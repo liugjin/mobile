@@ -1,0 +1,39 @@
+
+<ion-tabs class="tabs-icon-top tabs-color-active-balanced">
+  <!-- new design, 概览, 告警, 设备, 我的-->
+  <ion-tab title="概览" icon-off="bar-overview-off" icon-on="bar-overview-on" ui-sref="tab.overview({user: $root.project.model.user, project: $root.project.model.project})">
+    <ion-nav-view name="tab-overview"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="告警" icon-off="bar-alarm-off" icon-on="bar-alarm-on" ui-sref="tab.event({user: $root.project.model.user, project: $root.project.model.project, event: false})">
+    <ion-nav-view name="tab-event"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="设备" icon-off="bar-equipment-off" icon-on="bar-equipment-on" ui-sref="tab.signal({user: $root.project.model.user, project: $root.project.model.project})">
+    <ion-nav-view name="tab-signal"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="工单" icon-off="bar-order-off" icon-on="bar-order-on" ui-sref="tab.survey({user: $root.project.model.user, project: $root.project.model.project})">
+    <ion-nav-view name="tab-survey"></ion-nav-view>
+  </ion-tab>
+  <ion-tab title="我的" icon-off="bar-my-off" icon-on="bar-my-on" ui-sref="tab.setting({user: $root.project.model.user, project: $root.project.model.project})">
+    <ion-nav-view name="tab-setting"></ion-nav-view>
+  </ion-tab>
+  <!--ion-tab(title='概览', icon-off='ion-ios-pie-outline', icon-on='ion-ios-pie', ui-sref='tab.overview({user: $root.project.model.user, project: $root.project.model.project})')-->
+  <!--  ion-nav-view(name='tab-overview')-->
+  <!---->
+  <!---->
+  <!--// 设备-->
+  <!--ion-tab(title='设备', icon-off='ion-ios-monitor-outline', icon-on='ion-ios-monitor', ui-sref='tab.signal({user: $root.project.model.user, project: $root.project.model.project})')-->
+  <!--  ion-nav-view(name='tab-signal')-->
+  <!---->
+  <!---->
+  <!--ion-tab(title='告警', icon-off='ion-ios-bell-outline', icon-on='ion-ios-bell', ui-sref='tab.event({user: $root.project.model.user, project: $root.project.model.project})')-->
+  <!--  ion-nav-view(name='tab-event')-->
+  <!---->
+  <!--//ion-tab(title='扫码', icon-off='ion-ios-barcode-outline', icon-on='ion-ios-barcode', ui-sref='tab.scan({user: $root.project.model.user, project: $root.project.model.project})')-->
+  <!--//  ion-nav-view(name='tab-scan')-->
+  <!---->
+  <!--//ion-tab(title='地区', icon-off='ion-ios-keypad-outline', icon-on='ion-ios-keypad', ui-sref='tab.stations({user: $root.project.model.user, project: $root.project.model.project})')-->
+  <!--//  ion-nav-view(name='tab-station')-->
+  <!---->
+  <!--ion-tab(title='我的', icon-off='ion-ios-person-outline', icon-on='ion-ios-person', ui-sref='tab.setting({user: $root.project.model.user, project: $root.project.model.project})')-->
+  <!--  ion-nav-view(name='tab-setting')-->
+</ion-tabs>

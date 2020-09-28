@@ -1,0 +1,217 @@
+mobile-equip-list .padding-top-10 {
+  padding-top: 10px; }
+
+mobile-equip-list .no-margin {
+  margin: 0 !important; }
+
+mobile-equip-list .no-padding {
+  padding: 0 !important; }
+
+mobile-equip-list .search-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  width: 100%; }
+
+mobile-equip-list .search-wrapper > i {
+  position: absolute;
+  font-size: 24px;
+  top: 8px;
+  left: 6px;
+  line-height: 32px;
+  color: #757575; }
+
+mobile-equip-list .search-wrapper .search-input {
+  display: block;
+  margin: 4px 0 !important;
+  padding: 8px 8px 8px 32px !important;
+  height: 100% !important;
+  border: 0 solid #ececec !important;
+  border-radius: 6px !important;
+  background: white !important; }
+
+mobile-equip-list .search-wrapper input {
+  border: 1px solid #ececec !important;
+  height: 18px !important; }
+
+mobile-equip-list .search-input:hover {
+  border: 1px solid #ececec !important;
+  border-bottom: 1px solid #ececec !important;
+  background: white !important; }
+
+mobile-equip-list .search-input:focus {
+  background: #ffffff !important;
+  border: 1px solid #ececec !important;
+  box-shadow: none !important; }
+
+mobile-equip-list .search-w {
+  padding: .7rem 1rem; }
+
+mobile-equip-list .follow {
+  margin: 0.4rem 0 0.4rem 15%; }
+  mobile-equip-list .follow a.waves-effect {
+    line-height: 2.5rem;
+    width: 100%;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 0.2rem; }
+    mobile-equip-list .follow a.waves-effect img {
+      width: 1.3rem;
+      text-align: center;
+      margin: 0 0.3rem 0.2rem 0;
+      vertical-align: middle; }
+    mobile-equip-list .follow a.waves-effect span {
+      vertical-align: middle;
+      color: #10a957;
+      font-size: 0.8rem; }
+
+mobile-equip-list .follow.active a.waves-effect {
+  background: #10a957; }
+  mobile-equip-list .follow.active a.waves-effect span {
+    color: #ffffff; }
+
+mobile-equip-list .nav-top {
+  margin-bottom: 0.5rem; }
+  mobile-equip-list .nav-top .nav-li {
+    margin: 5px 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.5rem; }
+    mobile-equip-list .nav-top .nav-li a {
+      font-size: 16px;
+      color: #00a856; }
+  mobile-equip-list .nav-top .breadcrumb:before {
+    color: #bdbdbd; }
+  mobile-equip-list .nav-top .active-menu {
+    border-bottom: 0 solid white; }
+
+mobile-equip-list .equip-types {
+  margin-bottom: 1rem; }
+
+mobile-equip-list .swiper1 {
+  width: 100%; }
+
+mobile-equip-list .swiper1 .swiper-slide.selected {
+  color: #000;
+  border-bottom: 2px solid #10a957;
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+mobile-equip-list .swiper1 .swiper-slide {
+  text-align: center;
+  font-size: 1rem;
+  height: 1.5rem;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  cursor: pointer;
+  width: auto !important;
+  color: #737373; }
+
+mobile-equip-list .swiper1 .swiper-slide:last-of-type {
+  margin-right: 0 !important; }
+
+mobile-equip-list .equip-list {
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 0; }
+  mobile-equip-list .equip-list .equip-item {
+    background: #ffffff;
+    padding: .8rem;
+    margin-bottom: .7rem;
+    border-radius: .3rem; }
+  mobile-equip-list .equip-list .equip-item:last-of-type {
+    border-bottom: none; }
+  mobile-equip-list .equip-list .equip-content {
+    width: 100%;
+    padding-left: 0; }
+    mobile-equip-list .equip-list .equip-content .equip-img {
+      width: 20%;
+      height: 3.5rem;
+      text-align: center;
+      border-radius: .2rem;
+      position: relative; }
+      mobile-equip-list .equip-list .equip-content .equip-img .img-equip {
+        width: 3rem;
+        height: 3rem;
+        margin: .7rem auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; }
+      mobile-equip-list .equip-list .equip-content .equip-img img {
+        width: 2rem;
+        max-height: 2.5rem;
+        text-align: center;
+        vertical-align: middle; }
+      mobile-equip-list .equip-list .equip-content .equip-img .waves-img {
+        position: absolute;
+        width: 1.2rem;
+        height: 1.2rem;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        vertical-align: middle; }
+        mobile-equip-list .equip-list .equip-content .equip-img .waves-img img {
+          position: absolute;
+          width: 1.2rem;
+          height: 1.2rem;
+          right: 0; }
+    mobile-equip-list .equip-list .equip-content .equip-detail {
+      width: 80%; }
+      mobile-equip-list .equip-list .equip-content .equip-detail h6 {
+        font-weight: bold; }
+      mobile-equip-list .equip-list .equip-content .equip-detail .equip-state {
+        margin: 0.3rem 0 0.3rem 0.7rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      mobile-equip-list .equip-list .equip-content .equip-detail a {
+        cursor: default;
+        margin: 0 .5rem; }
+      mobile-equip-list .equip-list .equip-content .equip-detail img {
+        width: 1.2rem;
+        vertical-align: middle;
+        margin-right: 0.3rem; }
+      mobile-equip-list .equip-list .equip-content .equip-detail span {
+        vertical-align: middle; }
+      mobile-equip-list .equip-list .equip-content .equip-detail .text-green {
+        color: #00a856; }
+      mobile-equip-list .equip-list .equip-content .equip-detail .text-gray {
+        color: #a2aab6; }
+      mobile-equip-list .equip-list .equip-content .equip-detail .text-red {
+        color: #ff8089; }
+  mobile-equip-list .equip-list .equip-follow .follow {
+    margin: 0.4rem auto; }
+    mobile-equip-list .equip-list .equip-follow .follow a.waves-effect {
+      line-height: 1.5rem;
+      border: 1px solid #a2aab6;
+      border-radius: 10rem; }
+      mobile-equip-list .equip-list .equip-follow .follow a.waves-effect span {
+        color: #a2aab6;
+        margin-left: .2rem; }
+  mobile-equip-list .equip-list .equip-follow .follow.active a.waves-effect {
+    border: 1px solid #10a957; }
+    mobile-equip-list .equip-list .equip-follow .follow.active a.waves-effect span {
+      color: #ffffff; }
+  mobile-equip-list .equip-list .equip-address {
+    margin-top: 8px;
+    color: #a2aab6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    mobile-equip-list .equip-list .equip-address img {
+      width: 1.2rem;
+      margin: 0 0.3rem 0.4rem 0.2rem;
+      vertical-align: middle; }
+    mobile-equip-list .equip-list .equip-address span {
+      font-size: 12px; }

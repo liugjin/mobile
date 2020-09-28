@@ -1,0 +1,29 @@
+ion-header-bar.bar.bar-header.bg-white
+  button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')  我的
+  h1.title 反馈问题
+
+ion-content.has-header.bg-gray(scroll='false')
+  .list.margin-top-10
+    ion-item.item-icon-left
+      i.icon.ion-ios-medical
+      span.font-14.black 热点问题
+    ion-item.item-icon-right
+      span.font-14.black 短信通知怎么开启手机权限
+      img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+    ion-item.item-icon-right
+      span.font-14.black 怎么绑定邮箱,获取信息提示
+      img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+    ion-item.item-icon-right
+      span.font-14.black 如何关闭或开启新消息提醒
+      img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+
+  .margin-top-10.bg-white.feedback-width-height
+    .list
+      ion-item
+        span.black 意见反馈
+
+    textarea.feedback-area-width-height(placeholder='我们很乐意接收到您的反馈!' ng-model='vm.data.feedback')
+    .button-clc.font-14.gray-clc(ng-click='vm.onSubmit()') 提交
+
+
+

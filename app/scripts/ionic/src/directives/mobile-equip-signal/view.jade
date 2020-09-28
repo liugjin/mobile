@@ -1,0 +1,17 @@
+
+div(ng-if="communicationStatus")
+  //a.signal-line(ng-repeat="signal in equipment.signals.items | orderBy: 'data.severity': true" ng-click="navigate(signal)" ng-hide="!signal.data.value && !signal.data.formatValue.toString()")
+  a.signal-line(ng-repeat="signal in equipment.signals.items | filter: filterSignal() | orderBy: 'model.index': true | orderBy: 'data.severity': true" ng-click="navigate(signal)" ng-hide="(!signal.data.value && !signal.data.formatValue.toString())")
+    .signal-top
+      span {{signal.model.name}}
+      span.right.signal-state(ng-style='{color: getColorBySeverity(signal.data.severity) || "#bdbdbd"}') {{getNameBySeverity(signal.data.severity)}}
+
+    .signal-middle {{signal.data.formatValue.toString() || "-"}}
+    .signal-bottom
+      span(ng-if="signal.data.unitName") 实时值({{signal.data.unitName}})
+      span(ng-if="!signal.data.unitName") 实时值
+      span.right {{signal.data.timestamp | date: 'yyyy-MM-dd HH:mm:ss'}}
+
+.center.grey-text(ng-if="!communicationStatus", style="line-height:70vh") 通讯中断，请检查网关！
+
+

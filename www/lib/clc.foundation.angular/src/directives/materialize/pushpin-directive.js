@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define(["materialize-css"],function(n){var e,i;return{PushPinDirective:e=function(e){return{restrict:"AE",link:function(i,t,o){return e(function(){var e;return e={top:o.top||0,top:o.bottom||1/0,offset:o.offset||0,onPositionChange:o.onPositionChange},n.Pushpin.init(t,e)})}}}}});

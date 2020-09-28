@@ -1,0 +1,11 @@
+.box
+  span 健康度
+  span.right.value {{signal.data.value}}
+  .progress.bar
+    .determinate.length(ng-style="{'width':(100-signal.data.value)+'%'}")
+  .data
+    span 0
+    span 25
+    span 50
+    span 75
+    span 100

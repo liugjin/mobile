@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define(["three"],function(e){return window.THREE=e,e});

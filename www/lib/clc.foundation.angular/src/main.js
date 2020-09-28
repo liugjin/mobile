@@ -1,0 +1,1 @@
+requirejs(["json!/*/setting","materialize-css","angular","./app"],function(t,e,n,a){return window.setting=t,n.bootstrap(document.documentElement,["app"])});

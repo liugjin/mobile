@@ -1,0 +1,25 @@
+{
+  "id": "signal-value",
+  "name": "SignalValue控件",
+  "type": "SignalValueDirective",
+  "desc": {
+    "author": "david",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": [
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+    {"id": "equipment", "type":"string", "value": "_station_management"},
+    {"id": "signal", "type": "string", "value": ""}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.1"
+}

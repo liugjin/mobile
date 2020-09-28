@@ -1,0 +1,127 @@
+
+mobile-order-node
+
+  .order-node
+
+    .node-item
+      background: #ffffff
+      margin-top: 10px
+
+      //&:last-of-type
+        margin-bottom: 10px
+
+      .node-title
+        font-size: 18px
+        line-height: 40px
+        border-bottom: 1px solid #E5E5E5
+        padding: 0 10px
+
+        .img
+          display: inline-block
+          width: 1rem
+          margin-right: 15px
+          margin-left: 5px
+          margin-bottom: -2px
+
+        span
+          font-weight: bold
+
+      .order-detail
+        font-size: 14px
+        //margin-top: 1rem
+
+        .table
+          background: #ffffff
+
+          td
+            padding: 5px 5px
+            border-radius: 0
+
+          th
+            padding: 0
+
+          .border-bottom-0
+            border-bottom: 0
+
+          .run-normal
+            color: #00A856
+            font-weight: bold
+
+          .run-alarm
+            color: #F86066
+            font-weight: bold
+
+          .run-white
+            color: #ffffff
+            font-weight: bold
+
+          .run-normal-bg
+            background: #00A856
+
+          .run-alarm-bg
+            background: #F86066
+
+          .signal-name
+            color: #A6A6A6
+
+          .signal-value
+            color: #2F2F2F
+            font-weight: bold
+
+          .equip-type
+            text-align: center
+            color: #ffffff
+            font-weight: bold
+            border-bottom: 1px solid #fff
+
+          .equip-name
+            color: #A6A6A6
+            border-bottom: 1px solid #E5E5E5
+            text-align: center
+
+          .validate
+            border: 0
+            height: 80px
+            width: 100%
+            resize: none
+
+          .input-checkbox
+
+            [type="checkbox"] + span:not(.lever)
+              top: 5px
+
+            [type="checkbox"].filled-in:not(:checked) + span:not(.lever):after
+              border: 1px solid #979797
+              background-color: transparent
+              height: 18px
+              width: 18px
+
+            [type="checkbox"].filled-in:checked + span:not(.lever):after
+              border: 1px solid #979797
+              background-color: transparent
+              height: 18px
+              width: 18px
+
+            [type="checkbox"].filled-in:checked + span:not(.lever):before
+              border-right: 2px solid #10A957
+              border-bottom: 2px solid #10A957
+              height: 12px
+
+        .process-btn
+          color: #ffffff
+          font-size: 16px
+          height: 50px
+          line-height: 50px
+          vertical-align: middle
+          text-align: center
+
+          .btn-renew
+            display: inline-block
+            width: 50%
+            background: #F1A700
+
+          .btn-upload
+            display: inline-block
+            width: 50%
+            background: #10A957
+

@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define(["underscore"],function(e){var n,r;return{UniqueFilter:n=function(){return function(n,r,i){return e.uniq(n,function(e){return i?e.model[r]:e[r]})}}}});

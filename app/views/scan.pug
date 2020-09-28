@@ -1,0 +1,293 @@
+
+style.
+  .overflow-scroll .scroll {
+    height: auto;
+  }
+  .bar a img.img-scan {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .card {
+    margin: 1rem;
+    border-radius: .5rem;
+    box-shadow: none;
+  }
+  .scan-img {
+    width: 90%;
+    height: 22rem;
+  }
+  .btn, .btn:hover, .btn:focus {
+    display: block;
+    margin: 0 auto;
+    width: 66%;
+    background-color: #10a957;
+    border-color: transparent;
+    color: #fff;
+  }
+  .btn-stripe, .btn-stripe:hover, .btn-stripe:focus {
+    background: #f0f3f4;
+    margin-top: 1rem;
+    color: #9E9E9E;
+  }
+  .remark-text {
+    margin-top: 5rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #9E9E9E;
+  }
+  .remark-text span {
+    font-size: 12px;
+  }
+
+ion-header-bar.bar(style="background: #f0f3f4; border-bottom: 0;")
+  //a.button.icon-left.ion-ios-arrow-left.button-clear(ui-sref='tab.overview({user: vm.project.model.user, project: vm.project.model.project})' style="color: #444;")
+  a.button.button-icon.icon-left(ng-click="vm.goBack()" style="color: #444;")
+    img.img-scan(src="./img/svg/arrow-left.svg")
+  h1.title(style="color: #000; font-size: 18px;") 添加设备
+
+ion-content
+  .card.text-center(ng-if="!vm.device")
+    .item(style="background: #eff3f4;")
+      img.scan-img(src='img/scan.svg')
+      //button.button.btn.no-shadow(ng-click='vm.scanCode()') 扫码
+      button.button.btn.no-shadow(ng-click='vm.goToScan()') 扫码
+      button.button.btn.no-shadow(style="margin-top: 1rem;" ng-click='vm.writeText()') 手动输入
+      //button.button.btn.btn-stripe.no-shadow 条纹码
+      .remark-text
+        //span 目前只支持扫码添加设备，条纹码功能后续开发留意通知
+
+  br
+
+  .list(ng-if='vm.device && vm.flag==0')
+    .asset-image.valign-wrapper
+      .center
+        img(src="./img/equipments/{{vm.device.type}}.svg" style="height:120px")
+
+    label.item.item-input
+      //img.location-img(src='./img/location.svg')
+      span.input-label.label 设备ID
+      input(type='text', ng-model='vm.device.id', disabled)
+    label.item.item-input
+      //img.location-img(src='./img/location.svg')
+      span.input-label.label 设备名称
+      input(type='text', ng-model='vm.device.name')
+    label.item.item-input
+      //img.location-img(src='./img/location.svg')
+      span.input-label.label 设备类型
+      input(type='text', ng-model='vm.device.typeName', disabled)
+    label.item.item-input
+      //img.location-img(src='./img/location.svg')
+      span.input-label.label 设备厂商
+      input(type='text', ng-model='vm.device.vendorName', disabled)
+    label.item.item-input
+      //img.location-img(src='./img/location.svg')
+      span.input-label.label 设备型号
+      input(type='text', ng-model='vm.device.templateName', disabled)
+
+    //label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备位置
+      input(type='text', ng-model='vm.device.location')
+    //ion-item
+      ion-label 所属站点
+      ion-select
+        ion-option(value="a") AAA
+        ion-option(value="b") BBB
+    label.item.item-input.item-select1
+      //img.location-img(src='./img/location.svg')
+      .input-label.label 所属站点
+      select.browser-default(md-select, ng-model="vm.device.station")
+        //option 广东
+        //option(selected) 东莞
+        option(ng-repeat="station in vm.project.stations.items" value="{{station.model.station}}") {{station.model.name}}
+
+    .item
+      button.button.button-full.button-balanced(ng-click='vm.saveEquipment()')
+        | 确定添加
+
+  .list(ng-if="vm.device && vm.flag == 1")
+    .card.text-center.overview-card.green(style="margin-top:0px")
+      .asset-image.valign-wrapper
+        .center
+          img(src="./img/svg/bar-order-on.svg")
+          .white-text 设备添加成功
+          label.white-text {{vm.equipment.model.createTime | date: "yyyy-MM-dd HH:mm"}}
+
+    .card.overview-card
+      label.item.item-input
+        //img.location-img(src='./img/location.svg')
+        span.input-label.label 设备ID
+        span.label {{vm.equipment.model.equipment}}
+      label.item.item-input
+        //img.location-img(src='./img/location.svg')
+        span.input-label.label 设备名称
+        span.label {{vm.equipment.model.name}}
+      label.item.item-input
+        //img.location-img(src='./img/location.svg')
+        span.input-label.label 设备类型
+        span.label {{vm.equipment.model.typeName}}
+      label.item.item-input
+        //img.location-img(src='./img/location.svg')
+        span.input-label.label 设备厂商
+        span.label {{vm.equipment.model.vendorName}}
+      label.item.item-input
+        //img.location-img(src='./img/location.svg')
+        span.input-label.label 设备型号
+        span.label {{vm.equipment.model.templateName}}
+      //label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备位置
+        span.label {{vm.device.location}}
+      label.item.item-input
+        //img.location-img(src='./img/location.svg')
+        span.input-label.label 所属站点
+        span.label {{vm.equipment.model.stationName}}
+      .item
+        button.button.half-width.button-balanced(ng-click='vm.goToScan()')
+          | 继续添加
+        button.button.half-width.button-balanced(ng-click='vm.goToEquipment()')
+          | 查看设备
+
+  .list(ng-if="vm.device && vm.flag == -1")
+    .card.text-center.overview-card.orange(style="margin-top:0px")
+      .asset-image.valign-wrapper
+        .center
+          img(src="./img/svg/bar-order-off.svg")
+          .white-text 设备添加失败
+          label.white-text {{vm.device.time | date: "yyyy-MM-dd HH:mm"}}
+
+    .card.text-center.overview-card
+      .valign-wrapper(style="height:340px")
+        .center
+          img(src="./img/svg/bar-equipment-off.svg")
+
+    .show(style="margin: 16px 8px 2px 8px;border-radius:4px")
+      button.button.button-full.button-balanced(ng-click='vm.goToScan()')
+        | 继续添加
+
+
+//ion-header-bar.bar.bar-light.bar-header
+  a.button.icon-left.ion-ios-arrow-left.button-clear(ui-sref='tab.overview({user: vm.project.model.user, project: vm.project.model.project})')
+  h1.title 添加设备
+
+//ion-content
+  .card.text-center.overview-card(ng-if="!vm.device")
+    .item
+      img.scan-img(src='img/scan.svg')
+      button.button.button-full.button-balanced(ng-click='vm.scanCode()')
+        | 扫一扫
+
+  //.card.text-center.overview-card
+    .item
+      img.scan-img-2(src='img/scan-2.svg')
+      button.button.button-full.button-balanced
+        | 手动输入条码
+
+  br
+
+  .list(ng-if='vm.device && vm.flag==0')
+    .asset-image.valign-wrapper
+      .center
+        img(src="./img/location.svg")
+
+    label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备ID
+      input(type='text', ng-model='vm.device.id', disabled)
+    label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备名称
+      input(type='text', ng-model='vm.device.name')
+    label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备类型
+      input(type='text', ng-model='vm.device.type', disabled)
+    label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备厂商
+      input(type='text', ng-model='vm.device.vendor', disabled)
+    label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备型号
+      input(type='text', ng-model='vm.device.template', disabled)
+
+    label.item.item-input
+      img.location-img(src='./img/location.svg')
+      span.input-label.label 设备位置
+      input(type='text', ng-model='vm.device.location')
+    //ion-item
+    //  ion-label 所属站点
+    //  ion-select
+    //    ion-option(value="a") AAA
+    //    ion-option(value="b") BBB
+    label.item.item-input.item-select1
+      img.location-img(src='./img/location.svg')
+      .input-label.label 所属站点
+      select.browser-default(md-select, ng-model="vm.device.station")
+        //option 广东
+        //option(selected) 东莞
+        option(ng-repeat="station in vm.project.stations.items" value="{{station.model.station}}") {{station.model.name}}
+
+    .item
+      button.button.button-full.button-balanced(ng-click='vm.saveEquipment()')
+        | 确定添加
+
+  .list(ng-if="vm.device && vm.flag == 1")
+    .card.text-center.overview-card.green(style="margin-top:0px")
+      .asset-image.valign-wrapper
+        .center
+          img(src="./img/location.svg")
+          .white-text 设备添加成功
+          label.white-text {{vm.equipment.model.createTime | date: "yyyy-MM-dd HH:mm"}}
+
+    .card.overview-card
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备ID
+        span.label {{vm.equipment.model.equipment}}
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备名称
+        span.label {{vm.equipment.model.name}}
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备类型
+        span.label {{vm.equipment.model.type}}
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备厂商
+        span.label {{vm.equipment.model.vendor}}
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备型号
+        span.label {{vm.equipment.model.template}}
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 设备位置
+        span.label {{vm.device.location}}
+      label.item.item-input
+        img.location-img(src='./img/location.svg')
+        span.input-label.label 所属站点
+        span.label {{vm.equipment.model.station}}
+      .item
+        button.button.half-width.button-balanced(ng-click='vm.scanCode()')
+          | 继续添加
+        button.button.half-width.button-balanced(ng-click='vm.gotoEquipment()')
+          | 查看设备
+
+  .list(ng-if="vm.device && vm.flag == -1")
+    .card.text-center.overview-card.orange(style="margin-top:0px")
+      .asset-image.valign-wrapper
+        .center
+          img(src="./img/location.svg")
+          .white-text 设备添加失败
+          label.white-text {{vm.device.time | date: "yyyy-MM-dd HH:mm"}}
+
+    .card.text-center.overview-card
+      .valign-wrapper(style="height:340px")
+        .center
+          img(src="./img/location.svg")
+
+    .show(style="margin: 16px 8px 2px 8px;border-radius:4px")
+      button.button.button-full.button-balanced(ng-click='vm.scanCode()')
+        | 继续添加

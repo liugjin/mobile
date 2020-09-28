@@ -1,0 +1,33 @@
+//ion-nav-view
+//ion-content
+
+div(style="position: relative; padding-top: 1px; padding-bottom: 1px; padding-left: 0; margin-bottom: 20px;")
+  mobile-equipproperty(controller='vm', parameters='{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}')
+  //mobile-equipproperty(controller='vm', parameters='{station:vm.equipment.model.station, equipment: vm.equipment.model.equipment}')
+      //.item.item-image(ng-if='vm.equipment.model.image')
+      //  img.card-img(ng-src='{{vm.options.uploadUrl}}/{{vm.equipment.model.image}}')
+      //
+      //.item
+      //  span 类型：
+      //  span {{vm.equipment.model.typeName}}
+      //.item
+      //  span 厂商：
+      //  span {{vm.equipment.model.vendorName}}
+      //.item(ng-repeat='property in vm.equipment.properties.items | filter: vm.equipment.properties.filter(vm.searchProperty, ["property", "name"], true) | orderBy: vm.equipment.properties.predicate: vm.equipment.properties.reverse', ng-if='!(property.model.property.indexOf("_")===0 || property.model.property=="periods")')
+      //  div(ng-switch='property.model.dataType')
+      //    div(ng-switch-default)
+      //      span {{property.model.name}}：
+      //      span {{property.value}}
+      //      span &nbsp;{{property.unit.abbr}}
+      //
+      //    div(ng-switch-when='date')
+      //      span {{property.model.name}}：
+      //      span {{property.value | date: 'yyyy-MM-dd'}}
+      //      //span &nbsp;{{property.unit.abbr}}
+      //
+      //    div(ng-switch-when='datetime')
+      //      span {{property.model.name}}：
+      //      span {{property.value | date: 'yyyy-MM-dd HH:mm:ss'}}
+            //span &nbsp;{{property.unit.abbr}}
+
+

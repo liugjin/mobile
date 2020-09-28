@@ -1,0 +1,25 @@
+mobile-signal-card .signal-info {
+  line-height: 1.5;
+  position: relative;
+  text-align: center;
+  color: #101010;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem; }
+  mobile-signal-card .signal-info .title {
+    font-size: 1rem;
+    color: #a8a8a8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  mobile-signal-card .signal-info .content {
+    font-size: 1.4rem;
+    font-weight: bold; }
+  mobile-signal-card .signal-info .collect-time {
+    color: #a8a8a8;
+    height: 20px; }
+
+/*# sourceMappingURL=style.css.map */

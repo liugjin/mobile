@@ -1,0 +1,50 @@
+.collapsible1(ng-show="memos.length == 0")
+  span 该工单暂无情况反馈
+ul.collapsible(ng-show="memos.length > 0")
+  li(ng-repeat="memo in memos track by memo.id")
+    .collapsible-header
+      .check-box {{memo.id}}
+      .content-title
+        span 内容：{{memo.content}}
+        span 备注：{{memo.memo}}
+      .icon-box
+        img(ng-src="{{getComponentPath('image/arrow-right.svg')}}", alt="")
+    .collapsible-body
+      .threshold
+        .threshold-box
+          .threshold-box-name 序号&nbsp;&nbsp;
+            span{{memo.id}} 
+      .cause-failure
+        .failure-box
+          .failure-name 内容
+          textarea.textarea(ng-model="memo.content")
+      
+      .cause-failure
+        .failure-box
+          .failure-name 备注
+          textarea.textarea(ng-model="memo.memo")
+      .padding(ng-if="showType == 2")
+        button.button.button-block.btn-register.btn-green(ng-click="removeMemos(memo)") 删除
+.add-btn(ng-show="!parameters.message.complete")
+  .btn-floating.btn-large.waves-effect.waves-lightred.waves-light.modal-trigger(href="#modal1",ng-click="addFeedback(1)")
+      i.material-icons add
+.process-btn(ng-if="showType == 2")
+  .btn-renew(ng-click="setTask(2)" ng-show="showBtns.reject") 拒绝
+  .btn-hold(ng-click="saveTask(3)" ng-show="showBtns.save") 保存
+  .btn-upload(ng-click="setTask(1)" ng-show="showBtns.approval") 批准
+
+
+#modal1.modal.modalinfo(ng-if="showType == 2")
+  .modal-content
+    h6(style="text-align: center") 添加情况反馈
+    .cause-failure
+      .failure-box
+        .failure-name 内容
+        textarea.textarea(ng-model="addModel.content")
+    .cause-failure
+      .failure-box
+        .failure-name 备注
+        textarea.textarea(ng-model="addModel.memo")
+  .modal-footer
+    a.modal-action.modal-close.waves-effect.waves-green.btn-flat(href="",ng-click="closeDetail()") 取消
+    a.modal-action.modal-close.waves-effect.waves-green.btn(href="",ng-click="saveAddModel()") 生成

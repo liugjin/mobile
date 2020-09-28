@@ -1,0 +1,32 @@
+{
+  "id": "mobile-historycurve",
+  "name": "MobileHistorycurve控件",
+  "type": "MobileHistorycurveDirective",
+  "desc":{
+    "author":"sheen",
+    "desc":"手机版信号曲线",
+    "version":{
+      "0.0.1":["设备的信号历史曲线(手机版基于pc的0.0.3版本)"],
+      "0.0.2":["修复切换设备bug,修复没有显示所以曲线bug,修改图表区域渐变色,加点信号跳到显示曲线如果Eventbus有signalId(订阅signalId)"],
+      "0.0.3":["修改配置文件"],
+      "0.0.4":["增加路由方式加载设备及信号曲线"],
+      "0.0.5":["增加全屏与分享"],
+      "0.0.6":["用card包起来及部分样式修改 支持路由到设备或信号级别（到设备显示多曲线到信号为单信号曲线）"],
+      "0.0.7":["去掉input-field的下margin缩小上面选项所占空间"],
+      "0.0.8":["细调样式，日期插件改用gl-datepicker"],
+      "0.0.9":["gaullow要一个支持多个信号切换的版本"],
+      "0.0.10":["gaullow要曲线显示Y轴 曲线上显示圆点 改为select单选"],
+      "0.0.11":["单选信号用dropdown方式"]
+  }
+  },
+  "group": "设备组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": ["history-curve-heat-map"],
+    "subs": ["stationId", "equipmentId","signalId"]
+  },
+  "css": "",
+  "version": "0.0.11"
+}

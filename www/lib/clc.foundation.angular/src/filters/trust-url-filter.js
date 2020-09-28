@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,r;return{TrustUrlFilter:e=function(e){return function(r){return e.trustAsResourceUrl(r)}}}});

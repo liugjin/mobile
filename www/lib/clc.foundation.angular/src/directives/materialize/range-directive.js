@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define(["materialize-css"],function(e){var n,i;return{RangeDirective:n=function(n){return{restrict:"EA",link:function(i,r,t){return n(function(){var n;return n={},e.Range.init(r,n)})}}}}});

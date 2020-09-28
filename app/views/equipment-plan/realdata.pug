@@ -1,0 +1,12 @@
+ion-nav-view
+  ion-content(scroll='false')
+
+    .item.item-header.item-stable.row.row-item
+      .col.col-33 信号
+      .col.col-33 实时值
+      .col.col-33 更新时间
+    ion-scroll(direction='y', style='width: 100%;height: 94%;', scrollbar-y='false')
+      .item.row.row-item(ng-repeat='signal in filterSignals = (vm.equipment.signals.items | filter: vm.equipment.signals.filter(vm.searchSignal, ["group"], true)) | orderBy: vm.equipment.signals.predicate: vm.equipment.signals.reverse ',ng-class='{"active": signal == vm.signal}')
+        .col.col-33 {{signal.model.name}}
+        .col.col-33 {{signal.data.formatValue || '&nbsp;&nbsp;'}} {{signal.unit.unit}}
+        .col.col-33 {{signal.data.timestamp | date: 'yyyy-MM-dd HH:mm:ss'}}

@@ -1,0 +1,44 @@
+
+<style>
+  .bar-order a img {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .tabs .tab a {
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: transparent;
+    outline: none;
+  }
+  .tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #00a755;
+  }
+  .tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    /*background-color: #87D4AB;*/
+    background-color: #00a755;
+    will-change: left, right;
+  }
+  .popup-container {
+    background: rgba(0, 0, 0, 0.5)
+  }
+  .popup-container .popup {
+    background: #F0F3F4;
+  }
+  
+</style>
+<ion-header-bar class="bar-order" style="border-bottom: 0;"><a class="button button-icon icon-left" ng-click="vm.gotab()" style="color: #444;"><img class="img-scan" src="./img/svg/arrow-left.svg"/></a>
+  <h1 class="title" style="color: #000; font-size: 18px;">我的工单</h1>
+  <mobile-menu controller="vm" parameters="{}" style="position: absolute;top: 5px;right: 5px;bottom: 5px;"></mobile-menu>
+</ion-header-bar>
+<ion-content>
+  <div style="position: absolute; width: 100%;">
+    <mobile-order-list controller="vm" parameters="{}"></mobile-order-list>
+  </div>
+</ion-content>

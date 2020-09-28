@@ -1,0 +1,56 @@
+script.
+    (function($) {
+        function Sidenav(element) {
+            this.$el = $(element);
+            this.init(this);
+        }
+
+        Sidenav.prototype = {
+            init: function(self) {
+                self.initToggle(self);
+            },
+            initToggle: function(self) {
+                $(document).on("click", function(e) {
+                    let $target = $(e.target);
+                    if ($target.closest(self.$el.data("sidenav-toggle"))[0]) {
+                        self.$el.toggleClass("show");
+                    } else if (!$target.closest(self.$el)[0]) {
+                        self.$el.removeClass("show");
+                    }
+                });
+            },
+        };
+        $.fn.sidenav = function() {
+            return this.each(function() {
+                if (!$.data(this, "sidenav")) {
+                    $.data(this, "sidenav", new Sidenav(this));
+                }
+            });
+        };
+    })(window.jQuery);
+.content
+    a#sidenav-toggle(href="javascript:;")
+        i.material-icons menu
+    .sidenav(data-sidenav data-sidenav-toggle="#sidenav-toggle")
+        .card-box
+            .card-name
+                span 完成状态
+            .screen-box
+                .btn-box(ng-repeat="(i, d) in state",ng-click="stateData(d,i)",ng-class="{select: stateSelectBtn == i}") {{d.name}}
+        .card-box
+            .card-name
+                span 优先级
+            .screen-box
+                .btn-box(ng-repeat="(i, d) in rank",ng-click="rankData(d,i)",ng-class="{select: rankSelectBtn == i}") {{d.name}}
+        .time-card
+            .time-name
+                span 开始时间
+            .time-box
+                mobile-calendar-component(controller="vm" parameters="{id:'start'}")
+        .time-card
+            .time-name
+                span 结束时间
+            .time-box
+                mobile-calendar-component(controller="vm" parameters="{id:'end'}")
+        .btn-card
+            button.btn.search-btn(ng-click="search()") 搜索

@@ -1,0 +1,186 @@
+mobile-situation-feedback .collapsible-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.1rem 0.75rem 1rem; }
+
+mobile-situation-feedback .check-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: #00A856;
+  border-radius: 50%;
+  color: #FFF; }
+
+mobile-situation-feedback .collapsible1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  border: none;
+  box-shadow: none; }
+
+mobile-situation-feedback .collapsible1 span {
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+mobile-situation-feedback .collapsible {
+  height: 75%;
+  margin: 0;
+  border: none;
+  overflow-y: scroll;
+  box-shadow: none; }
+
+mobile-situation-feedback .content-title {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 3.2rem;
+  margin-left: 1.6rem; }
+
+mobile-situation-feedback .content-title span {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  color: #2F2F2F; }
+
+mobile-situation-feedback .content-title span:nth-child(1) {
+  font-size: 1rem;
+  font-weight: bold; }
+
+mobile-situation-feedback .content-title span:nth-child(2) {
+  font-size: 0.8rem;
+  color: #A6A6A6; }
+
+mobile-situation-feedback .icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 3.2rem; }
+
+mobile-situation-feedback .collapsible-body {
+  padding: 1rem;
+  height: 27rem;
+  border-bottom: none; }
+
+mobile-situation-feedback .threshold {
+  width: 100%;
+  height: 8%; }
+
+mobile-situation-feedback .threshold-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%; }
+
+mobile-situation-feedback .threshold-box-name {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  color: #A6A6A6;
+  margin-left: 2%; }
+
+mobile-situation-feedback .threshold-box-name span {
+  color: #2F2F2F;
+  font-size: 1.2rem; }
+
+mobile-situation-feedback .input {
+  width: 70%;
+  height: 100%;
+  color: #A6A6A6;
+  font-size: 1.2rem !important;
+  color: #2F2F2F; }
+
+mobile-situation-feedback .cause-failure {
+  display: flex;
+  width: 100%;
+  height: 34%; }
+
+mobile-situation-feedback .failure-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; }
+
+mobile-situation-feedback .failure-name {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 40%;
+  color: #A6A6A6;
+  margin-left: 2%; }
+
+mobile-situation-feedback .textarea {
+  height: 70%;
+  width: 96%;
+  background: #FFFFFF;
+  font-size: 1.2rem;
+  color: #2F2F2F;
+  margin-left: 2%;
+  padding: 0.4rem;
+  border: 1px solid #979797; }
+
+mobile-situation-feedback .padding {
+  padding: 10px 8px; }
+
+mobile-situation-feedback .btn-green {
+  background: #10A957  !important;
+  color: #FFF  !important; }
+
+mobile-situation-feedback .add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+mobile-situation-feedback .process-btn {
+  color: #ffffff;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center; }
+  mobile-situation-feedback .process-btn .btn-renew {
+    display: inline-block;
+    width: 33.33%;
+    background: #F1A700; }
+  mobile-situation-feedback .process-btn .btn-hold {
+    display: inline-block;
+    width: 33.33%;
+    background: #4DB2FF; }
+  mobile-situation-feedback .process-btn .btn-upload {
+    display: inline-block;
+    width: 33.33%;
+    background: #10A957; }
+
+mobile-situation-feedback .modalinfo {
+  height: 100% !important; }
+  mobile-situation-feedback .modalinfo .modal-content {
+    height: 89% !important; }
+  mobile-situation-feedback .modalinfo .modal-footer {
+    height: 10% !important; }
+
+mobile-situation-feedback .modal {
+  top: 10rem;
+  min-height: auto; }
+  mobile-situation-feedback .modal .modal-content p {
+    text-align: center;
+    font-size: 18px; }
+  mobile-situation-feedback .modal .modal-footer {
+    display: flex;
+    padding: 0;
+    height: auto; }
+    mobile-situation-feedback .modal .modal-footer a.btn, mobile-situation-feedback .modal .modal-footer a.btn-flat {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+      height: 48px;
+      line-height: 48px; }
+      mobile-situation-feedback .modal .modal-footer a.btn:nth-child(1), mobile-situation-feedback .modal .modal-footer a.btn-flat:nth-child(1) {
+        background: #ffffff; }
+      mobile-situation-feedback .modal .modal-footer a.btn:nth-child(2), mobile-situation-feedback .modal .modal-footer a.btn-flat:nth-child(2) {
+        background: #10A957; }

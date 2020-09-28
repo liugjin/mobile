@@ -1,0 +1,94 @@
+
+style.
+  .bar a img.img-us {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .content-us {
+    background: #ffffff;
+    margin: .5rem 1rem 1rem;
+    padding: 0 1rem 1rem;
+    border-radius: .5rem
+  }
+  .content-logo {
+    width: 95%;
+    height: 150px;
+    padding: 0 1rem 2rem;
+    margin: 0 auto;
+  }
+  .content-logo .vertical-horizontal-center {
+    border-bottom: 1px solid #DBDBDB;
+  }
+  .font-size-12 {
+    font-size: 12px;
+  }
+
+ion-header-bar.bar(style="background: #f0f3f4; border-bottom: 0;")
+  //button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')
+  a.button.button-icon.icon-left(ng-click='vm.onBackPress()')
+    img.img-us(src="./img/svg/arrow-left.svg")
+  h1.title(style="color: #000; font-size: 18px;") 关于我们
+
+ion-content
+  .content-us
+
+    .vertical.content-logo
+      .vertical-horizontal-center
+        img.logo-company.vertical-aline-middle(src="./img/logo-company.svg")
+
+    .match-parent.bg-white
+      .padding
+        img.us-icon(src='./img/svg/company-name.svg')
+        span 深圳华远云联数据科技有限公司
+        p
+          .font-size-12.grey-text-1 深圳华远云联数据科技有限公司（原名:深圳云联讯数据科技有限公司），创立于2015年2月，是北京市华远集团有 限公司控股的工业物联网整体解决方案国家级高新技术企业。 公司核心团队拥有超过二十年电信运营商基站、数据 中心基础设施及工业系统监控及管理平台的设计、开发、销售和运维经验，一切以客户需求为中心，长期致力于服 务制造型企业，通过提供设备实时物联及集中管理云平台解决方案，帮助工业客户完成从“传统制造”向“智能智 造”的转型升级，从而达到工业4.0时代的要求。
+          .font-size-12.grey-text-1 公司拥有自主知识产权的工业物联网云平台Huayuan Industry Internet Of Things ---（HIIOT）海鸥，为工业用 户提供智能网关、边缘计算、设备建模、连接、可视化、洞察和预测性服务。解决方案已经成功应用于数据中心、 物流仓储、PLC工控、动力设备、变频器、工程机械、楼宇节能、电力能耗等诸多领域。
+        .margin-top-12
+          img.us-icon(src='./img/svg/company-address.svg')
+          span 公司地址
+          p
+            .font-size-12.grey-text-1 深圳市南山区留仙大道1998号金骐智谷大厦405
+        .margin-top-12
+          img.us-icon(src='./img/svg/company-service.svg')
+          span 客户服务
+          p
+            .font-size-12.grey-text-1 服务咨询: service@huayuan-iot.com
+            .font-size-12.grey-text-1 解决方案: sales@huayuan-iot.com
+        .margin-top-12
+          img.us-icon(src='./img/svg/company-website.svg')
+          span 公司网址
+          p
+            .font-size-12.grey-text-1 http://www.huayuan-iot.com
+
+
+//ion-header-bar.bar.bar-header.bg-white
+  button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')
+  h1.title 关于我们
+
+//ion-content
+  .setting-top-height-width-out.vertical
+    .setting-top-height-width-inner.vertical-horizontal-center
+      img.logo-company.vertical-aline-middle(src="./img/logo-company.svg")
+
+  .match-parent.bg-white
+    .padding
+      img.us-icon(src='./img/icon/building.svg')
+      span 深圳华远云联数据科技有限公司
+      p
+        .grey-text-1 深圳华远云联数据科技有限公司（原名:深圳云联讯数据科技有限公司）创立于2015年2月。 团队拥有20万基站接入电信监控系统和预算8000万美金的全球数据中心基础设施管理平台的设计、开发、销售和运维经验。 专注于实时数据开放平台研发，提供软件即服务的实时数据云平台，为工业用户和消费者提供设备建模、连接、可视化、洞察和预测服务。
+      .margin-top-12
+        img.us-icon(src='./img/icon/address.svg')
+        span 公司地址
+        p
+          .grey-text-1 深圳市南山区留仙大道1998号金骐智谷大厦405
+      .margin-top-12
+        img.us-icon(src='./img/icon/service.svg')
+        span 客户服务
+        p
+          .grey-text-1 服务咨询: service@huayuan-iot.com
+          .grey-text-1 解决方案: sales@huayuan-iot.com
+      .margin-top-12
+        img.us-icon(src='./img/icon/website.svg')
+        span 公司网址
+        p
+          .grey-text-1 http://www.huayuan-iot.com

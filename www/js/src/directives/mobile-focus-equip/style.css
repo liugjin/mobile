@@ -1,0 +1,81 @@
+mobile-focus-equip .collection {
+  overflow: visible;
+  margin: 0;
+  border: none; }
+  mobile-focus-equip .collection .collection-item:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem; }
+  mobile-focus-equip .collection .collection-item {
+    height: 3rem;
+    border-bottom: 1px solid #e5e5e5; }
+    mobile-focus-equip .collection .collection-item .collection-item-title {
+      font-size: 14px;
+      color: #101010;
+      font-weight: 600; }
+      mobile-focus-equip .collection .collection-item .collection-item-title .state-dot {
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+        position: relative;
+        background-color: #d9d9d9;
+        margin-right: 8px; }
+      mobile-focus-equip .collection .collection-item .collection-item-title .state-online {
+        background-color: #52c41a; }
+      mobile-focus-equip .collection .collection-item .collection-item-title .state-online:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid #52c41a;
+        content: "";
+        -webkit-animation: stateOnline 1.2s infinite ease-in-out;
+        animation: stateOnline 1.2s infinite ease-in-out; }
+      mobile-focus-equip .collection .collection-item .collection-item-title .state-alarm {
+        background-color: #f86066; }
+      mobile-focus-equip .collection .collection-item .collection-item-title .state-alarm:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid #f86066;
+        content: "";
+        -webkit-animation: stateOnline 1.2s infinite ease-in-out;
+        animation: stateOnline 1.2s infinite ease-in-out; }
+
+mobile-focus-equip .follow-blank {
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center; }
+  mobile-focus-equip .follow-blank span {
+    color: #9e9e9e; }
+
+@-webkit-keyframes stateOnline {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: .5; }
+  to {
+    -webkit-transform: scale(2.4);
+    transform: scale(2.4);
+    opacity: 0; } }
+
+@keyframes stateOnline {
+  0% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: .5; }
+  to {
+    -webkit-transform: scale(2.4);
+    transform: scale(2.4);
+    opacity: 0; } }

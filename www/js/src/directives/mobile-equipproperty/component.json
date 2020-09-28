@@ -1,0 +1,24 @@
+{
+  "id": "mobile-equipproperty",
+  "name": "MobileEquipproperty控件",
+  "type": "MobileEquippropertyDirective",
+  "desc": {
+    "author":"sheen",
+    "version":{
+      "0.0.2":["修复第二次选设备数据更新bug,替换图标"],
+      "0.0.3":["修改配置文件"],
+      "0.0.4":["gaullow要通过取路由方式得到设备信息，不用订阅eventbus方式"],
+      "0.0.5":["修改取组件内图片方式,去掉card阴影"]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": ["stationId","equipmentId"]
+  },
+  "css": "",
+  "version": "0.0.5"
+}

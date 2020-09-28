@@ -1,0 +1,79 @@
+
+<ion-header-bar class="bar bar-green bar-header">
+  <h1 class="title">工单</h1><a class="button button-icon icon-right ion-ios-close-empty" ui-sref="tab.overview({user: $root.project.model.user, project: $root.project.model.project})"></a>
+</ion-header-bar>
+<!--ion-content-->
+<ion-content>
+  <!--.list-->
+  <div class="item item-divider item-icon-right"><span>工单清单</span><a class="icon icon-right ion-ios-plus-empty" ng-click="vm.openModal()"></a></div>
+  <ion-scroll direction="y" style="height: 300px"><a class="item item-event item-icon-left item-icon-right" ng-repeat="item in vm.worklists" ng-click="vm.selectWorklist(item)"><img class="event-icon2 icon-left" ng-src="img/icon/{{vm.getTypeImg(item.template)}}"/>
+      <div class="item-event-name"><span class="item-title3">{{item.name}}-{{item.equipment}}</span>
+        <div class="item-time"></div>
+      </div>
+      <div class="item-event-content">
+        <!--span.item-title2 +5 Days-->
+        <!--span.item-title4 杨三炮--><span class="item-title4">{{vm.getUserName(item.properties, 'order_notify')}}</span>
+      </div><img class="icon work-icon3 icon-right" ng-if="vm.worklist==item" src="img/icon/o-1.svg"/><img class="icon work-icon3 icon-right" ng-if="vm.worklist!=item" src="img/icon/o-0.svg"/></a>
+    <!--a.item.item-event.item-icon-left.item-icon-right-->
+    <!--  img.event-icon2.icon-left(src='img/icon/alarm-2.svg')-->
+    <!--  .item-event-name-->
+    <!--    span.item-title3 空调-02-NetRoom维修-1128-->
+    <!--    .item-time-->
+    <!--  .item-event-content-->
+    <!--    span.item-title2 +5 Days-->
+    <!--    span.item-title4 杨三炮-->
+    <!--  img.icon.work-icon3.icon-right(src='img/icon/o-1.svg')-->
+    <!---->
+    <!--a.item.item-event.item-icon-left.item-icon-right-->
+    <!--  img.event-icon2.icon-left(src='img/icon/sys.svg')-->
+    <!--  .item-event-name-->
+    <!--    span.item-title3 配电巡检-1128-->
+    <!--    .item-time-->
+    <!--  .item-event-content-->
+    <!--    span.item-title2 +1 Days-->
+    <!--    span.item-title4 谭桂芳-->
+    <!--  img.icon.work-icon3.icon-right(src='img/icon/o-0.svg')-->
+    <!---->
+    <!--a.item.item-event.item-icon-left.item-icon-right-->
+    <!--  img.event-icon2.icon-left(src='img/icon/inspect-2.svg')-->
+    <!--  .item-event-name-->
+    <!--    span.item-title3 空调-05-NetRoom除尘-1128-->
+    <!--    .item-time-->
+    <!--  .item-event-content-->
+    <!--    span.item-title2 -2 Days-->
+    <!--    span.item-title4 钱多多-->
+    <!--  img.icon.work-icon3.icon-right(src='img/icon/o-0.svg')-->
+    <!---->
+    <!--a.item.item-event.item-icon-left.item-icon-right-->
+    <!--  img.event-icon2.icon-left(src='img/icon/temporary.svg')-->
+    <!--  .item-event-name-->
+    <!--    span.item-title3 Server-02-CoreRoom上架1128-->
+    <!--    .item-time-->
+    <!--  .item-event-content-->
+    <!--    span.item-title2 -5 Days-->
+    <!--    span.item-title4 石超-->
+    <!--  img.icon.work-icon3.icon-right(src='img/icon/o-0.svg')-->
+  </ion-scroll>
+  <div class="list">
+    <div class="item item-divider"><span>当前工单：</span><span>{{vm.worklist.name}} {{vm.worklist.equipment}}</span></div>
+    <div class="item box">
+      <div class="grid-cell">
+        <!--span 责任人：杨三炮--><span>责任人：{{vm.getPv(vm.worklist.properties, 'order_details', 'order_department')}}</span>
+      </div>
+      <div class="grid-cell">
+        <!--span 状态：设备维修--><span>状态：{{vm.getPv(vm.worklist.properties, 'order_details', 'order_type')}}</span>
+      </div>
+    </div>
+    <div class="item item-icon-right"><span>基本信息：</span>
+      <textarea rows="2" cols="40" disabled="disabled">{{vm.getPv(vm.worklist.properties, 'order_details', 'order_detail')}}</textarea>
+      <!--i.icon.ion-chevron-right.icon-accessory-->
+    </div>
+    <div class="item"><span>工单处理</span></div>
+    <div class="item"><span>处理过程</span><span class="assertive">*</span><span>:</span>
+      <textarea rows="3" cols="40" placeholder="请输入" ng-model="vm.status"></textarea>
+    </div>
+  </div>
+  <div class="padding">
+    <button class="button button-block button-green" type="submit" ng-click="vm.saveWorklist()">提交</button>
+  </div>
+</ion-content>

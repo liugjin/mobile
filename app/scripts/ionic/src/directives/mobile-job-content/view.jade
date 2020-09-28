@@ -1,0 +1,56 @@
+
+ul.collapsible
+  li(ng-repeat="(index, work) in works")
+    .collapsible-header
+      .check-box
+        label(ng-if="showType == 1")
+          span {{work.work_status ? '已处理' : '待处理'}}
+        label(ng-if="showType == 2")
+          input.filled-in(type="checkbox" value="{{work.work_status}}")
+          span 
+      .content-title
+        span {{work.stationName}}
+        span {{work.equipName}}
+      .icon-box
+        img(ng-src="{{getComponentPath('image/arrow-right.svg')}}", alt="")
+    .collapsible-body
+      .task-box
+        .task-value
+          span 作业项
+          span {{work.signalName || work.eventName}}
+        .task-value
+          span 作业项阀值
+          span {{work.startValue}}
+      .threshold
+        .threshold-box
+          .threshold-box-name 作业项值
+          .threshold-box-input
+            input.input(type="number" ng-model="work.setvalue")
+            .waves-effect.waves-light.btn(ng-click="pubSig(work)")
+              img(src="{{getComponentPath('image/1.png')}}",style="width:20px;height:16px",alt="")
+        .threshold-box
+          label.threshold-box-name  设备状态
+          select.browser-default.threshold-box-input(ng-model="work.status",ng-options="c.value as c.name for c in stateOption")
+            option(value="number:0") 正常
+            option(value="number:1") 异常
+      .cause-failure
+        .failure-box
+          .failure-name 故障表象
+          textarea.textarea(ng-model="work.defect_representation")
+      .cause-failure
+        .failure-box
+          .failure-name 故障原因
+          textarea.textarea(ng-model="work.defect_reason")
+      
+      .cause-failure
+        .failure-box
+          .failure-name 损失情况
+          textarea.textarea(ng-model="work.loss_situation")
+      .cause-failure
+        .failure-box
+          .failure-name 原因分析
+          textarea.textarea(ng-model="work.defect_analysis")
+.process-btn
+  .btn-renew(ng-click="setTask(2)" ng-show="showBtns.reject") 拒绝
+  .btn-hold(ng-click="saveTask(3)" ng-show="showBtns.save") 保存
+  .btn-upload(ng-click="setTask(1)" ng-show="showBtns.approval") 批准

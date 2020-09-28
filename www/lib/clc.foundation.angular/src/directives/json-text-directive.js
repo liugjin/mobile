@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{JsonTextDirective:e=function(e){return{restrict:"AE",require:"ngModel",link:function(e,n,r,i){return i.$parsers.push(function(e){return JSON.parse(e)}),i.$formatters.push(function(e){return JSON.stringify(e)})}}}}});

@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,r;return{FilterPropertyFilter:e=function(){return function(e,r){var n,i,f;for(i in f=[],e)n=e[i],filterOr(n,r)&&f.push(n);return f}}}});

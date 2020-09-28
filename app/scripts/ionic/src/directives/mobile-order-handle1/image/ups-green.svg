@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="42px" viewBox="0 0 28 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工单复制-4" transform="translate(-154.000000, -443.000000)" fill="#00A856">
+            <g id="设备列表" transform="translate(0.000000, 138.000000)">
+                <g id="艾默生-UHA1R-0030L">
+                    <g id="配电柜电压" transform="translate(10.000000, 280.000000)">
+                        <g id="图标复制" transform="translate(144.000000, 17.000000)">
+                            <g id="编组" transform="translate(0.000000, 8.000000)">
+                                <polygon id="Fill-1" points="0 39 2 39 2 0 0 0"></polygon>
+                                <polygon id="Fill-2" points="26 39 28 39 28 0 26 0"></polygon>
+                                <polygon id="Fill-3" points="0 2 28 2 28 0 0 0"></polygon>
+                                <polygon id="Fill-4" points="5 7 23 7 23 5 5 5"></polygon>
+                                <polygon id="Fill-5" points="0 39 28 39 28 37 0 37"></polygon>
+                                <polygon id="Fill-6" points="4 42 8 42 8 40 4 40"></polygon>
+                                <polygon id="Fill-7" points="20 42 24 42 24 40 20 40"></polygon>
+                                <g transform="translate(7.000000, 15.000000)">
+                                    <path d="M7,12.8267143 C4.2903,12.8267143 2.0937,10.5852857 2.0937,7.82028571 C2.0937,5.05528571 4.2903,2.81314286 7,2.81314286 C9.7097,2.81314286 11.9063,5.05528571 11.9063,7.82028571 C11.9063,10.5852857 9.7097,12.8267143 7,12.8267143 M7,0.699571429 C3.1339,0.699571429 0,3.89742857 0,7.84242857 C0,11.7874286 3.1339,14.9852857 7,14.9852857 C10.8661,14.9852857 14,11.7874286 14,7.84242857 C14,3.89742857 10.8661,0.699571429 7,0.699571429" id="Fill-8"></path>
+                                    <polygon id="Fill-10" points="7.86611 8.19921429 5.39161 5.6735 6.62851 4.41064286 9.10371 6.93635714"></polygon>
+                                    <polygon id="Fill-12" points="7.37114 11.2293571 4.89594 8.70435714 6.13354 7.4415 8.60874 9.9665"></polygon>
+                                    <polygon id="Fill-14" points="4.89622 8.70421429 7.86632 5.6735 9.10392 6.93635714 6.13382 9.96707143"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

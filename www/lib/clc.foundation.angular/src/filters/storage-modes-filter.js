@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n,r;return r={period:"存储周期",threshold:"绝对值阀值",percentage:"百分比阀值",statistic:"统计数据",record:"记录值",event:"告警触发值",communication:"通信异常"},{StorageModeFilter:e=function(){return function(e){var n;return null!=(n=r[e])?n:e}}}});

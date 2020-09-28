@@ -1,0 +1,20 @@
+
+<style>
+  .bar a img.img-station {
+    width: 1rem;
+    margin-top: 3px;
+  }
+  
+</style>
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-light">
+    <h1 class="title">选择站点</h1>
+    <!--a.button.button-icon.icon-right.ion-ios-close-empty(ng-click='modal.hide()')--><a class="button button-icon icon-right" ng-click="vm.closeModal()"><img class="img-station" src="./img/svg/close-top.svg"/></a>
+  </ion-header-bar>
+  <ion-content>
+    <div class="card z-depth-0 no-margin">
+      <div class="item item-text-wrap">当前站点：{{vm.station.model.name}}</div>
+    </div>
+    <div class="card z-depth-0 list" ng-repeat="dt in vm.datacenters | orderBy: &quot;model.index&quot;:true"><a class="item item-icon-left item-divider item-icon-right normal-font" ng-click="vm.modalSelectStation(dt)" style="padding-top:16px;padding-bottom:16px;background: #fff;"><i class="icon ion-android-globe balanced"></i>{{dt.model.name}}<i class="icon ion-chevron-right icon-accessory"></i></a><a class="item item-icon-left item-icon-right normal-font" ng-repeat="station in dt.stations | orderBy: &quot;model.index&quot;:true" ng-click="vm.modalSelectStation(station)" style="padding-top:8px;padding-bottom:8px;background: #fff;"><i class="icon ion-ios-information-empty balanced"></i>{{station.model.name}}<i class="icon ion-chevron-right icon-accessory"></i></a></div>
+  </ion-content>
+</ion-modal-view>

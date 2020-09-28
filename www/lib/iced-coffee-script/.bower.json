@@ -1,0 +1,15 @@
+{
+  "name": "iced-coffee-script",
+  "homepage": "https://github.com/maxtaco/coffee-script",
+  "version": "108.0.9",
+  "_release": "108.0.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "v108.0.9",
+    "commit": "2cf1e3735366d4b7dd8c3007d1b1a47a8d8c6714"
+  },
+  "_source": "git://github.com/maxtaco/coffee-script.git",
+  "_target": "~108.0.9",
+  "_originalSource": "iced-coffee-script",
+  "_direct": true
+}

@@ -1,0 +1,45 @@
+//-
+    User: Pu
+    Date: 2019-06-09
+    : 
+    
+.modal.modal-fixed-footer(md-modal)
+    .modal-content
+        label {{name}} (markdown)
+
+        .text-editor(ng-show="view == 'edit'", ui-ace="{mode: 'markdown', onLoad: aceLoaded, onChange: onChange}", ng-model='content')
+        p.content-markdown(ng-show="view == 'html'", markdown='ngModel')
+
+        image-uploader#imageUploader.imageUploader.hide(ng-model='Img', dir='{{uploadUrl}}', on-upload='onImageUpload()')
+        file-uploader#fileUploader.fileUploader.hide(ng-model='File', dir='{{uploadUrl}}', on-upload='onFileUpload()')
+
+    .modal-footer
+        a.btn-flat.left(ng-click='save(true)')
+            | 保存
+            i.material-icons.left save
+
+        a.btn-flat.left(ng-click='view = "html"; save()', ng-class='{"teal-text": view == "html"}')
+            | 浏览
+            i.material-icons.left book
+        a.btn-flat.left(ng-click='view = "edit"', ng-class='{"teal-text": view == "edit"}')
+            | 编辑
+            i.material-icons.left edit
+
+        a.btn-flat.left(ng-click="insertImage()", ng-show='view == "edit"')
+            i.material-icons.left insert_photo
+            | 插入图片
+        a.btn-flat.left(ng-click="pasteImage()", ng-show='view == "edit"')
+            i.material-icons.left add_to_photos
+            | 粘贴图片
+        a.btn-flat.left(ng-click="insertFile()", ng-show='view == "edit"')
+            i.material-icons.left attach_file
+            | 插入附件
+
+        //-a.btn-flat.left(ng-click=' = last', title='恢复上一次编辑内容', ng-show=' != last')
+            | 恢复
+            i.material-icons.left undo
+
+
+        a.waves-effect.waves-teal.btn-flat.modal-action.modal-close(href='')
+            | 关闭
+            i.material-icons.left close

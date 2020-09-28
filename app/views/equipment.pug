@@ -1,0 +1,95 @@
+
+style.
+  .bar a img {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .tabs .tab a {
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: transparent;
+    outline: none;
+  }
+  .tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #00a755;
+  }
+  .tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    /*background-color: #87D4AB;*/
+    background-color: #00a755;
+    will-change: left, right;
+  }
+
+ion-header-bar.bar.bar-light.bar-header.has-tabs-top
+  //a.button.icon-left.ion-ios-arrow-left.button-clear(ng-click="vm.goBack()")
+  a.button.button-icon.icon-left(ng-click="vm.goBack()")
+    img(src="./img/svg/arrow-left.svg")
+  h1.title
+    | {{vm.currentEquipInfo.name}}
+
+//ion-content(scroll='false')
+ion-content
+
+  ul#tabs.tabs.tabs-fixed-width(md-tabs, data-swipeable='false')
+    li.tab(ng-if="vm.templateId")
+      a(href='#overview')
+        | 概况
+    li.tab(ng-if="vm.currentEquipInfo.type == 'video' && vm.currentEquipInfo.template =='video_template'")
+      a(href='#video')
+        | 视频
+    li.tab
+      a(href='#signal')
+        | 实时
+    li.tab
+      a(href='#history')
+        | 曲线
+    li.tab
+      a(href='#event')
+        | 告警
+    li.tab
+      a(href='#property')
+        | 属性
+
+  div(style="top:44px")
+    #overview
+      graphic-box#graphic(ng-if="vm.templateId", style="width:100%;height:calc(100vh - 92px)", controller="vm", parameters="{templateId: vm.templateId, templateParameters: vm.templateParameters}", ng-dblclick="vm.fullGraphic()")
+
+    #video(ng-if="vm.currentEquipInfo.type == 'video' && vm.currentEquipInfo.template =='video_template'")
+      mobile-equip-video(controller="vm" parameters="{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}")
+
+    #signal
+      include ./equipment-plan/overview.pug
+
+    #history
+      include ./equipment-plan/historydata.pug
+
+    #event
+      include ./equipment-plan/statisticdata.pug
+
+    #property
+      include ./equipment-plan/property.pug
+  //ion-tabs.tabs-top.tabs-color-active-balanced.equipment-tabs
+    ion-tab(title='实时')
+      include ./equipment-plan/overview.pug
+
+    ion-tab(title='曲线')
+      include ./equipment-plan/historydata.pug
+
+    //ion-tab(title='信号')
+    //    include ./equipment-plan/realdata.pug
+
+    ion-tab(title='告警')
+      include ./equipment-plan/statisticdata.pug
+
+    ion-tab(title='属性')
+      include ./equipment-plan/property.pug
+
+
+
+

@@ -1,0 +1,32 @@
+{
+  "id": "mobile-order-detail",
+  "name": "MobileOrderDetail控件",
+  "type": "MobileOrderDetailDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": [
+      ],
+      "0.0.2": [
+        "修改工单内容信号订阅，将按站点订阅改为按具体的设备信号来订阅---James"
+      ],
+      "0.0.3": [
+        "修改配电值问题---James"
+      ],
+      "0.0.4": [
+        "更新电池房配置---James"
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.4"
+}

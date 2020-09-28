@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n,r;return r={"-1":"通信异常",0:"正常",1:"一般告警",2:"重要告警",3:"紧急告警",4:"致命告警"},{SeverityNamesFilter:e=function(){return function(e){var n;return null!=(n=r[e])?n:e}}}});

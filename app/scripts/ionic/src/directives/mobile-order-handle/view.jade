@@ -1,0 +1,11 @@
+.tabs
+  .tab.col.s3.selected(ng-click="selectEquipType(1)",ng-class="{'selectedCK': focus ==1 }") 工作内容
+  .tab.col.s3.selected(ng-click="selectEquipType(2)",ng-class="{'selectedCK': focus ==2}") 情况反馈
+  .tab.col.s3.selected(ng-click="selectEquipType(3)",ng-class="{'selectedCK': focus ==3}") 现场附件
+mobile-job-content( ng-show="focus ==1",controller="controller" parameters="{message:parameters.message}")
+mobile-situation-feedback( ng-show="focus ==2",controller="controller" parameters="{message: parameters.message}")
+mobile-field-attachment( ng-show="focus ==3",controller="controller" parameters="{message: parameters.message}")
+
+
+
+

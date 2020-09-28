@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{PropertyCountFilter:e=function(){return function(e){return Object.keys(e).length}}}});

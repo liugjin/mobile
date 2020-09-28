@@ -1,0 +1,67 @@
+
+<ion-header-bar class="bar bar-header bar-header-none"><a class="button button-icon icon-left ion-ios-close-empty" ui-sref="portal()"></a></ion-header-bar>
+<!--ion-content.login-pane(scroll="false")-->
+<ion-content class="login-pane">
+  <!--.bar.bar-header.bar-balanced-->
+  <!--  h1.title 斯菲尔云憬-->
+  <!--br-->
+  <!--br-->
+  <!---->
+  <!--form(ng-submit='vm.doLogin()')-->
+  <!--  .list-->
+  <!--    label.item.item-input.item-stacked-label-->
+  <!--      span.input-label 用户ID-->
+  <!--      input(type='text', ng-model='vm.loginData.username', placeholder='请输入用户ID', required)-->
+  <!--    label.item.item-input.item-stacked-label-->
+  <!--      span.input-label 密码-->
+  <!--      input(type='password', ng-model='vm.loginData.password', placeholder='请输入密码', required)-->
+  <!---->
+  <!--  .padding-->
+  <!--    button.button.button-block.button-balanced(type='submit') 登录-->
+  <!--.row
+  //.col
+    //- a.decora-none.assertive(href='#/register') 注册
+  //.col.text-right
+    //- a.decora-none.gery(href='#/resetpwd') 忘记密码
+    //a.decora-none.assertive.s18px(href='#/register') 注册
+  
+  -->
+  <div class="padding">
+    <h2>创建项目</h2>
+  </div>
+  <div class="match-parent bg-white">
+    <!--.col.header.text-center-->
+    <!--  img.logo(src='./img/loginlogo2.png')-->
+    <!--.col.button-row.text-center//img(src='./img/facebook-button.png')
+    -->
+    <!--.logo-->
+    <!--  img.login-img(src='./img/loginlogo2.png')-->
+    <form class="bg-white" ng-submit="vm.save()">
+      <div class="margin-bottom-20">
+        <div class="img-uploader project-img-upload center">
+          <image-uploader ng-model="vm.current.image" dir="{{vm.options.uploadUrl}}"></image-uploader>
+        </div>
+      </div>
+      <div class="bg-white">
+        <div class="list">
+          <label class="item item-input"><span class="input-label">项目ID</span>
+            <input type="text" ng-model="vm.current.project" placeholder="项目ID" required="required"/>
+          </label>
+          <label class="item item-input"><span class="input-label">项目名称</span>
+            <input type="text" ng-model="vm.current.name" placeholder="项目名称" required="required"/>
+          </label>
+        </div>
+        <!--.list-->
+        <!--  label.item.item-input.item-floating-label-->
+        <!--    span.input-label 项目ID-->
+        <!--    input(type='text', placeholder='项目ID')-->
+        <!--  label.item.item-input.item-floating-label-->
+        <!--    span.input-label 项目名称-->
+        <!--    input(type='text', placeholder='项目名称')-->
+        <div class="padding">
+          <button class="button button-block button-green" type="submit" ng-disabled="vm.isSave">{{vm.btnTxt}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ion-content>

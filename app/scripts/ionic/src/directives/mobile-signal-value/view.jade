@@ -1,0 +1,8 @@
+
+.card.no-shadow
+  .card-image
+    img.overview-img(src='./img/svg/{{parameters.image}}')
+  .overview-title {{signal.model.name}}
+  .overview-value {{signal.data.value || 0}}
+  .more-image
+    img(ng-src="{{moreImg}}")

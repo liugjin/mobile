@@ -1,0 +1,6 @@
+
+.content
+    i.dropdown-trigger.material-icons(data-target='dropdown1') view_list
+    ul#dropdown1.dropdown-content
+        li(ng-repeat="type in typeList",ng-click='selectStaticsType(type.key)')
+            span {{type.name}}

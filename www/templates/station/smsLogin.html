@@ -1,0 +1,72 @@
+
+<ion-content class="login-pane" scroll="false">
+  <!--.bar.bar-header.bar-balanced-->
+  <!--  h1.title 斯菲尔云憬-->
+  <!--br-->
+  <!--br-->
+  <!---->
+  <!--form(ng-submit='vm.doLogin()')-->
+  <!--  .list-->
+  <!--    label.item.item-input.item-stacked-label-->
+  <!--      span.input-label 用户ID-->
+  <!--      input(type='text', ng-model='vm.loginData.username', placeholder='请输入用户ID', required)-->
+  <!--    label.item.item-input.item-stacked-label-->
+  <!--      span.input-label 密码-->
+  <!--      input(type='password', ng-model='vm.loginData.password', placeholder='请输入密码', required)-->
+  <!---->
+  <!--  .padding-->
+  <!--    button.button.button-block.button-balanced(type='submit') 登录-->
+  <!--.row
+  //.col
+    //- a.decora-none.assertive(href='#/register') 注册
+  //.col.text-right
+    //- a.decora-none.gery(href='#/resetpwd') 忘记密码
+    //a.decora-none.assertive.s18px(href='#/register') 注册
+  
+  -->
+  <div class="padding">
+    <div class="login-title">
+      <h5>请输入账号密码</h5>
+      <div class="agree-note"><span>&nbsp;</span><span class="note-1">登录注册表示同意</span><span class="note-2" ng-click="vm.openModal()">用户协议、隐私条款</span></div>
+    </div>
+  </div>
+  <section class="login-container">
+    <!--.col.header.text-center-->
+    <!--  img.logo(src='./img/loginlogo2.png')-->
+    <!--.col.button-row.text-center//img(src='./img/facebook-button.png')
+    -->
+    <!--.logo-->
+    <!--  img.login-img(src='./img/loginlogo2.png')-->
+    <form class="login-form" ng-submit="vm.doLogin()">
+      <div class="list padding">
+        <label class="item item-2 item-input margin-bottom-8">
+          <input type="text" ng-model="vm.loginData.username" placeholder="请填写账号" required="required"/>
+        </label>
+        <label class="item item-2 item-input">
+          <input type="password" ng-model="vm.loginData.password" placeholder="请填写密码" required="required"/>
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-green" type="submit" ng-disabled="vm.isLogin">{{vm.btnTxt}}</button>
+      </div>
+    </form>
+  </section>
+  <section class="login-container">
+    <form class="login-form" ng-submit="vm.doLogin()">
+      <div class="list padding">
+        <label class="item item-2 item-input margin-bottom-8">
+          <input type="tel" ng-model="vm.registerData.phone" placeholder="请填写手机号" required="required"/>
+        </label>
+        <div class="code">
+          <label class="item item-2 item-input margin-bottom-8 left" style="width:50vw;display:inline-block;">
+            <input type="text" ng-model="vm.registerData.code" placeholder="验证码" required="required"/>
+          </label><a class="btn right" style="width:40vw;display:inline-block;height:40px !important;background:#eee;line-height:40px;color:#666;" ng-click="vm.sendsmscode()" ng-disabled="vm.ismail">验证码</a>
+        </div>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-green" type="submit" ng-disabled="vm.isLogin">{{vm.btnTxt}}</button>
+      </div>
+    </form>
+  </section>
+  <div class="center font-14 margin-top-12" style="padding:0 20px;"><a class="green-text-1 to-register left" ui-sref="register()">注册</a><a class="right green-text-1" ui-sref="portal">手机登录</a></div>
+</ion-content>

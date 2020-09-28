@@ -1,0 +1,208 @@
+
+style.
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: 0.1s opacity linear;
+    transition: 0.1s opacity linear;
+    border-radius: 0;
+  }
+  .popup-buttons .button, .popup-buttons .button:hover, .popup-buttons .button:focus {
+    background: #ffffff;
+    border: none;
+  }
+  .button.button-positive, .button.button-positive:hover, .button.button-positive:focus, .button.button-positive.activated {
+    background-color: #10a957;
+    border: none;
+  }
+
+ion-content
+  .region-bg-green
+    .user-msg-top
+      .user-msg-top-center
+        img.user-msg-top-icon(src="./img/change/icon.png")
+        .user-msg-top-msg
+          span.font-18(style="font-weight: bold;") {{$root.user.name || "-"}}
+          br
+          div(style="line-height: 2rem;")
+            img.security-icon.img-vertical-center(src="./img/svg/safety.svg")
+            span.font-12.gray.text-vertical-center(style="margin-left: 8px; color: #9E9E9E;") 账号安全保障中
+
+  .list.list-setting.margin-top-20
+    .list-item-content
+      .item.item-icon-left.item-icon-right.bg-white(ng-click='vm.openModal()')
+        img.item-icon-height-width.icon(src="./img/svg/account-setting.svg")
+        span.font-14.white 账户信息
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+      //.item.item-icon-left.item-icon-right.bg-white(ui-sref="scan({user: $root.project.model.user, project: $root.project.model.project, origin: 'setting'})")
+        img.item-icon-height-width.icon(src="./img/svg/account-add.svg")
+        span.font-14.white 新增设备
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+      .item.item-icon-left.item-icon-right.bg-white(ui-sref='aboutApp()')
+        img.item-icon-height-width.icon(src="./img/svg/about-app.svg")
+        span.font-14.white 版本更新
+        span.item-note.font-14 版本 {{vm.versionIndex[0]}}
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+      .item.item-icon-left.item-icon-right.bg-white(ui-sref='aboutUs()')
+        img.item-icon-height-width.icon(src="./img/svg/about-us.svg")
+        span.font-14.white 关于我们
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+      .item.item-icon-left.item-icon-right.bg-white(ui-sref="portal({user: $root.project.model.user, project: $root.project.model.project, auto: 'false', origin: 'setting'})")
+        img.item-icon-height-width.icon(src="./img/svg/switch-account.svg")
+        span.font-14.white 切换项目
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+
+  .list.list-setting.margin-top-10
+    .list-item-content
+      //.item.bg-white(style="text-align: center; color: #10a957;" ui-sref='logout()')
+      .item.bg-white(style="text-align: center; color: #10a957;" ng-click='vm.showConfirm()')
+        span.font-14.white 退出登录
+
+//ion-header-bar.bar(style="border: none;")
+  h1.title(style="color: #000; font-size: 18px;") 我的
+
+//ion-content
+  .user-msg-top.margin-top-20
+    .user-msg-top-center
+      .user-msg-top-msg
+        span.font-24 华远云联数据科技
+        br
+        div(style="line-height: 2rem;")
+          img.security-icon.img-vertical-center(src="./img/svg/safety.svg")
+          span.font-12.gray.text-vertical-center(style="margin-left: 8px;") 账号安全保障中
+      img.user-msg-top-icon(src="./img/head-portrait-bg.png")
+
+  .list.list-setting.margin-top-20
+    .list-item-content
+      .item.item-icon-left.item-icon-right.bg-white(ng-click='vm.openModal()')
+        img.item-icon-height-width.icon(src="./img/svg/account-setting.svg")
+        span.font-14.white 账户信息
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+        //i.icon.ion-ios-arrow-right
+      .item.item-icon-left.item-icon-right.bg-white(ui-sref='aboutApp()')
+        //i.icon.ion-person.positive
+        img.item-icon-height-width.icon(src="./img/svg/about-app.svg")
+        span.font-14.white 关于APP
+        span.item-note.font-14 版本 {{vm.versionIndex[0]}}
+        //span.item-note.font-14 版本 {{$root.appVersion}}
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+        //i.icon.ion-ios-arrow-right
+      .item.item-icon-left.item-icon-right.bg-white(ui-sref='aboutUs()')
+        //i.icon.ion-person.positive
+        img.item-icon-height-width.icon(src="./img/svg/about-us.svg")
+        span.font-14.white 关于我们
+        //span.item-note.font-14 查看
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+        //i.icon.ion-ios-arrow-right
+      .item.item-icon-left.item-icon-right.bg-white(ui-sref="portal({user: $root.project.model.user, project: $root.project.model.project, auto: 'false', origin: 'setting'})")
+        img.item-icon-height-width.icon(src="./img/svg/switch-account.svg")
+        span.font-14.white 切换系统
+        img.icon.right.img-item(src="./img/svg/arrow-right.svg")
+        //i.icon.ion-ios-arrow-right
+
+  .list.list-setting.margin-top-10
+    .list-item-content
+      .item.bg-white(style="text-align: center; color: #10a957;" ui-sref='logout()')
+        span.font-14.white 退出登录
+
+
+//ion-header-bar.bar.bar-dark.bar-header
+  h1.title 我的
+
+//ion-content
+  .user-msg-top
+    .user-msg-top-center
+      img.user-msg-top-icon.margin-left-20(src="./img/head-portrait-bg.png")
+      .user-msg-top-msg
+        span.font-24 华远云联数据科技
+        br
+        div
+          img.security-icon.img-vertical-center(src="./img/safety.svg")
+          span.font-12.gray.text-vertical-center 账号安全保障中
+
+  .list
+    .item.item-icon-left.item-icon-right.bg-white.item-border-color(ng-click='vm.openModal()')
+      img.item-icon-height-width.icon(src="./img/account-setting.svg")
+      span.font-14.white 账户信息
+      i.icon.ion-ios-arrow-right
+    //.item.item-icon-left.item-icon-right.bg-white.item-border-color
+    //  img.item-icon-height-width.icon(src="./img/push-setting.svg")
+    //  span.font-14 推送设置
+    //  img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+
+
+  .list.margin-top-10
+    //.item.item-icon-left.item-icon-right.bg-white.item-border-color
+      //i.icon.ion-person.positive
+    //  img.item-icon-height-width.icon(src="./img/problem-feedback.svg")
+    //  span.font-14.white 反馈问题
+    //  img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+    .item.item-icon-left.item-icon-right.bg-white.item-border-color(ui-sref='aboutApp()')
+      //i.icon.ion-person.positive
+      img.item-icon-height-width.icon(src="./img/about-app.svg")
+      span.font-14.white 关于APP
+      span.item-note.font-14 版本 {{$root.appVersion}}
+      i.icon.ion-ios-arrow-right
+    .item.item-icon-left.item-icon-right.bg-white.item-border-color(ui-sref='aboutUs()')
+      //i.icon.ion-person.positive
+      img.item-icon-height-width.icon(src="./img/about-us.svg")
+      span.font-14.white 关于我们
+      span.item-note.font-14 查看
+      i.icon.ion-ios-arrow-right
+
+  .list.margin-top-10
+    .item.item-icon-left.item-icon-right.bg-white.item-border-color(ui-sref="portal({auto: 'false'})")
+      img.item-icon-height-width.icon(src="./img/switch-account.svg")
+      span.font-14.white 切换系统
+      i.icon.ion-ios-arrow-right
+    .item.item-icon-left.item-icon-right.bg-white.item-border-color(ui-sref='logout()')
+      img.item-icon-height-width.icon(src="./img/logout.svg")
+      span.font-14.white 退出登录
+      i.icon.ion-ios-arrow-right
+
+  //.user-info.text-center
+  //  img.avatar(src='img/icon_guardian.png')
+  //.list
+  //  .item.item-icon-left
+  //    i.icon.ion-person.positive
+  //    span {{$root.user.name}}
+  //  .item.item-icon-left
+  //    i.icon.ion-email.royal
+  //    span {{$root.user.email}}
+  //  .item.item-icon-left
+  //    i.icon.ion-iphone.calm
+  //    span {{$root.user.phone}}
+  //
+  //  .item.item-divider
+  //    | 当前:
+  //  .item.item-avatar
+  //    img(ng-src='{{vm.options.uploadUrl}}/{{$root.project.model.image}}')
+  //    h2 {{$root.project.model.name}}
+  //    p {{$root.project.model.desc}}
+  //
+  //  //.item.item-divider
+  //  //  | 切换系统
+  //  //a.item.item-avatar.item-icon-right(ng-if='vm.$routeParams.project != item.project', ui-sref="tab.signal({user: item.user, project: item.project})", ng-repeat='item in vm.items')
+  //  //  img(ng-src='{{vm.options.uploadUrl}}/{{item.image}}')
+  //  //  h2 {{item.name}}
+  //  //  p {{item.desc}}
+  //  //  i.icon.ion-chevron-right.icon-accessory
+  //
+  //  .item.item-divider
+  //  a.item.item-icon-left.item-icon-right(ui-sref="portal()")
+  //    i.icon.ion-arrow-swap.balanced
+  //    span 切换
+  //    i.icon.ion-chevron-right.icon-accessory
+  //
+  //br
+  //a.button.button-full.button-light(ui-sref='logout()')
+  //  span.positive 退出登录
+
+

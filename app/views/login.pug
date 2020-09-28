@@ -1,0 +1,113 @@
+
+style.
+  .ion-content {
+    background: #ffffff !important;
+  }
+  .item {
+    border-color: #DBDBDB;
+    background-color: #ffffff;
+  }
+  .account {
+    width: 15%;
+    border-right: 1px solid #dbdbdb;
+    color: #9e9e9e;
+  }
+  .button.btn-green {
+    /*background: #87D4AB;*/
+    background: #10A957;
+    color: #ffffff;
+  }
+
+ion-content.login-pane.ion-content(scroll="false")
+
+  .padding
+    //a.green-text-1(ui-sref="platform") 切换平台
+    .login-title
+      h5 请输入账号密码
+      .agree-note
+        span &nbsp;
+        span.note-1 登录注册表示同意
+        span.note-2(ng-click='vm.openModal()') 用户协议、隐私条款
+
+  section.login-container
+    form.login-form(ng-submit='vm.doLogin()')
+      .list.padding
+        label.item.item-input.margin-bottom-8
+          span.account 账号
+          input(type='text', ng-model='vm.loginData.username', placeholder='请填写账号', required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.loginData.username") *
+        label.item.item-input.margin-bottom-8
+          span.account 密码
+          input(type='password', ng-model='vm.loginData.password', placeholder='请填写密码', required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.loginData.password") *
+      .padding
+        button.button.button-block.btn-register(ng-class="{'btn-green': vm.isAll}" ng-disabled="!vm.isAll") {{vm.btnTxt}}
+        //button.button.button-block.btn-green(type='submit', ng-disabled='vm.isLogin') {{vm.btnTxt}}
+
+  .center.font-14.margin-top-12(style="padding:0 20px;")
+    //a.green-text-1.to-register.right(ui-sref='register()') 注册
+    a.green-text-1.to-register.left(ui-sref='register()') 注册
+    //a.green-text-1.to-register.left(ui-sref='supplier()') 注册
+    a(ui-sref='smslogin').right.green-text-1 快捷登录
+
+//ion-content.login-pane(scroll="false")
+  //.bar.bar-header.bar-balanced
+  //  h1.title 斯菲尔云憬
+
+  //br
+  //br
+  //
+  //form(ng-submit='vm.doLogin()')
+  //  .list
+  //    label.item.item-input.item-stacked-label
+  //      span.input-label 用户ID
+  //      input(type='text', ng-model='vm.loginData.username', placeholder='请输入用户ID', required)
+  //    label.item.item-input.item-stacked-label
+  //      span.input-label 密码
+  //      input(type='password', ng-model='vm.loginData.password', placeholder='请输入密码', required)
+  //
+  //  .padding
+  //    button.button.button-block.button-balanced(type='submit') 登录
+
+
+  //.row
+    //.col
+      //- a.decora-none.assertive(href='#/register') 注册
+    //.col.text-right
+      //- a.decora-none.gery(href='#/resetpwd') 忘记密码
+      //a.decora-none.assertive.s18px(href='#/register') 注册
+
+  .padding
+    a(ui-sref="platform") 切换平台
+    .login-title
+      h5 请输入账号密码
+      .agree-note
+        span &nbsp;
+        span.note-1 登录注册表示同意
+        span.note-2(ng-click='vm.openModal()') 用户协议、隐私条款
+  section.login-container
+    //.col.header.text-center
+    //  img.logo(src='./img/loginlogo2.png')
+    //.col.button-row.text-center
+      //img(src='./img/facebook-button.png')
+    //.logo
+    //  img.login-img(src='./img/loginlogo2.png')
+
+    form.login-form(ng-submit='vm.doLogin()')
+      .list.padding
+        label.item.item-2.item-input.margin-bottom-8
+          span 账号
+          input(type='text', ng-model='vm.loginData.username', placeholder='请填写账号', required)
+        label.item.item-2.item-input.margin-bottom-8
+          span 密码
+          input(type='password', ng-model='vm.loginData.password', placeholder='请填写密码', required)
+      .padding
+        button.button.button-block.button-green(type='submit', ng-disabled='vm.isLogin') {{vm.btnTxt}}
+
+  .center.font-14.margin-top-12(style="padding:0 20px;")
+    a.green-text-1.to-register.left(ui-sref='register()') 注册
+    a(ui-sref='smslogin').right.green-text-1 手机登录
+
+
+
+

@@ -1,0 +1,96 @@
+
+.row.event-lists
+  .col.s12.event-item(ng-repeat="event in eventItems | orderBy: 'startTime': true")
+    .col.s10.event-content(ng-click="selectEvent(event)")
+      .event-img.left
+        img(ng-src='{{alarmImg}}')
+      .event-detail.left
+        h6(title="{{event.eventName}}") {{event.eventName}}
+        .event-state
+          a.waves-effect.waves-light(href="" title="{{event.phaseName}}")
+            span {{event.phaseName}}
+    .col.s2.arrow-down(ng-click="selectEvent(event)")
+      i.material-icons(ng-if="!(currentEvent.event == event.event && toggle)") keyboard_arrow_right
+      i.material-icons(ng-if="currentEvent.event == event.event && toggle") keyboard_arrow_down
+    .col.s12.event-detail-other(ng-if="currentEvent.event == event.event && toggle")
+      .col.s6.event-detail-other-item
+        h5 告警原因
+        h4 {{event.title}}
+      .col.s6.event-detail-other-item
+        h5 告警等级
+        h4 {{event.severityName}}
+      .col.s6.event-detail-other-item
+        h5 开始值
+        h4 {{event.startValue}}
+      .col.s6.event-detail-other-item
+        h5 开始时间
+        h4 {{event.startTime | date : 'yyyy-MM-dd HH:mm'}}
+      .col.s6.event-detail-other-item(ng-show="currentEvent.endValue == 0 || currentEvent.endValue")
+        h5 结束值
+        h4 {{event.endValue}}
+      .col.s6.event-detail-other-item(ng-show="currentEvent.endTime")
+        h5 结束时间
+        h4 {{event.endTime | date : 'yyyy-MM-dd HH:mm'}}
+      .col.s6.event-detail-other-item
+        h5 告警时长
+        h4 {{currentEvent.duration}} 小时
+
+    //.col.s2.event-time
+      .timestamp
+        span {{event.startTime | date: 'MM-dd hh:mm'}}
+
+.center.grey-text(ng-if="!currentEvent && eventItems.length==0", style="line-height:70vh") 设备暂无告警
+
+
+//.row.event-lists(ng-show="!currentEvent")
+  //.col.s12.event-item(ng-repeat="event in eventItems | filter: filterEvent()" ng-click="selectEvent(event)")
+  .col.s12.event-item(ng-repeat="event in eventItems | orderBy: 'startTime': true" ng-click="selectEvent(event)")
+    .col.s9.event-content
+      .event-img.left
+        img(ng-src='{{alarmImg}}')
+      .event-detail.left
+        h6(title="{{event.eventName}}") {{event.eventName}}
+        .event-state
+          a.waves-effect.waves-light(href="" title="{{event.phaseName}}")
+            img(ng-src="{{alarmEImg}}")
+            span {{event.phaseName}}
+    .col.s3.event-time
+      .timestamp
+        span {{event.startTime | date: 'MM-dd hh:mm'}}
+//.center.grey-text(ng-if="!currentEvent && eventItems.length==0", style="line-height:70vh") 设备暂无告警
+
+//.event(ng-if="currentEvent")
+  //.card-img-placeholder.event-img
+    img(ng-src="{{ngMsgImg}}")
+    //h6 点击可一键报修
+  .event-items
+    i.material-icons.right(ng-click="returnEvents()", style="margin-right:-20px") close
+    table
+      tbody
+        tr
+          td.td-width 告警名称
+          td {{currentEvent.eventName}}
+        tr
+          td.td-width 告警内容
+          td {{currentEvent.title}}
+        tr
+          td.td-width 告警状态
+          td {{currentEvent.phaseName}}
+        tr
+          td.td-width 告警等级
+          td {{currentEvent.severityName}}
+        tr
+          td.td-width 开始值
+          td {{currentEvent.startValue}}
+        tr(ng-show="currentEvent.endValue")
+          td.td-width 结束值
+          td {{currentEvent.endValue}}
+        tr
+          td.td-width 开始时间
+          td {{currentEvent.startTime | date : 'yyyy-MM-dd hh:mm:ss'}}
+        tr(ng-show="currentEvent.endTime")
+          td.td-width 结束时间
+          td {{currentEvent.endTime | date : 'yyyy-MM-dd hh:mm:ss'}}
+        tr
+          td.td-width 告警时长
+          td {{currentEvent.duration}} 小时

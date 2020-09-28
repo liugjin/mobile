@@ -1,0 +1,22 @@
+
+<ion-header-bar class="bar bar-header bar-header-none"><a class="button button-icon icon-left ion-ios-close-empty" ui-sref="login()"></a></ion-header-bar>
+<ion-content class="login-pane" scroll="false">
+  <h5 style="margin-left:10px;">手机登录</h5>
+  <section>
+    <form class="login-form" ng-submit="vm.doLogin()">
+      <div class="list padding">
+        <label class="item item-2 item-input margin-bottom-8">
+          <input type="tel" ng-model="vm.phone" placeholder="请填写手机号" required="required"/>
+        </label>
+        <div class="code">
+          <label class="item item-2 item-input margin-bottom-8 left" style="width:50vw;display:inline-block;">
+            <input type="text" ng-model="vm.smscode" placeholder="验证码" required="required"/>
+          </label><a class="btn right" style="width:40vw;display:inline-block;height:40px !important;background:#eee;line-height:40px;color:#666;" ng-click="vm.sendsmscode()" ng-disabled="vm.ismail"><span ng-if="!vm.TIME">发送验证码</span><span ng-if="vm.TIME" style="margin-left:10px;">{{vm.TIME}}s</span></a>
+        </div>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-green" type="submit" ng-disabled="vm.isLogin">登录</button>
+      </div>
+    </form>
+  </section>
+</ion-content>

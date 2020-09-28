@@ -1,0 +1,16 @@
+{
+  "id": "graphic-box",
+  "name": "组态控件",
+  "type": "GraphicBoxDirective",
+  "desc": "[hardy]展示组态.【v0.0.3】修改templateId后注意要$applyAsync()",
+  "group": "其它组件",
+  "parameters": [
+    {"id":"templateId","type":"string","value":"datacenter"}
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "css": "style='width:56%;'",
+  "version": "0.0.3"
+}

@@ -1,0 +1,421 @@
+mobile-order-info1
+  .order
+    .order-item
+      padding: 0
+      margin: 0 0 8px
+      clear: both
+
+      .item-alarm
+        padding: 10px 0 5px
+        background: #FFFFFF
+
+        .alarm
+          text-align: center
+          border-right: 1px solid #E5E5E5
+
+          .alarm-num
+            color: #2F2F2F
+            font-size: 20px
+            font-weight: bold
+            line-height: 30px
+
+          .item-name
+            color: #A6A6A6
+            font-size: 12px
+
+      .alarm-severity-1
+        border-bottom: 5px solid #E4F192
+
+      .alarm-severity-2
+        border-bottom: 5px solid #F1A700
+
+      .alarm-severity-3
+        border-bottom: 5px solid #F86066
+
+      .item-capacity
+
+        .capacity
+          width: 100%
+          height: 60px
+          background: #FFFFFF
+          border-radius: 5px
+
+          .capacity-img
+            margin: 5px
+
+            .img
+              width: 3rem
+              height: 2rem
+              margin: .7rem auto
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url("~image/ups.svg~")
+
+            .img.alarm
+              background-image: url("~image/ups-red.svg~")
+
+          .capacity-detail
+            width: calc(100% - 4.5rem)
+            margin: 10px 0
+            text-align: center
+
+            .capacity-num
+              width: 100%
+              line-height: 20px
+              color: #000000
+              font-weight: bold
+              font-size: 14px
+
+            .capacity-name
+              color: #A6A6A6
+              font-size: 11px
+
+      .item-voltage
+
+        .voltage
+          width: 100%
+          height: 70px
+          background: #FFFFFF
+          border-radius: 5px
+          padding: 5px
+          text-align: center
+
+          .voltage-img
+            display: inline-block
+            width: 40%
+            height: 100%
+            position: relative
+
+            .img-oval-1
+              position: absolute
+              width: 100%
+              height: 100%
+              left: 0
+              top: 0
+              border-radius: 50%
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url("~image/oval-1.svg~")
+            .img-oval-1.alarm
+              background-image: url("~image/oval-1-red.svg~")
+
+            .img-oval-2
+              position: absolute
+              width: 70%
+              height: 70%
+              left: 14%
+              top: 14%
+              border-radius: 50%
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url("~image/oval-2.svg~")
+            .img-oval-2.alarm
+              background-image: url("~image/oval-2-red.svg~")
+
+            .img-ups
+              position: absolute
+              width: 40%
+              height: 40%
+              left: 30%
+              top: 28%
+              border-radius: 50%
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url("~image/ups-white.svg~")
+
+          .voltage-item
+            display: inline-block
+            width: 60%
+            height: 100%
+            text-align: center
+            margin-top: 10px
+            vertical-align: top
+
+            .voltage-num
+              width: 100%
+              line-height: 20px
+              color: #000000
+              font-weight: bold
+              font-size: 14px
+
+            .voltage-name
+              color: #A6A6A6
+              font-size: 11px
+
+          //.voltage-other
+            display: inline-block
+            width: 30%
+            height: 100%
+            margin-top: 10px
+            vertical-align: top
+
+            .temperature
+              width: 100%
+              line-height: 20px
+              color: #000000
+              font-weight: bold
+              font-size: 14px
+
+          .battery-name
+            color: #A6A6A6
+            font-size: 11px
+
+          .battery-item
+            height: 70%
+
+            .battery-img
+              display: inline-block
+              width: 30%
+              height: 100%
+              position: relative
+
+              .img-oval-1
+                position: absolute
+                width: 80%
+                height: 80%
+                left: 9%
+                top: 9%
+                border-radius: 50%
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: center
+                background-image: url("~image/oval-1.svg~")
+              .img-oval-1.alarm
+                background-image: url("~image/oval-1-red.svg~")
+
+              .img-oval-2
+                position: absolute
+                width: 50%
+                height: 50%
+                left: 24%
+                top: 24%
+                border-radius: 50%
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: center
+                background-image: url("~image/oval-2.svg~")
+              .img-oval-2.alarm
+                background-image: url("~image/oval-2-red.svg~")
+
+            .battery-other
+              display: inline-block
+              width: 60%
+              height: 100%
+              vertical-align: top
+
+              .temperature
+                width: 100%
+                color: #000000
+                font-weight: bold
+                font-size: 14px
+
+      .air-condition-item
+        float: left
+        width: 30.4%
+        margin-left: 8px
+        left: auto
+        right: auto
+        background: #FFFFFF
+        border-radius: 5px
+        text-align: center
+        padding: 5px 0
+
+        .air-name
+          width: 100%
+          color: #A6A6A6
+          font-size: 10px
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+
+        .air-img
+          height: 30px
+          width: 50%
+          margin: 5px auto
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center
+          background-image: url("~image/air.svg~")
+        .air-img.alarm
+          background-image: url("~image/air-red.svg~")
+
+        .air-status
+          width: 100%
+          color: #000000
+          font-weight: bold
+          font-size: 12px
+
+      .rack
+        background: #FFFFFF
+        height: 100px
+
+        .rack-title
+          color: #000000
+          font-weight: bold
+          font-size: 12px
+          padding: 5px 0 0 5px
+
+        .item-list
+          height: 114px
+          padding: 0 10px 5px
+          background: #fff
+
+        .rack-item
+          float: left
+          width: 16.3%
+          margin-left: auto
+          left: auto
+          right: auto
+          text-align: center
+          padding: 5px 0
+
+          .rack-name
+            width: 100%
+            color: #A6A6A6
+            font-size: 11px
+            overflow: hidden
+            //text-overflow: ellipsis
+            white-space: nowrap
+
+          .rack-img
+            height: 40px
+            width: 50%
+            margin: 0 auto
+            position: relative
+
+            .img-oval-1
+              position: absolute
+              width: 100%
+              height: 100%
+              left: 0
+              top: 0
+              border-radius: 50%
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url("~image/oval-1.svg~")
+            .img-oval-1.alarm
+              background-image: url("~image/oval-1-red.svg~")
+
+            .img-oval-2
+              position: absolute
+              width: 50%
+              height: 50%
+              left: 24%
+              top: 24%
+              border-radius: 50%
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url("~image/oval-2.svg~")
+            .img-oval-2.alarm
+              background-image: url("~image/oval-2-red.svg~")
+
+          .rack-value
+            width: 100%
+            color: #000000
+            font-weight: bold
+            font-size: 12px
+
+        .environmental-list
+          padding: 0 10px 5px
+          background: #fff
+
+          .environmental-item
+            float: left
+            width: 19%
+            margin-left: auto
+            left: auto
+            right: auto
+            text-align: center
+            padding: 5px 0
+
+            .rack-name
+              width: 100%
+              color: #A6A6A6
+              font-size: 11px
+              overflow: hidden
+              text-overflow: ellipsis
+              white-space: nowrap
+
+            .rack-img
+              height: 40px
+              width: 40%
+              margin: 0 auto
+              position: relative
+
+              .img-oval-1
+                position: absolute
+                width: 100%
+                height: 100%
+                left: 0
+                top: 0
+                border-radius: 50%
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: center
+                background-image: url("~image/oval-1.svg~")
+              .img-oval-1.alarm
+                background-image: url("~image/oval-1-red.svg~")
+
+              .img-oval-2
+                position: absolute
+                width: 50%
+                height: 50%
+                left: 24%
+                top: 24%
+                border-radius: 50%
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: center
+                background-image: url("~image/oval-2.svg~")
+              .img-oval-2.alarm
+                background-image: url("~image/oval-2-red.svg~")
+
+            .rack-value
+              width: 100%
+              color: #000000
+              font-weight: bold
+              font-size: 12px
+
+      .feedback
+        background: #ffffff
+        padding: 0
+
+        .feedback-title
+          color: #000000
+          font-weight: bold
+          font-size: 12px
+          padding: 5px 0 0 5px
+
+        .feedback-content
+          width: 100%
+          padding: 0 10px
+
+          .validate
+            border: 0
+            height: 80px
+            width: 100%
+            resize: none
+
+  .process-btn
+    color: #ffffff
+    font-size: 14px
+    height: 50px
+    line-height: 50px
+    vertical-align: middle
+    text-align: center
+
+    .btn-renew
+      display: inline-block
+      width: 50%
+      background: #A6A6A6
+
+    .btn-upload
+      display: inline-block
+      width: 50%
+      background: #10A957

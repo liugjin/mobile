@@ -1,0 +1,98 @@
+.row.no-margin.search-w
+  .col.s9.no-padding
+    .search-wrapper
+      i.material-icons search
+      input.search-input(type="text" placeholder="搜索" ng-model="searchLists" required)
+      i.material-icons(style="left: auto; right: 6px;" ng-click="searchLists = ''; pageIndex = 1;" ng-show='searchLists') close
+  .col.s3.no-padding
+    .follow
+      a.waves-effect.waves-light.modal-trigger(title='筛选' href='' data-target='filter-event-modal')
+        img(ng-src="{{filterImg}}")
+        span 筛选
+
+.row.event-lists
+  //.col.s12.event-item(ng-repeat="event in eventItems | filter: filterEvent()" ui-sref="eventDetail({user: event.user, project: event.project, station: event.station, equipment: event.equipment, event: event.event, origin: 'tab.event', startTime: event.startTime})")
+  .col.s12.event-item(ng-repeat="event in events | filter: filterEvent() | orderBy:'startTime':true" ng-click="selectEvent(event)")
+    .col.s9.event-content
+      .event-img.left(ng-style='{"background-color": getEventColor(event.severity)}')
+        img(ng-src='{{alarmImg}}')
+        //img(ng-src='{{alarm1Img}}' ng-if="event.severity == 1")
+        //img(ng-src='{{alarm2Img}}' ng-if="event.severity == 2")
+        //img(ng-src='{{alarm3Img}}' ng-if="event.severity == 3")
+      .event-detail.left
+        h6.marquee(title="{{event.equipmentName}}") {{event.equipmentName}}
+        .event-state
+          a.waves-effect.waves-light(href="" title="{{event.title}}")
+            //img(ng-src="{{alarmEImg}}")
+            span {{event.title || event.eventName}}
+    .col.s3.event-time
+      .timestamp
+        span {{event.startTime | date: 'MM-dd HH:mm'}}
+      .event-status
+        span {{event.phaseName || "未知"}}
+
+  .col.s12.event-item-blank(ng-if="eventItems.length == 0")
+    span 无告警
+
+#filter-event-modal.modal.modal-fixed-footer(md-modal)
+  .modal-content
+    .row.nav-top
+      .col.s12
+        .dropdown
+          span.left 选择站点：
+          a.dropdown-trigger(href="" data-target='stations' data-hover='true' data-constrain-width='false' md-dropdown title='{{station.model.name}}')
+            span.truncate.left(style="max-width:180px") {{station.model.name}}
+            i.material-icons.right expand_more
+
+      .col.s12
+        .dropdown
+          span 告警等级：
+          a.dropdown-trigger(href="" data-target='events' data-hover='true' data-constrain-width='false' md-dropdown title='{{eventSeverity.model.name}}')
+            | {{eventSeverity.model.name}}
+            i.material-icons.right expand_more
+
+      //.col.s12
+        .dropdown
+          span 事件状态：
+          a.dropdown-trigger(href="" data-target='phases' data-hover='true' data-constrain-width='false' md-dropdown title='{{eventPhase.model.name}}')
+            | {{eventPhase.model.name}}
+            i.material-icons.right expand_more
+
+    ul#stations.dropdown-content
+      //li(ng-class='{active: allStation.key == station.key}')
+        a(ng-href='' ng-click='selectStation(allStation)')
+          span {{allStation.model.name}}
+      li(ng-repeat='sta in stations' ng-class='{active: sta.key == station.key}')
+        a(ng-href='' ng-click='selectStation(sta)')
+          span {{sta.model.name}}
+
+    ul#events.dropdown-content
+      li(ng-class='{active: allSeverity.key == eventSeverity.key}')
+        a(ng-href='' ng-click='selectEventSeverity(allSeverity)')
+          span {{allSeverity.model.name}}
+      li(ng-repeat="event in eventSeverities" ng-class="{active: event.key == eventSeverity.key}")
+        a(ng-href="" ng-click="selectEventSeverity(event)")
+          span {{event.model.name}}
+
+    //ul#phases.dropdown-content
+      li(ng-class='{active: allPhase.key == eventPhase.key}')
+        a(ng-href='' ng-click='selectEventPhase(allPhase)')
+          span {{allPhase.model.name}}
+      li(ng-repeat="phase in eventPhases" ng-class="{active: phase.key == eventPhase.key}")
+        a(ng-href="" ng-click="selectEventPhase(phase)")
+          span {{phase.model.name}}
+
+  .modal-footer.modal-nav
+    nav.teal
+      .nav-wrapper
+        ul
+          li
+            a(href='', ng-click='filter()' title='确定')
+              i.material-icons.left done
+              span 确认
+          ul.right
+            li
+              a.modal-action.modal-close(href='')
+                i.material-icons.left close
+                span 关闭
+

@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-proxy",
+  "version": "1.0.0",
+  "description": "proxy",
+  "cordova": {
+    "id": "cordova-plugin-proxy",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "gaullow",
+  "license": "ISC"
+}

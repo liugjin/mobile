@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="24px" viewBox="0 0 21 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" fill="#EE6E73">
+            <polygon id="Fill-1" points="0.602 23.99512 19.6252 23.99512 19.6252 22.79512 0.602 22.79512"></polygon>
+            <polygon id="Fill-2" points="1.4932 20.53632 18.7332 20.53632 18.7332 19.33632 1.4932 19.33632"></polygon>
+            <polygon id="Fill-3" points="17.5332 20.53632 18.7332 20.53632 18.7332 13.34312 17.5332 13.34312"></polygon>
+            <polygon id="Fill-4" points="1.4932 20.53632 2.6932 20.53632 2.6932 13.34312 1.4932 13.34312"></polygon>
+            <polygon id="Fill-5" points="5.6932 20.53632 6.8932 20.53632 6.8932 13.69992 5.6932 13.69992"></polygon>
+            <polygon id="Fill-6" points="9.5132 3.02392 10.7132 3.02392 10.7132 -8e-05 9.5132 -8e-05"></polygon>
+            <polygon id="Fill-7" points="0 4.41076 2.138 6.54916 2.9868 5.70076 0.8484 3.56236"></polygon>
+            <polygon id="Fill-8" points="17.23968 5.70064 18.08808 6.54904 20.22648 4.41064 19.37808 3.56224"></polygon>
+            <path d="M10.1132,5.92628 C14.2092,5.92628 17.53,9.24708 17.53,13.34308 L18.7132,13.34308 C18.7132,8.59348 14.8628,4.74308 10.1132,4.74308 C5.3636,4.74308 1.5132,8.59348 1.5132,13.34308 L2.6964,13.34308 C2.6964,9.24708 6.0172,5.92628 10.1132,5.92628" id="Fill-9"></path>
+        </g>
+    </g>
+</svg>

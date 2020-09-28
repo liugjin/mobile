@@ -1,0 +1,163 @@
+
+<!--ion-header-bar.bar.bar-overview
+a.button.button-icon.icon-left(ui-sref="portal({user: $root.project.model.user, project: $root.project.model.project, auto: 'false', origin: 'overview'})")
+  img(src="./img/svg/project.svg")
+h1.title-text(style="font-size: 18px; top: 3rem;") {{vm.project.model.name}}
+h1.title-text(style="font-size: 16px; top: 6rem;") 24小时设备监控，让设备管理更方便
+a.button.button-icon.icon-right.btn-right(ui-sref='scan({user: $root.project.model.user, project: $root.project.model.project})')
+  img(src="./img/svg/add.svg")
+
+-->
+<ion-content>
+  <div class="bar bar-overview"><a class="button button-icon icon-left" ui-sref="portal({user: $root.project.model.user, project: $root.project.model.project, auto: 'false', origin: 'overview'})"><img src="./img/svg/project.svg"/></a>
+    <h1 class="title-text" style="font-size: 18px; top: 3rem;">{{vm.project.model.name}}</h1>
+    <h1 class="title-text" style="font-size: 16px; top: 6rem;">24小时设备监控，让设备管理更方便</h1><a class="button button-icon icon-right btn-right" ui-sref="scan({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station, origin: 'overview'})"><img src="./img/svg/add.svg"/></a>
+  </div>
+  <div class="overview-station"><a class="station-btn station-btn-left"><img class="station-img-left" src="./img/svg/location.svg"/></a>
+    <div class="station-name" ng-click="vm.openModal()"><span class="title-text">当前站点：{{vm.station.model.name}}</span></div><a class="station-btn station-btn-right" ng-click="vm.openModal()"><img class="station-img-right" src="./img/svg/arrow-down.png"/></a>
+  </div>
+  <div class="overview-item">
+    <div class="cart-list">
+      <div class="cart-item"><span class="item-title">通讯状态</span>
+        <label ui-sref="tab.signal({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station})"><span class="item-look-all">查看全部</span><img class="icon cart-img-item" src="./img/svg/arrow-right.svg"/></label>
+      </div>
+    </div>
+    <div class="box-content" ui-sref="tab.signal({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station})">
+      <mobile-status-statistic controller="vm" parameters="{station: vm.station.model.station}"></mobile-status-statistic>
+    </div>
+  </div>
+  <div class="overview-item">
+    <div class="cart-list">
+      <div class="cart-item"><span class="item-title">告警数量</span>
+        <label ui-sref="tab.event({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station, event: true})"><span class="item-look-all">查看全部</span><img class="icon cart-img-item" src="./img/svg/arrow-right.svg"/></label>
+      </div>
+    </div>
+    <div class="box-content" ui-sref="tab.event({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station, event: true})">
+      <mobile-events-statistic controller="vm" parameters="{station: vm.station.model.station}"></mobile-events-statistic>
+    </div>
+  </div>
+  <!--.overview-item
+  .cart-list
+    .cart-item
+      span.item-title PUE和机房健康度
+  .box-content
+    mobile-pue(controller="vm" parameters="{station: vm.station.model.station, equipment:'_station_efficient', signal:'pue-value'}")
+    health-value(controller="vm" parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'health'}")
+  -->
+  <div class="overview-item">
+    <div class="cart-list">
+      <div class="cart-item"><span class="item-title">我的工单</span></div>
+    </div>
+    <div class="box-content">
+      <div class="row hexagon no-margin">
+        <div class="col s6">
+          <div class="inspect-sheet" ui-sref="order({user: $root.project.model.user, project: $root.project.model.project})"><img class="inspect-img" src="./img/svg/inspect-sheet-start.png"/>
+            <div class="inspect-title">待处理</div>
+            <div class="inspect-index">{{vm.startTasks.length || 0}}</div>
+          </div>
+        </div>
+        <div class="col s6 border-left">
+          <div class="inspect-sheet" ui-sref="order({user: $root.project.model.user, project: $root.project.model.project})"><img class="inspect-img" src="./img/svg/inspect-sheet-end.png"/>
+            <div class="inspect-title">已完成</div>
+            <div class="inspect-index">{{vm.endTasks.length || 0}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--.overview-item
+  .cart-list
+    .cart-item
+      span.item-title 最近巡检记录
+  .box-content
+    .row.hexagon.no-margin(style="padding: 0 1rem")
+      table
+        tbody
+          tr(ng-repeat="item in vm.endTasks | orderBy: 'phase.timestamp':true | limitTo:6", ng-click="vm.selectOrder(item)")
+            td {{item.name}}
+            td {{item.phase.manager.name}}
+            td {{item.phase.timestamp| date:'MM-dd HH:mm'}}
+  
+  -->
+  <div class="overview-item">
+    <div class="cart-list">
+      <div class="cart-item"><span class="item-title">我的关注</span></div>
+    </div>
+    <div class="box-content">
+      <mobile-focus-equip controller="vm" parameters="{station: vm.station.model.station}"></mobile-focus-equip>
+    </div>
+  </div>
+</ion-content>
+<!--ion-header-bar.bar(style="background: #f0f3f4; border-bottom: 0;")
+a.button.button-icon.icon-left(ui-sref="portal({user: $root.project.model.user, project: $root.project.model.project, auto: 'false', origin: 'overview'})")
+  img(src="./img/svg/project.svg")
+h1.title(style="color: #000; font-size: 18px;") {{vm.project.model.name}}
+a.button.button-icon.icon-right(ui-sref='scan({user: $root.project.model.user, project: $root.project.model.project})')
+  img(src="./img/svg/add.svg")
+
+-->
+<!--ion-header-bar.bar.bar-dark.bar-header
+a.button.button-icon.icon-left.ion-ios-arrow-left(ui-sref='portal({auto: "false"})')
+h1.title
+  | {{vm.project.model.name}}
+  //i.icon.ion-android-arrow-dropdown
+a.button.button-icon.icon-right.ion-ios-plus-empty(ui-sref='scan({user: $root.project.model.user, project: $root.project.model.project})')
+
+-->
+<!--ion-content(scroll='false')-->
+<!--ion-content
+.station-panel
+  .station-name
+    img.location-img(src='./img/svg/location.svg')
+    span.location-text.text-white 当前区域：{{vm.station.model.name}}
+  a.button-3.margin-top-10(ng-click='vm.openModal()') 选择区域
+
+.overview-panel
+  .row.no-margin
+
+    .col.s6(ui-sref='tab.signal({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station})')
+      mobile-signal-value(controller="vm" parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'equipments', image:'equip-all.svg'}")
+
+    .col.s6(ui-sref='tab.signal({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station})')
+      mobile-signal-value(controller="vm" parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'onlines', image:'equip-online.svg'}")
+
+    .col.s6(ui-sref='tab.event({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station, event: true})')
+      mobile-signal-value(controller="vm" parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'alarms', image:'equip-alarm.svg'}")
+
+    .col.s6
+      mobile-signal-value(controller="vm" parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'repair-device', image:'equip-overhaul.svg'}")
+
+//.overview-panel
+  .row.no-margin
+    .col.s6
+      .card.text-center.overview-card.no-shadow(ui-sref='tab.signal({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station})')
+        .item.item-text-wrap
+          signal-value(controller="vm", parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'equipments', name:'设备总数', image:'equipment-total.svg', value: vm.equipments.length}")
+          //.overview-title 设备总数
+          //img.overview-img(src='./img/equipment-total.svg')
+          //.overview-value {{vm.equipments.length}}
+    .col.s6
+      .card.text-center.overview-card.no-shadow(ui-sref='tab.signal({user: $root.project.model.user, project: $root.project.model.project, station: vm.station.model.station})')
+        .item.item-text-wrap
+          signal-value(controller="vm", parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'onlines', name:'在线设备', image:'equipment-online.svg'}")
+          //.overview-title 在线设备
+          //img.overview-img(src='./img/equipment-online.svg')
+          //.overview-value {{vm.equipments.length}}
+
+  .row.no-margin
+    .col.s6
+      .card.text-center.overview-card.no-shadow(ui-sref='tab.event({user: $root.project.model.user, project: $root.project.model.project})')
+        .item.item-text-wrap
+          signal-value(controller="vm", parameters="{station:vm.station.model.station, equipment:'_station_management', signal:'alarms', name:'告警数量', image:'equipment-alarm.svg'}")
+          //.overview-title 告警设备
+          //img.overview-img(src='./img/equipment-alarm.svg')
+          //.overview-value {{vm.alarmEquipmentsCount}}
+
+    .col.s6
+      .card.text-center.overview-card.no-shadow
+        .item.item-text-wrap
+          signal-value(controller="vm", parameters="{station:vm.station.model.station, equipment:'_station_management', name:'检修设备', image:'equipment-overhaul.svg', value: vm.repairDevices.length}")
+          //.overview-title 检修设备
+          //img.overview-img(src='./img/equipment-overhaul.svg')
+          //.overview-value 0
+-->

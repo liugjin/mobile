@@ -1,0 +1,7 @@
+
+<ion-nav-view>
+  <ion-content>
+    <div class="list"><a class="item item-thumbnail-left item-icon-right station-item" ng-repeat="equipment in vm.equipments" ng-if="equipment.model.equipment.indexOf(&quot;_&quot;) !== 0" ui-sref="equipment({user: vm.project.model.user, project: vm.project.model.project, station: equipment.model.station, equipment: equipment.model.equipment})"><img ng-src="{{vm.options.uploadUrl}}/{{equipment.model.image}}"/>
+        <h2>{{equipment.model.name}}</h2><i class="icon ion-chevron-right icon-accessory"></i></a></div>
+  </ion-content>
+</ion-nav-view>

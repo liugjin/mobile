@@ -1,0 +1,19 @@
+
+style.
+  .bar-order-detail a img {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .bar-order-detail .title {
+    font-weight: bold;
+  }
+
+
+ion-header-bar.bar.bar-light.bar-header.bar-order-detail
+  a.button.button-icon.icon-left(ng-click="vm.goBack(false)")
+    img(src="./img/svg/arrow-left.svg")
+  h1.title {{vm.$routeParams.task}}
+
+ion-content
+  mobile-order-handle(controller="vm" parameters="{message: vm.$routeParams.msg}")
+  //- mobile-order-handle1(controller="vm" parameters="{message: vm.$routeParams.message}" ng-if="vm.process == 'wuhan-process'")

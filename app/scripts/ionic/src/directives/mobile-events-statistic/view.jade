@@ -1,0 +1,10 @@
+.box-hexagon
+  .pie-item
+    .ratio-pie
+  .pie-item
+    .pie-list.alarm-item-list
+      .list-text(ng-repeat="severity in severities")
+        .block-color(ng-style="{background: severity.color}")
+        span {{severity.name}}&nbsp;&nbsp;
+        span(style="font-size: 16px; font-weight: 700;" ng-style="{color: severity.color}") {{severity.value}}
+

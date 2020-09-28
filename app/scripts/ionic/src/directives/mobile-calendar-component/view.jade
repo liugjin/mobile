@@ -1,0 +1,8 @@
+link(rel='stylesheet', href='lib/gl-datepicker/styles/glDatePicker.default.css')
+link(rel='stylesheet', href='lib/lCalendar/LCalendar.css')
+.select-time
+    .day-mode
+        i.material-icons(ng-click="selectDate('previous')",style="color:#737373") keyboard_arrow_left
+    input.datepicker(type="text" ng-model="formatStartTime" ng-change="selectDates()" ng-disabled="false" readonly="true")
+    .day-mode
+        i.material-icons(ng-click="selectDate('next')",style="color:#737373") keyboard_arrow_right

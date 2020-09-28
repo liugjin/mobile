@@ -1,0 +1,29 @@
+<script>(function($) {
+    function Sidenav(element) {
+        this.$el = $(element);
+        this.init(this);
+    }
+
+    Sidenav.prototype = {
+        init: function(self) {
+            self.initToggle(self);
+        },
+        initToggle: function(self) {
+            $(document).on("click", function(e) {
+                let $target = $(e.target);
+                if ($target.closest(self.$el.data("sidenav-toggle"))[0]) {
+                    self.$el.toggleClass("show");
+                } else if (!$target.closest(self.$el)[0]) {
+                    self.$el.removeClass("show");
+                }
+            });
+        },
+    };
+    $.fn.sidenav = function() {
+        return this.each(function() {
+            if (!$.data(this, "sidenav")) {
+                $.data(this, "sidenav", new Sidenav(this));
+            }
+        });
+    };
+})(window.jQuery);</script><div class="content"><a id="sidenav-toggle" href="javascript:;"><i class="material-icons">menu</i></a><div data-sidenav="data-sidenav" data-sidenav-toggle="#sidenav-toggle" class="sidenav"><div class="card-box"><div class="card-name"><span>完成状态</span></div><div class="screen-box"><div ng-repeat="(i, d) in state" ng-click="stateData(d,i)" ng-class="{select: stateSelectBtn == i}" class="btn-box">{{d.name}}</div></div></div><div class="card-box"><div class="card-name"><span>优先级</span></div><div class="screen-box"><div ng-repeat="(i, d) in rank" ng-click="rankData(d,i)" ng-class="{select: rankSelectBtn == i}" class="btn-box">{{d.name}}</div></div></div><div class="time-card"><div class="time-name"><span>开始时间</span></div><div class="time-box"><mobile-calendar-component controller="vm" parameters="{id:'start'}"></mobile-calendar-component></div></div><div class="time-card"><div class="time-name"><span>结束时间</span></div><div class="time-box"><mobile-calendar-component controller="vm" parameters="{id:'end'}"></mobile-calendar-component></div></div><div class="btn-card"><button ng-click="search()" class="btn search-btn">搜索</button></div></div></div>

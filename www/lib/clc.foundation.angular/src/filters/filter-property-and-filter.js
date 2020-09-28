@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{FilterPropertyAndFilter:e=function(){return function(e,n){var r,i,f,t,u,o,d;for(i in o=[],e){for(t in r=e[i],f=!0,n)if(d=n[t],u=r[t],!d&&u||u&&u!==d){f=!1;break}f&&o.push(r)}return o}}}});

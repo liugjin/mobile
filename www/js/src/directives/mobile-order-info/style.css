@@ -1,0 +1,356 @@
+mobile-order-info .order .order-item {
+  padding: 0;
+  margin: 0 0 8px;
+  clear: both; }
+  mobile-order-info .order .order-item .item-alarm {
+    padding: 10px 0 5px;
+    background: #FFFFFF; }
+    mobile-order-info .order .order-item .item-alarm .alarm {
+      text-align: center;
+      border-right: 1px solid #E5E5E5; }
+      mobile-order-info .order .order-item .item-alarm .alarm .alarm-num {
+        color: #2F2F2F;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 30px; }
+      mobile-order-info .order .order-item .item-alarm .alarm .item-name {
+        color: #A6A6A6;
+        font-size: 12px; }
+  mobile-order-info .order .order-item .alarm-severity-1 {
+    border-bottom: 5px solid #E4F192; }
+  mobile-order-info .order .order-item .alarm-severity-2 {
+    border-bottom: 5px solid #F1A700; }
+  mobile-order-info .order .order-item .alarm-severity-3 {
+    border-bottom: 5px solid #F86066; }
+  mobile-order-info .order .order-item .item-capacity .capacity {
+    width: 100%;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 5px; }
+    mobile-order-info .order .order-item .item-capacity .capacity .capacity-img {
+      margin: 5px; }
+      mobile-order-info .order .order-item .item-capacity .capacity .capacity-img .img {
+        width: 3rem;
+        height: 2rem;
+        margin: .7rem auto;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("~image/ups.svg~"); }
+      mobile-order-info .order .order-item .item-capacity .capacity .capacity-img .img.alarm {
+        background-image: url("~image/ups-red.svg~"); }
+    mobile-order-info .order .order-item .item-capacity .capacity .capacity-detail {
+      width: calc(100% - 4.5rem);
+      margin: 10px 0;
+      text-align: center; }
+      mobile-order-info .order .order-item .item-capacity .capacity .capacity-detail .capacity-num {
+        width: 100%;
+        line-height: 20px;
+        color: #000000;
+        font-weight: bold;
+        font-size: 14px; }
+      mobile-order-info .order .order-item .item-capacity .capacity .capacity-detail .capacity-name {
+        color: #A6A6A6;
+        font-size: 11px; }
+  mobile-order-info .order .order-item .item-voltage .voltage {
+    width: 100%;
+    height: 70px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px; }
+    mobile-order-info .order .order-item .item-voltage .voltage .voltage-img {
+      display: inline-block;
+      width: 30%;
+      height: 100%;
+      position: relative; }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-img .img-oval-1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("~image/oval-1.svg~"); }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-img .img-oval-1.alarm {
+        background-image: url("~image/oval-1-red.svg~"); }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-img .img-oval-2 {
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        left: 14%;
+        top: 14%;
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("~image/oval-2.svg~"); }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-img .img-oval-2.alarm {
+        background-image: url("~image/oval-2-red.svg~"); }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-img .img-ups {
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        left: 30%;
+        top: 28%;
+        border-radius: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("~image/ups-white.svg~"); }
+    mobile-order-info .order .order-item .item-voltage .voltage .voltage-item {
+      display: inline-block;
+      width: 40%;
+      height: 100%;
+      text-align: center;
+      margin-top: 10px;
+      vertical-align: top; }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-item .voltage-num {
+        width: 100%;
+        line-height: 20px;
+        color: #000000;
+        font-weight: bold;
+        font-size: 14px; }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-item .voltage-name {
+        color: #A6A6A6;
+        font-size: 11px; }
+    mobile-order-info .order .order-item .item-voltage .voltage .voltage-other {
+      display: inline-block;
+      width: 30%;
+      height: 100%;
+      margin-top: 10px;
+      vertical-align: top; }
+      mobile-order-info .order .order-item .item-voltage .voltage .voltage-other .temperature {
+        width: 100%;
+        line-height: 20px;
+        color: #000000;
+        font-weight: bold;
+        font-size: 14px; }
+    mobile-order-info .order .order-item .item-voltage .voltage .battery-name {
+      color: #A6A6A6;
+      font-size: 11px; }
+    mobile-order-info .order .order-item .item-voltage .voltage .battery-item {
+      height: 70%; }
+      mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-img {
+        display: inline-block;
+        width: 30%;
+        height: 100%;
+        position: relative; }
+        mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-img .img-oval-1 {
+          position: absolute;
+          width: 80%;
+          height: 80%;
+          left: 9%;
+          top: 9%;
+          border-radius: 50%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("~image/oval-1.svg~"); }
+        mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-img .img-oval-1.alarm {
+          background-image: url("~image/oval-1-red.svg~"); }
+        mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-img .img-oval-2 {
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          left: 24%;
+          top: 24%;
+          border-radius: 50%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("~image/oval-2.svg~"); }
+        mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-img .img-oval-2.alarm {
+          background-image: url("~image/oval-2-red.svg~"); }
+      mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-other {
+        display: inline-block;
+        width: 60%;
+        height: 100%;
+        vertical-align: top; }
+        mobile-order-info .order .order-item .item-voltage .voltage .battery-item .battery-other .temperature {
+          width: 100%;
+          color: #000000;
+          font-weight: bold;
+          font-size: 14px; }
+  mobile-order-info .order .order-item .air-condition-item {
+    float: left;
+    width: 17.3%;
+    margin-left: 8px;
+    left: auto;
+    right: auto;
+    background: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 0; }
+    mobile-order-info .order .order-item .air-condition-item .air-name {
+      width: 100%;
+      color: #A6A6A6;
+      font-size: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+    mobile-order-info .order .order-item .air-condition-item .air-img {
+      height: 30px;
+      width: 50%;
+      margin: 5px auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("~image/air.svg~"); }
+    mobile-order-info .order .order-item .air-condition-item .air-img.alarm {
+      background-image: url("~image/air-red.svg~"); }
+    mobile-order-info .order .order-item .air-condition-item .air-status {
+      width: 100%;
+      color: #000000;
+      font-weight: bold;
+      font-size: 12px; }
+  mobile-order-info .order .order-item .rack {
+    background: #FFFFFF;
+    height: 100px; }
+    mobile-order-info .order .order-item .rack .rack-title {
+      color: #000000;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 5px 0 0 5px; }
+    mobile-order-info .order .order-item .rack .item-list {
+      height: 114px;
+      padding: 0 10px 5px;
+      background: #fff; }
+    mobile-order-info .order .order-item .rack .rack-item {
+      float: left;
+      width: 14%;
+      margin-left: auto;
+      left: auto;
+      right: auto;
+      text-align: center;
+      padding: 5px 0; }
+      mobile-order-info .order .order-item .rack .rack-item .rack-name {
+        width: 100%;
+        color: #A6A6A6;
+        font-size: 11px;
+        overflow: hidden;
+        white-space: nowrap; }
+      mobile-order-info .order .order-item .rack .rack-item .rack-img {
+        height: 40px;
+        width: 50%;
+        margin: 0 auto;
+        position: relative; }
+        mobile-order-info .order .order-item .rack .rack-item .rack-img .img-oval-1 {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          border-radius: 50%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("~image/oval-1.svg~"); }
+        mobile-order-info .order .order-item .rack .rack-item .rack-img .img-oval-1.alarm {
+          background-image: url("~image/oval-1-red.svg~"); }
+        mobile-order-info .order .order-item .rack .rack-item .rack-img .img-oval-2 {
+          position: absolute;
+          width: 50%;
+          height: 50%;
+          left: 24%;
+          top: 24%;
+          border-radius: 50%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url("~image/oval-2.svg~"); }
+        mobile-order-info .order .order-item .rack .rack-item .rack-img .img-oval-2.alarm {
+          background-image: url("~image/oval-2-red.svg~"); }
+      mobile-order-info .order .order-item .rack .rack-item .rack-value {
+        width: 100%;
+        color: #000000;
+        font-weight: bold;
+        font-size: 12px; }
+    mobile-order-info .order .order-item .rack .environmental-list {
+      padding: 0 10px 5px;
+      background: #fff; }
+      mobile-order-info .order .order-item .rack .environmental-list .environmental-item {
+        float: left;
+        width: 19%;
+        margin-left: auto;
+        left: auto;
+        right: auto;
+        text-align: center;
+        padding: 5px 0; }
+        mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-name {
+          width: 100%;
+          color: #A6A6A6;
+          font-size: 11px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-img {
+          height: 40px;
+          width: 40%;
+          margin: 0 auto;
+          position: relative; }
+          mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-img .img-oval-1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("~image/oval-1.svg~"); }
+          mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-img .img-oval-1.alarm {
+            background-image: url("~image/oval-1-red.svg~"); }
+          mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-img .img-oval-2 {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            left: 24%;
+            top: 24%;
+            border-radius: 50%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("~image/oval-2.svg~"); }
+          mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-img .img-oval-2.alarm {
+            background-image: url("~image/oval-2-red.svg~"); }
+        mobile-order-info .order .order-item .rack .environmental-list .environmental-item .rack-value {
+          width: 100%;
+          color: #000000;
+          font-weight: bold;
+          font-size: 12px; }
+  mobile-order-info .order .order-item .feedback {
+    background: #ffffff;
+    padding: 0; }
+    mobile-order-info .order .order-item .feedback .feedback-title {
+      color: #000000;
+      font-weight: bold;
+      font-size: 12px;
+      padding: 5px 0 0 5px; }
+    mobile-order-info .order .order-item .feedback .feedback-content {
+      width: 100%;
+      padding: 0 10px; }
+      mobile-order-info .order .order-item .feedback .feedback-content .validate {
+        border: 0;
+        height: 80px;
+        width: 100%;
+        resize: none; }
+
+mobile-order-info .process-btn {
+  color: #ffffff;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center; }
+  mobile-order-info .process-btn .btn-renew {
+    display: inline-block;
+    width: 50%;
+    background: #A6A6A6; }
+  mobile-order-info .process-btn .btn-upload {
+    display: inline-block;
+    width: 50%;
+    background: #10A957; }

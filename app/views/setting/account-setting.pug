@@ -1,0 +1,23 @@
+ion-header-bar.bar.bar-header.bg-white
+  button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')  我的
+  h1.title 账号设置
+
+ion-content(scroll='false').bg-gray
+  .list.margin-top-10
+    .item.item-icon-left.item-icon-right.bg-white.item-border-color(ui-sref='phoneNumberSetting()')
+      img.item-icon-height-width.icon(src="./img/account-setting.svg")
+      span.font-14.black 更换手机号码
+      img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+    .item.item-icon-right.item-icon-left(ui-sref='resetPasswordSetting()')
+      img.item-icon-height-width.icon(src="./img/account-setting.svg")
+      span.font-14.black 重置密码
+      img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+    //.item.item-icon-right.item-icon-left(ui-sref='bindEmailSetting()')
+    //  img.item-icon-height-width.icon(src="./img/account-setting.svg")
+    //  span.font-14.black 绑定邮箱
+    //  img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+    .item.item-icon-right.item-icon-left(ui-sref='changeEmailSetting()')
+      img.item-icon-height-width.icon(src="./img/account-setting.svg")
+      span.font-14.black 更换邮箱
+      img.item-icon-right-height-width.icon(src="./img/arrow-right.svg")
+

@@ -1,0 +1,53 @@
+mobile-order-handle .tabs .tab {
+  height: 46px; }
+
+mobile-order-handle .selected {
+  color: #737373;
+  font-size: 1rem; }
+
+mobile-order-handle .selectedCK {
+  color: #2F2F2F;
+  border-bottom: 4px solid #00A856;
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+mobile-order-handle .process-btn {
+  color: #ffffff;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center; }
+  mobile-order-handle .process-btn .btn-renew {
+    display: inline-block;
+    width: 33.33%;
+    background: #F1A700; }
+  mobile-order-handle .process-btn .btn-hold {
+    display: inline-block;
+    width: 33.33%;
+    background: #4DB2FF; }
+  mobile-order-handle .process-btn .btn-upload {
+    display: inline-block;
+    width: 33.33%;
+    background: #10A957; }
+
+mobile-order-handle .modal {
+  top: 10rem;
+  min-height: auto; }
+  mobile-order-handle .modal .modal-content p {
+    text-align: center;
+    font-size: 18px; }
+  mobile-order-handle .modal .modal-footer {
+    display: flex;
+    padding: 0;
+    height: auto; }
+    mobile-order-handle .modal .modal-footer a.btn, mobile-order-handle .modal .modal-footer a.btn-flat {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+      height: 48px;
+      line-height: 48px; }
+      mobile-order-handle .modal .modal-footer a.btn:nth-child(1), mobile-order-handle .modal .modal-footer a.btn-flat:nth-child(1) {
+        background: #ffffff; }
+      mobile-order-handle .modal .modal-footer a.btn:nth-child(2), mobile-order-handle .modal .modal-footer a.btn-flat:nth-child(2) {
+        background: #10A957; }

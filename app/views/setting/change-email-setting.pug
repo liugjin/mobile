@@ -1,0 +1,20 @@
+ion-header-bar.bar.bar-header.bg-white
+  button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')
+  h1.title 更换邮箱
+
+ion-content(scroll='false')
+  hr.hr-clc
+  .about-app-top.bg-white
+    .about-app-top-center
+      img.margin-top-10(src="../img/company-icon.png")
+      div.margin-top-10
+        span.h3 当前绑定邮箱 {{$root.user.email}}
+
+  .bg-white.match-parent
+    p 1.更换邮箱后,当前账号基础信息保持不变
+    p 2.更换成功后注意查看新邮箱信息提醒
+    p 3.只支持未绑定的邮箱
+
+    .clc-button(ng-click='vm.showPop()')
+      span 知道了,我要跟换
+

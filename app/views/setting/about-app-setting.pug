@@ -1,0 +1,50 @@
+
+style.
+  .overflow-scroll .scroll {
+    height: auto;
+  }
+
+ion-header-bar.bar(style="background: #f0f3f4; border-bottom: 0;")
+  //a.button.button-icon.icon-left.ion-ios-arrow-left(ng-click='vm.onBackPress()')
+  a.button.button-icon.icon-left(ng-click='vm.onBackPress()')
+    img.img-app(src="./img/svg/arrow-left.svg")
+  h1.title(style="color: #000; font-size: 18px;") 关于APP
+
+ion-content
+  .list.list-app(style="margin-top: .5rem;")
+    .list-item
+      .app-content-img
+        img.img(src='./img/change/icon.png')
+      .content-text
+        span 当前版本 {{vm.versionIndex[0]}}
+
+  .list.list-app(ng-show="vm.$rootScope.user.user == 'admin'")
+    .list-item-content
+      .item.item-icon-right.bg-white.item-content(ui-sref='funIntro({versionIndex: version})' ng-repeat="version in vm.versionIndex")
+        span.font-16 {{version}} 的主要更新
+        span.mark(ng-if="$index==0") NEW
+        i.icon.ion-ios-arrow-right
+
+  //.list
+    .list-item-content
+      .item.bg-white(style="text-align: center; border: none;" ui-sref='logout()')
+        span.font-14.white 检查新版本
+
+//ion-header-bar.bar.bar-header.bg-white
+  button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')
+  h1.title 关于APP
+
+//ion-content
+  .about-app-top.background-app-logo
+    .about-app-top-center
+      img.margin-top-20(src="./img/head-portrait-bg.png")
+      br
+      span.text-app-top 当前APP版本 {{$root.appVersion}}
+
+  .list.margin-top-10
+    ion-item.item-icon-right.about-app-margin-top25(ui-sref='funIntro()')
+      span 功能介绍
+      i.icon.ion-ios-arrow-right
+    ion-item.item-icon-right(ng-click='vm.showPop()')
+      span 检查新版本
+      i.icon.ion-ios-arrow-right

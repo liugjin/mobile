@@ -1,0 +1,78 @@
+
+style.
+  .bar a img.img-user {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .list-user {
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    border-radius: .5rem;
+  }
+  .list-item {
+    height: 12rem;
+    border-bottom: 1px solid #f0f3f4;
+    padding: 1rem;
+  }
+  .list-item:last-of-type {
+    border: none;
+  }
+  .content-img {
+    display: block;
+    width: 4rem;
+    height: 6rem;
+    margin: 0 auto;
+  }
+  .content-text {
+    line-height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .content-text span {
+    font-weight: 700;
+  }
+
+ion-modal-view
+  ion-header-bar.bar(style="background: #f0f3f4; border-bottom: 0;")
+    //a.button.button-icon.icon-left.ion-ios-close-empty(ng-click='modal.hide()')
+    a.button.button-icon.icon-left(ng-click='modal.hide()')
+      img.img-user(src="./img/svg/arrow-left.svg")
+    h1.title(style="color: #000; font-size: 18px;") 账户信息
+
+  ion-content
+    .list.list-user
+      .list-item
+        img.content-img(src='./img/svg/account-name.svg')
+        .content-text
+          span {{$root.user.name || "-"}}
+      .list-item
+        img.content-img(src='./img/svg/account-email.svg')
+        .content-text
+          span {{$root.user.email || "-"}}
+      .list-item
+        img.content-img(src='./img/svg/account-phone.svg')
+        .content-text
+          span {{$root.user.phone || "-"}}
+
+
+//ion-modal-view
+  ion-header-bar.bar.bar-header.bar-light
+    a.button.button-icon.icon-left.ion-ios-close-empty(ng-click='modal.hide()')
+    h1.title 账户信息
+
+
+  ion-content
+    //.user-info.text-center
+    //  img.avatar(src='../img/icon_guardian.png')
+    .list
+      .item.item-icon-left
+        i.icon.ion-person.balanced
+        span {{$root.user.name}}
+      .item.item-icon-left
+        i.icon.ion-email.balanced
+        span {{$root.user.email}}
+      .item.item-icon-left
+        i.icon.ion-iphone.balanced
+        span {{$root.user.phone}}
+

@@ -1,0 +1,20 @@
+{
+  "name": "clc.foundation.angular",
+  "version": "3.17.4",
+  "description": "clc foundation angular",
+  "author": "Dow <dow@clcdata.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://clc-dow@bitbucket.org/clc-dow/clc.foundation.angular.git"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "http://dev.clcdata.com:4873/"
+  },
+  "private": false,
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

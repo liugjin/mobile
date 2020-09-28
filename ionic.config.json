@@ -1,0 +1,19 @@
+{
+  "name": "clc.mobile",
+  "integrations": {
+    "gulp": {},
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "proxies": [
+    {
+      "path": "/socket.io",
+      "proxyUrl": "http://192.168.0.128/socket.io"
+    }
+  ]
+}

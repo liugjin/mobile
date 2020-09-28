@@ -1,0 +1,16 @@
+{
+  "id": "mobile-signal-value",
+  "name": "MobileSignalValue控件",
+  "type": "MobileSignalValueDirective",
+  "desc": "自定义控件",
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "css": "",
+  "version": "0.0.1"
+}

@@ -1,0 +1,50 @@
+
+.event
+  //.card-img-placeholder.event-img
+    img(ng-src="{{ngMsgImg}}")
+    //h6 点击可一键报修
+  .event-critical
+    .event-critical-detail
+      h6.text-font 告警原因
+      h5.text-font(style="animation: 10s wordsLoop linear infinite normal; display: inline-block; margin-top: 0.7rem;") {{currentEvent.title}}&nbsp;&nbsp;{{currentEvent.title}}
+    .event-critical-detail
+      h6.text-font 告警状态
+      h5.text-font {{currentEvent.phaseName}}
+  .event-items
+    table
+      tbody
+        tr
+          td.td-width 设备名称
+          td(ng-click="goToEquip(currentEvent)")
+            a(style="color: #10a957;") {{currentEvent.equipmentName}}
+          //td
+            a(ui-sref="equipment({user: currentEvent.user, project: currentEvent.project, station: currentEvent.station, equipment: currentEvent.equipment})") {{currentEvent.equipmentName}}
+        tr
+          td.td-width 设备类型
+          td {{currentEvent.equipmentTypeName}}
+        tr
+          td.td-width 告警名称
+          td {{currentEvent.title || currentEvent.eventName}}
+        //tr
+          td.td-width 告警状态
+          td {{currentEvent.phaseName}}
+        tr
+          td.td-width 告警等级
+          td {{currentEvent.severityName}}
+        tr
+          td.td-width 开始值
+          td {{currentEvent.startValue}}
+        tr(ng-show="currentEvent.endValue == 0 || currentEvent.endValue")
+          td.td-width 结束值
+          td {{currentEvent.endValue}}
+        tr
+          td.td-width 开始时间
+          td {{currentEvent.startTime2 | date : 'yyyy-MM-dd HH:mm:ss'}}
+        tr(ng-show="currentEvent.endTime2")
+          td.td-width 结束时间
+          td {{currentEvent.endTime2 | date : 'yyyy-MM-dd HH:mm:ss'}}
+        tr
+          td.td-width 告警时长
+          td {{currentEvent.duration}} 小时
+
+

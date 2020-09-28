@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 -0.00016 40 -0.00016 40 41.43208 0 41.43208"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(1.000000, 1.000000)">
+            <circle id="bg" stroke="#1B95F5" stroke-width="2" fill="#F1F9FF" fill-rule="nonzero" cx="40" cy="40" r="40"></circle>
+            <g transform="translate(20.000000, 19.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M2.4,14.39984 L37.6,14.39984 L37.6,2.39984 L2.4,2.39984 L2.4,14.39984 Z M38,16.79984 L2,16.79984 C0.8976,16.79984 0,15.90304 0,14.79984 L0,1.99984 C0,0.89744 0.8976,-0.00016 2,-0.00016 L38,-0.00016 C39.1032,-0.00016 40,0.89744 40,1.99984 L40,14.79984 C40,15.90304 39.1032,16.79984 38,16.79984 Z" id="Fill-1" fill="#1B95F5" mask="url(#mask-2)"></path>
+                <path d="M10.4732,9.99968 L6.0988,9.99968 C5.4356,9.99968 4.8988,9.46288 4.8988,8.79968 C4.8988,8.13728 5.4356,7.59968 6.0988,7.59968 L10.4732,7.59968 C11.1364,7.59968 11.6732,8.13728 11.6732,8.79968 C11.6732,9.46288 11.1364,9.99968 10.4732,9.99968" id="Fill-3" fill="#1B95F5" mask="url(#mask-2)"></path>
+                <path d="M10.4732,29.19968 L6.0988,29.19968 C5.4356,29.19968 4.8988,28.66288 4.8988,27.99968 C4.8988,27.33728 5.4356,26.79968 6.0988,26.79968 L10.4732,26.79968 C11.1364,26.79968 11.6732,27.33728 11.6732,27.99968 C11.6732,28.66288 11.1364,29.19968 10.4732,29.19968" id="Fill-4" fill="#1B95F5" mask="url(#mask-2)"></path>
+                <path d="M21.506,33.59968 L2.3996,33.59968 L2.3996,21.59968 L37.5996,21.59968 L37.5996,23.99968 L39.9996,23.99968 L39.9996,21.19968 C39.9996,20.09728 39.1028,19.19968 37.9996,19.19968 L1.9996,19.19968 C0.8972,19.19968 -0.0004,20.09728 -0.0004,21.19968 L-0.0004,33.99968 C-0.0004,35.10288 0.8972,35.99968 1.9996,35.99968 L21.506,35.99968 L21.506,33.59968 Z" id="Fill-5" fill="#1B95F5" mask="url(#mask-2)"></path>
+                <path d="M29.2404,28.60912 L27.1284,40.08672" id="Stroke-6" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M29.2404,28.60912 L39.0748,33.43072" id="Stroke-7" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M27.12864,40.0864 L30.64544,37.4184" id="Stroke-8" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M35.16456,34.99656 L39.07496,33.43096" id="Stroke-9" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M30.64504,37.41848 L33.06184,41.43208" id="Stroke-10" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M35.16456,34.99656 L37.80936,38.74136" id="Stroke-11" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M33.06224,41.43176 L37.80944,38.74136" id="Stroke-12" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M32.61928,26.90048 L33.74648,25.96128" id="Stroke-13" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M29.52008,24.19584 L29.52008,25.81184" id="Stroke-14" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M25.44424,25.62312 L26.74024,26.91912" id="Stroke-15" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+                <path d="M23.6404,29.98096 L26.0916,29.98096" id="Stroke-16" stroke="#1B95F5" stroke-width="2" stroke-linecap="round" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

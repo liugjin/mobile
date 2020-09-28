@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="82px" height="82px" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 8e-05 40 8e-05 40 13.6 0 13.6"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(1.000000, 1.000000)">
+            <circle id="bg" stroke="#F1BB00" stroke-width="2" fill="#FFFBEE" fill-rule="nonzero" cx="40" cy="40" r="40"></circle>
+            <g transform="translate(20.000000, 19.000000)">
+                <path d="M4.74768,7.494 C7.31888,3.9468 12.46288,0.4004 19.99968,0.4004" id="Stroke-1" stroke="#F1BB00" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M35.2524,7.494 C32.7692,3.9468 27.5372,0.4004 20.0004,0.4004" id="Stroke-3" stroke="#F1BB00" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M11.77424,11.4432 C13.56944,9.5304 15.93504,7.6176 19.99984,7.6176" id="Stroke-5" stroke="#F1BB00" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M28.22584,11.4432 C26.42504,9.5304 24.06504,7.6176 20.00024,7.6176" id="Stroke-7" stroke="#F1BB00" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M22.7672,17.86352 C22.7672,19.39152 21.528,20.63072 20,20.63072 C18.472,20.63072 17.2328,19.39152 17.2328,17.86352 C17.2328,16.33552 18.472,15.09712 20,15.09712 C21.528,15.09712 22.7672,16.33552 22.7672,17.86352 Z" id="Stroke-9" stroke="#F1BB00" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M20,33.65416 L20,20.63096" id="Stroke-11" stroke="#F1BB00" stroke-width="3" stroke-linecap="round"></path>
+                <path d="M10.47344,36.7096 L6.09824,36.7096 C5.43584,36.7096 4.89824,36.172 4.89824,35.5096 C4.89824,34.8464 5.43584,34.3096 6.09824,34.3096 L10.47344,34.3096 C11.13584,34.3096 11.67344,34.8464 11.67344,35.5096 C11.67344,36.172 11.13584,36.7096 10.47344,36.7096" id="Fill-13" fill="#F1BB00"></path>
+                <g id="Group-17" transform="translate(0.000000, 28.309520)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-16"></g>
+                    <path d="M38,8e-05 L24.6728,8e-05 L24.6728,2.40008 L37.6,2.40008 L37.6,11.20008 L2.4,11.20008 L2.4,2.40008 L15.3272,2.40008 L15.3272,8e-05 L2,8e-05 C0.8968,8e-05 0,0.89688 0,2.00008 L0,11.60008 C0,12.70248 0.8968,13.60008 2,13.60008 L38,13.60008 C39.1024,13.60008 40,12.70248 40,11.60008 L40,2.00008 C40,0.89688 39.1024,8e-05 38,8e-05" id="Fill-15" fill="#F1BB00" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M25.9188,29.5096 C25.9188,30.172 25.3812,30.7096 24.7188,30.7096 C24.0564,30.7096 23.5188,30.172 23.5188,29.5096 C23.5188,28.8472 24.0564,28.3096 24.7188,28.3096 C25.3812,28.3096 25.9188,28.8472 25.9188,29.5096" id="Fill-18" fill="#F1BB00"></path>
+                <path d="M16.47424,29.5096 C16.47424,30.172 15.93744,30.7096 15.27424,30.7096 C14.61184,30.7096 14.07424,30.172 14.07424,29.5096 C14.07424,28.8472 14.61184,28.3096 15.27424,28.3096 C15.93744,28.3096 16.47424,28.8472 16.47424,29.5096" id="Fill-20" fill="#F1BB00"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+
+<ion-header-bar class="bar bar-header bg-white">
+  <button class="button button-icon icon ion-ios-arrow-left" ng-click="vm.onBackPress()"></button>
+  <h1 class="title">更换手机号码</h1>
+</ion-header-bar>
+<ion-content scroll="false">
+  <hr class="hr-clc"/>
+  <div class="about-app-top bg-white">
+    <div class="about-app-top-center"><img class="margin-top-10" src="../img/company-icon.png"/>
+      <div class="margin-top-10"><span class="h3">当前绑定手机 {{$root.user.phone}}</span></div>
+    </div>
+  </div>
+  <div class="bg-white match-parent">
+    <p>1.更换手机后,当前账号基础信息保持不变</p>
+    <p>2.更换成功后注意查看新邮箱信息提醒</p>
+    <p>3.只支持未注册的手机号</p>
+    <div class="clc-button" ng-click="vm.showPop()"><span>知道了,我要跟换</span></div>
+  </div>
+</ion-content>

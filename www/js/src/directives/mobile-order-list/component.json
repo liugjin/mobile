@@ -1,0 +1,24 @@
+{
+  "id": "mobile-order-list",
+  "name": "MobileOrderList控件",
+  "type": "MobileOrderListDirective",
+  "desc": {
+    "author": "",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.2": [
+        "修改查询方法并增加查询条件----James"
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "deps": [],
+  "css": "",
+  "version": "0.0.2"
+}

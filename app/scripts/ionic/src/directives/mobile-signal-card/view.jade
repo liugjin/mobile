@@ -1,0 +1,7 @@
+a.signal-info(ng-style='{color: signal.data.color || "#bdbdbd"}' ng-click="navigate()")
+  .title {{signal.model.name}}
+  .content-font(ng-class="{'grey-text':signal.data.severity<0, 'green-text':signal.data.severity==0, 'orange-text':signal.data.severity>0}")
+    span.content {{signal.data.formatValue || "-"}}&nbsp;
+    //span.unit {{item.data.unit}}
+  .collect-time(title="{{item.data.timestamp | date:'MM-dd HH:mm:ss'}}") {{signal.data.timestamp | date:'MM-dd HH:mm:ss'}}
+  i.material-icons(ng-if="signal.data.eventSeverity",style="position: absolute;right:0;top:0;" ng-style='{color: signal.data.color || "#bdbdbd"}') notifications

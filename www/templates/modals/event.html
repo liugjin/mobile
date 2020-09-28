@@ -1,0 +1,12 @@
+
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-light">
+    <h1 class="title">选择区域</h1><a class="button button-icon icon-right ion-ios-close-empty" ng-click="modal.hide()"></a>
+  </ion-header-bar>
+  <ion-content>
+    <div class="card">
+      <div class="item item-text-wrap">当前区域：{{::controller.station.model.name}}</div>
+    </div>
+    <div class="card list" ng-repeat="dt in controller.datacenters"><a class="item item-icon-left item-divider item-icon-right" ng-click="controller.modalSelectStation(dt)"><i class="icon ion-android-globe balanced"></i>{{::dt.model.name}}<i class="icon ion-chevron-right icon-accessory"></i></a><a class="item item-icon-left item-icon-right" ng-repeat="station in dt.stations" ng-click="controller.modalSelectStation(station)"><i class="icon ion-ios-information-empty balanced"></i>{{::station.model.name}}<i class="icon ion-chevron-right icon-accessory"></i></a></div>
+  </ion-content>
+</ion-modal-view>

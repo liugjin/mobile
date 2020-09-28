@@ -1,0 +1,30 @@
+
+style.
+  .bar a img.img-platform {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .button.btn-green {
+    /*background: #87D4AB;*/
+    background: #10A957;
+    color: #ffffff;
+  }
+
+ion-header-bar.bar(style="background: #f0f3f4; border-bottom: 0;")
+  a.button.button-icon.icon-left(ui-sref='login()')
+    img.img-platform(src="./img/svg/arrow-left.svg")
+
+//ion-header-bar.bar.bar-header.bar-header-none
+  a.button.button-icon.icon-left.ion-ios-close-empty(ui-sref='login()')
+
+ion-content.login-pane(scroll="false")
+  .padding
+    h5 选择平台
+  section.login-container
+    form.login-form(ng-submit='vm.doRegister()')
+      .list.padding
+        select.select-3(style="display:block;",ng-model='vm.selectPlatform')
+          option(ng-repeat="item in vm.platform",value="{{item.ip + '&' + item.token}}") {{item.name}}
+      .padding
+        button.button.button-block.btn-green(type='submit') 下一步
+

@@ -1,0 +1,43 @@
+
+
+
+ul#tabs.tabs.tabs-fixed-width(md-tabs, data-swipeable='false' style="top: 0;")
+    li.tab(ng-click="changeType('defect')")
+      a
+        | 故障工单
+    li.tab(ng-click="changeType('plan')")
+      a
+        | 巡检工单
+    li.tab(ng-click="changeType('predict')")
+      a
+        | 预测维保
+    li.tab(ng-click="changeType('preventive')")
+      a
+        | 预防维保
+.row.order
+  .order-item(ng-repeat="(index, item) in data",ng-click="openTask(index)")
+    .order-title
+      .col.s2.center
+        img(ng-src='{{orderImg}}' width="34px" height="34px")
+      .col.s8.title
+        h6 {{item.task}}
+        div(ng-repeat="(i, d) in tableConfig")
+          span(ng-if="d.id == 'phase'",ng-style="{ 'color': d.color[d.formate(item[d.id])] }") {{stateMap[d.formate(item[d.id])] || '--'}}
+          span(ng-if="d.id == 'source' && d.class == 'colorItem'",ng-style="{ 'color': d.color[item[d.id].severity] }") {{ item[d.id].severityName || '--'}}
+      .col.s2.center
+        i.material-icons(ng-if="!(openIndex == index && toggle)") keyboard_arrow_right
+        i.material-icons(ng-if="openIndex == index && toggle") keyboard_arrow_down
+    .order-content(ng-if="openIndex == index && toggle")
+      ul.content
+        li(ng-repeat="(i, d) in tableConfig")
+          span {{d.title}}
+          span(ng-if="d.id == 'type'" title="{{processtypes[item[d.id]] || '未知'}}") {{processtypes[item[d.id]] || '--'}}
+          span(ng-if="d.id == 'phase'" ng-style="{ 'color': d.color[d.formate(item[d.id])] }") {{ stateMap[d.formate(item[d.id])] || '--'}}
+          span(ng-if="d.id == 'priority'" ng-style="{ 'color': d.color[item[d.id]] }") {{ d.formate(item[d.id]) || '--'}}
+          span(ng-if="d.id == 'source' && d.class == 'colorItem'" ng-style="{ 'color': d.color[item[d.id].severity] }") {{ item[d.id].severityName || '--'}}
+          span(ng-if="d.id != 'type' && d.class != 'colorItem' && d.formate" title="{{d.formate(item[d.id]) || '未知'}}") {{d.formate(item[d.id]) || "--"}}
+          span(ng-if="d.id != 'type' && d.class != 'colorItem' && !d.formate" title="{{item[d.id] || '未知'}}") {{item[d.id] || "--"}}
+        .handle
+          button.btn.search-btn(ng-click="selectOrder(item)") 处理工单
+  .col.s12.order-item-blank(ng-if="data.length == 0")
+    span 无工单

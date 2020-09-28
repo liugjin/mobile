@@ -1,0 +1,16 @@
+//#player
+//  .graphic-viewer(tabindex2='0', graphic-player='', options='vm.graphicOptions', template-id='vm.templateId', controller='vm', on-template-load='vm.onTemplateLoad()', on-element-changed='vm.onElementChanged()', parameters='vm.parameters')
+//  #element-placeholder(ng-show='vm.placeholderMode != "none"', data-activates='placeholder-menu', md-dropdown, data-hover='false', data-beloworigin='true', title2='信息窗口')
+//    #element-placeholder-popover(style='width:100%; height:100%;', ng-click2='vm.togglePopover($event)', element-popover, data-style='inverse', data-title='{{vm.element.propertyValues.name || vm.element.id}}', element='vm.element', controller='vm', data-trigger='manual', data-placement='auto', data-closeable='true', data-dismissible='false', data-animation='fade', title2='信息展示：在选中项前双击即可弹出信息窗口')
+//graphic-box#graphic(ng-if="templateId", style="width:100%;height:250px", controller="controller", parameters="{templateId: templateId, templateParameters: templateParameters}", ng-dblclick="fullGraphic()")
+//img.center(style="height:200px", ng-if="!templateId", ng-src="{{setting.urls.uploadUrl}}/{{equipment.model.image || equipment.equipmentTemplate.model.image}}")
+.row.white
+  .col.s6(ng-repeat="signal in signalComponent track by $index")
+    a.signal-info(ng-style='{color: signal.data.color || "#bdbdbd"}' ng-click="navigate(signal)")
+      .title {{signal.model.name}}
+      .content-font(ng-class="{'grey-text':signal.data.severity<0, 'green-text':signal.data.severity==0, 'orange-text':signal.data.severity>0}")
+        span.content {{signal.data.formatValue || "-"}}&nbsp;
+        //span.unit {{item.data.unit}}
+      .collect-time(title="{{item.data.timestamp | date:'MM-dd HH:mm:ss'}}") {{signal.data.timestamp | date:'MM-dd HH:mm:ss'}}
+      i.material-icons(ng-if="signal.data.eventSeverity",style="position: absolute;right:0;top:0;" ng-style='{color: signal.data.color || "#bdbdbd"}') notifications
+

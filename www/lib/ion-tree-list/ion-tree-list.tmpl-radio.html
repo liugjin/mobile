@@ -1,0 +1,20 @@
+<link type="text/css" rel="stylesheet" ng-href="{{baseUrl}}/ion-tree-list.min.css"/>
+
+<script type="text/ng-template" id="items_renderer">
+    <ion-radio class="depth-{{item.depth}}" ng-model="selectNode" ng-value="item.id" ng-click="emitEvent(item)">
+      <span class="symbol">
+        <i class="icon" ng-if="item.tree.length > 0" ng-class="item.tree.collapsed ? 'ion-arrow-right-b' : 'ion-arrow-down-b'"></i>
+      </span>
+      {{item.name}}
+    </ion-radio>
+
+    <ion-list ng-model="item.tree"
+              ng-repeat="item in item.tree"
+              ng-hide="item.collapsed"
+              ng-include="'items_renderer'">
+    </ion-list>
+</script>
+
+<div class="list" ng-model="items">
+    <span ng-repeat="item in items" ng-include="'items_renderer'"></span>
+</div>

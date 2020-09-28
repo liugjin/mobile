@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="101px" height="101px" viewBox="0 0 101 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 100 99.995 100 99.995 0 0 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon">
+            <g>
+                <path d="M0,75 L0,15 L93,15 L93,27 L100,27 L100,87 L7,87 L7,75 L0,75 Z" id="Combined-Shape" fill-opacity="0.2" fill="#F1BB00"></path>
+                <polygon id="Fill-1" fill="#F1BB00" points="0 20.1433333 93.3333333 20.1433333 93.3333333 15.1433333 0 15.1433333"></polygon>
+                <polygon id="Fill-2" fill="#F1BB00" points="0 75.1433333 5 75.1433333 5 15.1433333 0 15.1433333"></polygon>
+                <polygon id="Fill-3" fill="#F1BB00" points="79.191 0.9995 75.656 4.5345 91.2626667 20.1428333 93.3326667 15.1428333"></polygon>
+                <polygon id="Fill-4" fill="#F1BB00" points="6.66166667 86.8583333 99.995 86.8583333 99.995 81.8583333 6.66166667 81.8583333"></polygon>
+                <polygon id="Fill-5" fill="#F1BB00" points="94.995 86.8583333 99.995 86.8583333 99.995 26.8583333 94.995 26.8583333"></polygon>
+                <polygon id="Fill-6" fill="#F1BB00" points="6.6615 86.858 20.8031667 100.999667 24.3381667 97.4646667 8.73316667 81.858"></polygon>
+                <g id="Group-18" transform="translate(0.000000, 1.000000)">
+                    <path d="M49.9558333,58.3333333 C45.3525,58.3333333 41.6225,54.6016667 41.6225,50 C41.6225,45.3983333 45.3525,41.6666667 49.9558333,41.6666667 C54.5591667,41.6666667 58.2891667,45.3983333 58.2891667,50 C58.2891667,54.6016667 54.5591667,58.3333333 49.9558333,58.3333333 M49.9558333,36.6666667 C42.5925,36.6666667 36.6225,42.6366667 36.6225,50 C36.6225,57.3633333 42.5925,63.3333333 49.9558333,63.3333333 C57.3191667,63.3333333 63.2891667,57.3633333 63.2891667,50 C63.2891667,42.6366667 57.3191667,36.6666667 49.9558333,36.6666667" id="Fill-7" fill="#F1BB00"></path>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-10"></g>
+                    <polygon id="Fill-9" fill="#F1BB00" mask="url(#mask-2)" points="47.4566667 38.3333333 52.4566667 38.3333333 52.4566667 28.3333333 47.4566667 28.3333333"></polygon>
+                    <polygon id="Fill-11" fill="#F1BB00" mask="url(#mask-2)" points="47.4566667 71.4583333 52.4566667 71.4583333 52.4566667 61.4583333 47.4566667 61.4583333"></polygon>
+                    <polygon id="Fill-12" fill="#F1BB00" mask="url(#mask-2)" points="61.5183333 52.3966667 71.5183333 52.3966667 71.5183333 47.3966667 61.5183333 47.3966667"></polygon>
+                    <polygon id="Fill-13" fill="#F1BB00" mask="url(#mask-2)" points="28.3933333 52.3966667 38.3933333 52.3966667 38.3933333 47.3966667 28.3933333 47.3966667"></polygon>
+                    <polygon id="Fill-14" fill="#F1BB00" mask="url(#mask-2)" points="56.3638333 59.8398333 59.8988333 56.3031667 66.9705 63.3748333 63.4355 66.9115"></polygon>
+                    <polygon id="Fill-15" fill="#F1BB00" mask="url(#mask-2)" points="32.9408333 36.4168333 36.4758333 32.8801667 43.5475 39.9518333 40.0125 43.4885"></polygon>
+                    <polygon id="Fill-16" fill="#F1BB00" mask="url(#mask-2)" points="59.8988333 43.488 56.3638333 39.9513333 63.4355 32.8813333 66.9705 36.4163333"></polygon>
+                    <polygon id="Fill-17" fill="#F1BB00" mask="url(#mask-2)" points="36.476 66.9108333 32.941 63.3741667 40.0126667 56.3041667 43.5476667 59.8391667"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

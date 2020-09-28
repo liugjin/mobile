@@ -1,0 +1,67 @@
+
+<style>
+  .bar a img.img-introduction {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .intro-list-item {
+    padding: 1rem;
+  }
+  .intro-list-item:last-of-type {
+    padding: 1rem 1rem 2rem;
+  }
+  .intro-item-time {
+    font-size: 16px;
+    color: #000;
+    padding: 0 .5rem .5rem;
+  }
+  .intro-item-content {
+    padding: 0 1rem;
+    background: #ffffff;
+    border-radius: .5rem;
+    margin-top: .5rem;
+  }
+  .item-content {
+    border: none;
+    border-bottom: 2px solid #f0f3f4;
+    padding: 1rem .5rem;
+    white-space: normal;
+    font-size: 14px;
+  }
+  .item-content:last-of-type {
+    border: none;
+  }
+  
+</style>
+<ion-header-bar class="bar" style="background: #f0f3f4; border-bottom: 0;">
+  <!--a.button.button-icon.icon-left.ion-ios-arrow-left(ng-click='vm.onBackPress()')--><a class="button button-icon icon-left" ng-click="vm.onBackPress()"><img class="img-introduction" src="./img/svg/arrow-left.svg"/></a>
+  <h1 class="title" style="color: #000; font-size: 18px;">更新日志</h1>
+</ion-header-bar>
+<ion-content>
+  <div class="intro-list-item" ng-repeat="version in vm.versionUpdate[vm.$routeParams.versionIndex]">
+    <div class="intro-item-time"><span>{{version.updateTime}}主要更新</span></div>
+    <div class="intro-item-content">
+      <div class="item item-content" ng-repeat="content in version.updateContent"><span>{{content}}</span></div>
+    </div>
+  </div>
+</ion-content>
+<!--ion-header-bar.bar.bar-header.bg-white
+button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')
+h1.title 功能介绍
+
+-->
+<!--ion-content(scroll='false')
+.list
+  ion-item.item-icon-right
+    span 工业APP1.0.3主要更新介绍
+    i.icon.ion-ios-arrow-right
+  ion-item.item-icon-right
+    span 工业APP1.0.2主要更新介绍
+    i.icon.ion-ios-arrow-right
+  ion-item.item-icon-right
+    span 工业APP1.0.1主要更新介绍
+    i.icon.ion-ios-arrow-right
+  ion-item.item-icon-right
+    span 工业APP1.0.0主要更新介绍
+    i.icon.ion-ios-arrow-right
+-->

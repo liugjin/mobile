@@ -1,0 +1,69 @@
+
+<ion-header-bar class="bar bar-positive bar-header"><a class="button icon-left ion-ios-arrow-left button-clear" ui-sref="tab.stations({user: vm.project.model.user, project: vm.project.model.project})"></a>
+  <h1 class="title">{{vm.station.model.name}}</h1>
+</ion-header-bar>
+<ion-content scroll="false">
+  <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tab title="概览" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+      <ion-nav-view>
+        <ion-content>
+          <div class="row">
+            <div class="col col-50">
+              <div class="list"><a class="item item-icon-left" href="#"><i class="icon ion-stats-bars positive"></i>
+                  <h3 class="grey">日发电量</h3>
+                  <div><span class="value">{{vm.station.stationSignal['day-power-generation'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['day-power-generation-overview']}}</span></div></a><a class="item item-icon-left" href="#"><i class="icon ion-connection-bars positive"></i>
+                  <h3 class="grey">月发电量</h3>
+                  <div><span class="value">{{vm.station.stationSignal['month-power-generation'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['month-power-generation-overview']}}</span></div></a><a class="item item-icon-left" href="#"><i class="icon ion-arrow-graph-up-right positive"></i>
+                  <h3 class="grey">年发电量</h3>
+                  <div><span class="value">{{vm.station.stationSignal['year-power-generation'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['year-power-generation-overview']}}</span></div></a><a class="item item-icon-left" href="#"><i class="icon ion-pie-graph positive"></i>
+                  <h3 class="grey">总发电量</h3>
+                  <div><span class="value">{{vm.station.stationSignal['total-power-generation'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['total-power-generation-overview']}}</span></div></a></div>
+            </div>
+            <div class="col col-50">
+              <div class="list"><a class="item item-icon-left" href="#"><i class="icon ion-social-yen positive"></i>
+                  <h3 class="grey">累计收益</h3>
+                  <div><span class="value">{{vm.station.stationSignal['income'].value}}&nbsp;</span><span class="unit">¥</span></div></a><a class="item item-icon-left" href="#"><i class="icon ion-android-cloud-circle positive"></i>
+                  <h3 class="grey">co2减排</h3>
+                  <div><span class="value">{{vm.station.stationSignal['co2-reduction'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['co2-reduction']}}</span></div></a><a class="item item-icon-left" href="#"><i class="icon ion-ios-color-filter positive"></i>
+                  <h3 class="grey">so2减排</h3>
+                  <div><span class="value">{{vm.station.stationSignal['so2-reduction'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['so2-reduction']}}</span></div></a><a class="item item-icon-left" href="#"><i class="icon ion-android-cart positive"></i>
+                  <h3 class="grey">节约煤炭</h3>
+                  <div><span class="value">{{vm.station.stationSignal['saving-standard-coal'].value}}&nbsp;</span><span class="unit">{{vm.station.unit['saving-standard-coal']}}</span></div></a></div>
+            </div>
+          </div>
+          <div class="card margin-top-4">
+            <div class="item item-divider">实时功率 (kW)</div>
+            <div class="item">
+              <power-chart class="power-chart" signals="vm.signalValues" setting="vm.signalSetting" data="vm.signalValue"></power-chart>
+            </div>
+          </div>
+        </ion-content>
+      </ion-nav-view>
+    </ion-tab>
+    <ion-tab title="接线图" icon-on="ion-ios-pulse-strong" icon-off="ion-ios-pulse">
+      <ion-nav-view>
+        <ion-content>
+          <div id="player">
+            <div class="graphic-viewer" tabindex2="0" graphic-player="" options="vm.graphicOptions" template-id="vm.templateId" controller="vm" on-template-load="vm.onTemplateLoad()" on-element-changed="vm.onElementChanged()" parameters="vm.parameters"></div>
+            <div id="element-placeholder" ng-show="vm.placeholderMode != &quot;none&quot;" data-activates="placeholder-menu" md-dropdown="md-dropdown" data-hover="false" data-beloworigin="true" title2="信息窗口">
+              <div id="element-placeholder-popover" style="width:100%; height:100%;" ng-click2="vm.togglePopover($event)" element-popover="element-popover" data-style="inverse" data-title="{{vm.element.propertyValues.name || vm.element.id}}" element="vm.element" controller="vm" data-trigger="manual" data-placement="auto" data-closeable="true" data-dismissible="false" data-animation="fade" title2="信息展示：在选中项前双击即可弹出信息窗口"></div>
+            </div>
+          </div>
+        </ion-content>
+      </ion-nav-view>
+    </ion-tab>
+    <ion-tab title="设备" icon-on="ion-ios-calculator" icon-off="ion-ios-calculator-outline">
+      <ion-nav-view>
+        <ion-content>
+          <div class="list"><a class="item item-thumbnail-left item-icon-right station-item" ng-repeat="equipment in vm.equipments" ng-if="equipment.model.equipment.indexOf(&quot;_&quot;) !== 0" ui-sref="equipment({user: vm.project.model.user, project: vm.project.model.project, station: equipment.model.station, equipment: equipment.model.equipment})"><img ng-src="{{vm.options.uploadUrl}}/{{equipment.model.image}}"/>
+              <h2>{{equipment.model.name}}</h2><i class="icon ion-chevron-right icon-accessory"></i></a></div>
+        </ion-content>
+      </ion-nav-view>
+    </ion-tab>
+    <ion-tab title="告警" icon-on="ion-ios-bell" icon-off="ion-ios-bell-outline">
+      <ion-nav-view>
+        <ion-content></ion-content>
+      </ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+</ion-content>

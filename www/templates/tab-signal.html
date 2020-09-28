@@ -1,0 +1,62 @@
+
+<style>
+  a.button .icon::before, a.button.icon::before, a.button.icon-left::before, a.button.icon-right::before {
+    margin-top: 0;
+  }
+  .bar .button.button-icon .icon:before {
+    font-size: 24px;
+  }
+  
+</style>
+<ion-header-bar class="bar" style="border-bottom: 0;">
+  <!--a.button.button-icon.icon-left(style="font-size: 1rem; line-height: 44px;" ui-sref="scan({user: $root.project.model.user, project: $root.project.model.project, origin: 'signal'})")img(src="./img/svg/signal-add.svg" style="width: auto; height: 66%;")
+  -->
+  <h1 class="title" style="color: #000; font-size: 18px;">{{vm.station.model.name}}</h1><a class="button button-icon icon-left" style="font-size: 1rem; line-height: 44px;" ng-click="vm.openModal()">
+    <!--i.icon.ion-navigate-->
+    <!--span &nbsp;&nbsp;切换站点--><img src="./img/svg/signal-location.svg" style="width: auto; height: 66%;"/>
+    <!--img(src='./img/svg/map.svg' style="width: auto; height: 66%;")--></a>
+</ion-header-bar>
+<ion-content class="tab-equipments">
+  <mobile-equip-list controller="vm" parameters="{station: vm.station.model.station}"></mobile-equip-list>
+</ion-content>
+<!--ion-header-bar.bar.bar-dark.bar-header
+//a.button.icon-left.ion-ios-arrow-left.button-clear.button-dark(ng-click='backGo()')
+h1.title(ng-click='vm.openModal()')
+  | {{vm.station.model.name}} &nbsp;
+  i.icon.ion-android-arrow-dropdown
+-->
+<!--ion-content.tab-equipments
+.list.list-inset.list-search
+  label.item.item-input
+    i.icon.ion-ios-search.placeholder-icon
+    input(type='search', placeholder='搜索')
+
+
+//.row
+//  .col.col-50
+//
+//
+
+.list
+  a.item.item-avatar.item-icon-right(ng-repeat='equip in vm.equipments', ui-sref="equipment({user: vm.project.model.user, project: vm.project.model.project, station: equip.model.station, equipment: equip.model.equipment})")
+    img(ng-src="{{vm.options.uploadUrl}}/{{equip.model.image}}")
+    h2 {{equip.model.name}}
+    p
+      img.e-online(src='img/icon/e-online.svg')
+      span &nbsp;在线&nbsp;&nbsp;
+      img.e-normal(src='img/icon/e-normal.svg')
+      span &nbsp;正常
+    i.icon.ion-chevron-right.icon-accessory
+
+
+
+
+
+//div(collection-repeat='equipment in vm.equipments', item-width="100%", item-height="vm.getItemHeight($index, vm.equipments.length)")
+//  .row(ng-if='$even')
+//    .col-50
+//      signal-card(controller='vm', equipment='vm.equipments[$index]')
+//
+//    .col-50(ng-if='vm.equipments[$index + 1]')
+//      signal-card(controller='vm', equipment='vm.equipments[$index + 1]')
+-->

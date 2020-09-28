@@ -1,0 +1,15 @@
+
+ion-header-bar.bar.bar-stable.bar-header
+  a.button.icon-left.ion-ios-arrow-left.button-clear.button-dark(ng-click='vm.goBack()')
+  h1.title(ng-click='vm.openModal()')
+    | {{vm.station.model.name}} &nbsp;
+    i.icon.ion-android-arrow-dropdown
+
+ion-content(scroll='false', padding='true')
+
+  br
+  br
+  br
+  button.button.icon-left.ion-ios-play.button-full.button-positive(ng-click='vm.play()')
+    | 播放视频监控
+

@@ -1,0 +1,45 @@
+/*
+Error: Invalid GBK character "\xE8"
+        on line 687 of ionic.app.scss
+
+682:   margin: 8px 0
+683: }
+684:
+685:
+686: // -----------------------------------------------------
+687: //背景颜色
+688: .bg-black {
+689:   background: #000000;
+690: }
+691:
+692: //字体颜色
+
+Backtrace:
+ionic.app.scss:687
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util.rb:1043:in `rescue in block in find_encoding_error'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util.rb:1040:in `block in find_encoding_error'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util.rb:1039:in `each'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util.rb:1039:in `each_with_index'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util.rb:1039:in `find_encoding_error'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/util.rb:767:in `check_sass_encoding'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:444:in `check_encoding!'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:400:in `_to_tree'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/base.rb:52:in `parse'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/lib/sass/exec/base.rb:19:in `parse!'
+C:/sunmoon/program/Ruby25-x64/lib/ruby/gems/2.5.0/gems/sass-3.5.6/bin/scss:13:in `<top (required)>'
+C:/sunmoon/program/Ruby25-x64/bin/scss:23:in `load'
+C:/sunmoon/program/Ruby25-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE8\"\A         on line 687 of ionic.app.scss\A \A 682:   margin: 8px 0\A 683: }\A 684: \A 685: \A 686: // -----------------------------------------------------\A 687: //背景颜色\A 688: .bg-black {\A 689:   background: #000000;\A 690: }\A 691: \A 692: //字体颜色"; }

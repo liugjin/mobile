@@ -1,0 +1,84 @@
+mobile-menu
+    .content
+        display: flex
+        justify-content: center 
+        align-items: center 
+        width: 100%
+        height: 100%
+    .sidenav
+        background: #f0f3f4
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3)
+        position: fixed
+        overflow: auto
+        transform: translate(-330px, 0)
+        transition: transform 0.3s
+        top: 0
+        left: 0
+        width: 300px
+        z-index: 1000
+        padding: 1rem
+    .sidenav.show
+        transform: translate(0, 0)
+
+    .card-box
+        width: 100%
+        height: 130px
+        margin: 0
+        margin-bottom: 1rem
+    .card-name
+        display: flex
+        align-items: center
+        width: 100%
+        height: 24%
+        font-size: 14px
+        font-weight: bold
+        color: #444
+    .screen-box
+        display: flex
+        flex-wrap: wrap
+        align-content: flex-start
+        justify-content: space-between
+        width: 100%
+        height: 70%
+    .btn-box
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 30%
+        height: 38%
+        margin-bottom: 1rem
+        border-radius: 2px
+        background: #fff
+        color: #444
+    .select
+        color: #10A957
+    .time-card
+        width: 100%
+        height: 90px
+        margin-bottom: 1rem
+    .time-name
+        display: flex
+        align-items: center
+        width: 100%
+        height: 40%
+        font-size: 14px
+        font-weight: bold
+        color: #444
+    .time-box
+        width: 100%
+        height: 50%
+    .btn-card
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        height: 60px
+    .search-btn
+        width: 90%
+        height: 70%
+        background: #10A957
+
+    .btn:focus
+        background: #fff !important
+
+    

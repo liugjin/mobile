@@ -1,0 +1,17 @@
+
+<ion-nav-view>
+  <ion-content scroll="false">
+    <div class="item item-header item-stable row row-item">
+      <div class="col col-33">信号</div>
+      <div class="col col-33">实时值</div>
+      <div class="col col-33">更新时间</div>
+    </div>
+    <ion-scroll direction="y" style="width: 100%;height: 94%;" scrollbar-y="false">
+      <div class="item row row-item" ng-repeat="signal in filterSignals = (vm.equipment.signals.items | filter: vm.equipment.signals.filter(vm.searchSignal, [&quot;group&quot;], true)) | orderBy: vm.equipment.signals.predicate: vm.equipment.signals.reverse " ng-class="{&quot;active&quot;: signal == vm.signal}">
+        <div class="col col-33">{{signal.model.name}}</div>
+        <div class="col col-33">{{signal.data.formatValue || '&nbsp;&nbsp;'}} {{signal.unit.unit}}</div>
+        <div class="col col-33">{{signal.data.timestamp | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+      </div>
+    </ion-scroll>
+  </ion-content>
+</ion-nav-view>

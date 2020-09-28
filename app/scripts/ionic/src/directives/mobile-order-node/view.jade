@@ -1,0 +1,149 @@
+
+.order-node
+  .node-item(ng-repeat="content in contents")
+    .node-title
+      img.img(ng-src="{{getComponentPath('image/order.svg')}}")
+      span {{task.nodes[0].name}}
+      span(style="font-weight:inherit") ({{task.phase.manager.name}}  {{task.phase.timestamp |date: 'yyyy-MM-dd HH:mm'}})
+    .order-detail
+      .table
+        table(style="font-size: 14px;")
+          thead
+            tr(style="border-bottom: 0;")
+              th(style="width: 20%;")
+              th(style="width: 2%;")
+              th(style="width: 28%;")
+              th(style="width: 11%;")
+              th(style="width: 10%;")
+              th(style="width: 24%;")
+              th(style="width: 5%;")
+          tbody
+            tr.border-bottom-0
+              td.equip-type.run-normal-bg(rowspan="4") {{content.content[0].equiptypeName}}
+              td.equip-name(rowspan="2" colspan="2") {{content.content[0].equips[0].equipmentName}}
+              td(colspan="2")
+                span.signal-name {{content.content[0].equips[0].value[0].name}}：
+              td
+                span.signal-value {{content.content[0].equips[0].value[0].value}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[0].equips[0].value[0].checked" disabled)
+                  span
+            tr
+              td(colspan="2")
+                span.signal-name {{content.content[0].equips[0].value[1].name}}：
+              td
+                span(ng-class="{'run-normal': content.content[0].equips[0].value[1].value == '正常', 'run-alarm': content.content[0].equips[0].value[1].value != '正常'}") {{content.content[0].equips[0].value[1].value}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[0].equips[0].value[1].checked" disabled)
+                  span
+            tr.border-bottom-0
+              td.equip-name(rowspan="2" colspan="2") {{content.content[0].equips[1].equipmentName}}
+              td(colspan="2")
+                span.signal-name {{content.content[0].equips[1].value[0].name}}：
+              td
+                span.signal-value.normal {{content.content[0].equips[1].value[0].value}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[0].equips[1].value[0].checked" disabled)
+                  span
+            tr
+              td(colspan="2")
+                span.signal-name {{content.content[0].equips[1].value[1].name}}：
+              td
+                span(ng-class="{'run-normal': content.content[0].equips[1].value[1].value == '正常', 'run-alarm': content.content[0].equips[1].value[1].value != '正常'}") {{content.content[0].equips[1].value[1].value}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[0].equips[1].value[1].checked" disabled)
+                  span
+            tr(style="border-bottom: 0;")
+              td.equip-type.run-normal-bg(rowspan="4") {{content.content[1].equiptypeName}}
+              td.equip-name(rowspan="2" colspan="2") {{content.content[1].equips[0].equipmentName}}
+              td(colspan="2")
+                span.signal-name {{content.content[1].equips[0].value[0].name}}：
+              td
+                span.signal-value {{content.content[1].equips[0].value[0].value}}℃
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[1].equips[0].value[0].checked" disabled)
+                  span
+            tr
+              td(colspan="2")
+                span.signal-name {{content.content[1].equips[0].value[1].name}}：
+              td
+                span.signal-value {{content.content[1].equips[0].value[1].value}}%RH
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[1].equips[0].value[1].checked" disabled)
+                  span
+            tr(style="border-bottom: 0;")
+              td.equip-name(rowspan="2" colspan="2") {{content.content[1].equips[1].equipmentName}}
+              td(colspan="2")
+                span.signal-name {{content.content[1].equips[1].value[0].name}}：
+              td
+                span.signal-value {{content.content[1].equips[1].value[0].value}}℃
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[1].equips[1].value[0].checked" disabled)
+                  span
+            tr
+              td(colspan="2")
+                span.signal-name {{content.content[1].equips[1].value[1].name}}：
+              td
+                span.signal-value {{content.content[1].equips[1].value[1].value}}%RH
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[1].equips[1].value[1].checked" disabled)
+                  span
+            tr
+              td.equip-type.run-normal-bg {{content.content[2].equiptypeName}}
+              td.signal-value(colspan="5" style="text-align: center;") {{content.content[2].equips[0].value}}V
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[2].equips[0].checked" disabled)
+                  span
+            tr(style="border-bottom: 0;")
+              td.equip-type.run-normal-bg(rowspan="3") {{content.content[3].equiptypeName}}
+              td
+              td.signal-value(style="text-align: left;") {{content.content[3].equips[0].equipmentName}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[3].equips[0].checked" disabled)
+                  span
+              td
+              td.signal-value(style="text-align: left;") {{content.content[3].equips[1].equipmentName}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[3].equips[1].checked" disabled)
+                  span
+            tr(style="border-bottom: 0;")
+              td
+              td.signal-value(style="text-align: left;") {{content.content[3].equips[2].equipmentName}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[3].equips[2].checked" disabled)
+                  span
+              td
+              td.signal-value(style="text-align: left;") {{content.content[3].equips[3].equipmentName}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[3].equips[3].checked" disabled)
+                  span
+            tr
+              td
+              td.signal-value(style="text-align: left;") {{content.content[3].equips[4].equipmentName}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[3].equips[4].checked" disabled)
+                  span
+              td
+              td.signal-value(style="text-align: left;") {{content.content[3].equips[5].equipmentName}}
+              td
+                label.input-checkbox
+                  input(type="checkbox" class="filled-in" ng-model="content.content[3].equips[5].checked" disabled)
+                  span
+            tr
+              td.equip-type.run-normal-bg 工作情况反馈
+              td.signal-value(colspan="6" style="text-align: center; padding: 0;")
+                textarea.validate(type="text" placeholder="无反馈情况" ng-model='content.content[4]' required disabled)

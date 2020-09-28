@@ -1,0 +1,124 @@
+
+link(rel='stylesheet', href='lib/gl-datepicker/styles/glDatePicker.default.css')
+link(rel='stylesheet', href='lib/lCalendar/LCalendar.css')
+
+.card.z-depth-0.no-margin
+  .select-mode
+    a.select-mode-title(ng-click='selectStatisticMode("now")' ng-class="{active: mode =='now'}") 实时
+    a.select-mode-title(ng-click='selectStatisticMode("day")' ng-class="{active: mode =='day'}") 本日
+    a.select-mode-title(ng-click='selectStatisticMode("week")' ng-class="{active: mode =='week'}") 本周
+    a.select-mode-title(ng-click='selectStatisticMode("month")' ng-class="{active: mode =='month'}") 本月
+    a.select-mode-title(ng-click='selectStatisticMode("year")' ng-class="{active: mode =='year'}") 本年
+    //a.select-mode-title(ng-click='selectStatisticMode("heatmap")' ng-class="mode=='heatmap' ? 'grey-text-5' : 'grey-text-8'") 热图
+
+  .row.no-margin
+    .col.s5.select-signal
+      .select-signal-title 选择信号
+      .select-signal-content
+        a.breadcrumb.dropdown-trigger(href="", data-target='mysignals{{date}}', data-hover='false',  md-dropdown)
+          span {{selectSignals[0].model.name || ' '}}
+          i.material-icons.right(style="border-left: 0;") arrow_drop_down
+
+        ul.dropdown-content.mysignals(id="mysignals{{date}}")
+          ion-scroll
+            li(ng-repeat='sig in signals | filter: filterSignal() track by $index')
+              a(ng-href='' ng-click="selectSignal(sig)")
+                span {{sig.model.name}}
+
+    .col.s7.select-time
+      .select-time-title 选择时间
+      .select-time-content
+        .day-mode(ng-show="mode == 'now' || mode =='day'")
+          i.material-icons.left(ng-click="selectDate('previous')" ng-class="mode=='now'?'disabled':''") keyboard_arrow_left
+          input#calendar.datepicker.z-depth-0(type="text" ng-model="formatStartTime" ng-change="selectDates()" ng-disabled="mode=='now'?true:false" readonly="true")
+          i.material-icons.right(ng-click="selectDate('next')" ng-class="mode=='now'?'disabled':''") keyboard_arrow_right
+
+        .btn-group.center.statisticmode(ng-if="mode!='now' && mode!='day' && mode!='heatmap'")
+          i.material-icons.left(ng-click="queryRecords('previous')") keyboard_arrow_left
+          input.datepicker.z-depth-0(type="text" ng-model="formatStatisticTime" ng-click="queryRecords('refresh')" readonly="true")
+          i.material-icons.right(ng-click="queryRecords('next')" style="margin-right:0px;") keyboard_arrow_right
+
+        //.btn-group.center.statisticmode(ng-if="mode!='now' && mode!='day' && mode!='heatmap'")
+          i.material-icons(ng-click="queryRecords('previous')") keyboard_arrow_left
+          i.material-icons.border-left(ng-click="queryRecords('refresh')") refresh
+          i.material-icons.border-left(ng-click="queryRecords('next')" style="margin-right:0px;") keyboard_arrow_right
+
+  .e-chart
+    .ss-chart(ng-show="mode !== 'heatmap'")
+
+//.card.z-depth-0.no-margin
+    .card-content
+        .row
+           .input-field.col.s12.m5.l6.no-padding
+               //select(multiple md-select ng-model="selectSignals" data="signals" ng-options='s as s.model.name for s in signals')
+               .col.s12
+                   nav.z-depth-0(style="")
+                       .row
+                           .col.s12(style="padding:0 !important;")
+                                       //.nav-wrapper
+                                       //    .col.s12.truncate
+                                       a.breadcrumb.dropdown-trigger(href="", data-target='mysignals{{date}}', data-hover='false',  md-dropdown, title='{{selectSignals[0].model.name}}')
+                                           | {{selectSignals[0].model.name}}
+
+                   ul.dropdown-content.mysignals(id="mysignals{{date}}")
+                       //li(ng-repeat='sta in stations | filter:{key: "!="+station.key}', ng-class='{active: sta.key == station.key}')
+                       //    a(ng-href='', ng-click='selectStation(sta)')
+                       //        span {{sta.model.name}}
+                       li(ng-repeat='sig in signals | filter: filterSignal() track by $index')
+                           a(ng-href='' ng-click="selectSignal(sig)")
+                               span {{sig.model.name}}
+
+           .input-field.col.s12.m7.l6.center
+               a.select-mode-title(ng-click='selectStatisticMode("now")' ng-class="mode=='now'?'grey-text-5':'grey-text-8'") 实时
+               a.select-mode-title.select-mode-border(ng-click='selectStatisticMode("day")' ng-class="mode=='day' ? 'grey-text-5' : 'grey-text-8'") 本日
+               a.select-mode-title.select-mode-border(ng-click='selectStatisticMode("week")' ng-class="mode=='week' ? 'grey-text-5' : 'grey-text-8'") 本周
+               a.select-mode-title.select-mode-border(ng-click='selectStatisticMode("month")' ng-class="mode=='month' ? 'grey-text-5' : 'grey-text-8'") 本月
+               a.select-mode-title.select-mode-border(ng-click='selectStatisticMode("year")' ng-class="mode=='year' ? 'grey-text-5' : 'grey-text-8'") 本年
+               //a.select-mode-title.select-mode-border(ng-click='selectStatisticMode("heatmap")' ng-class="mode=='heatmap' ? 'grey-text-5' : 'grey-text-8'") 热图
+           .black-text.center.daymode(ng-show="mode =='day'")
+               a.waves-effect.waves-light.btn.green-1(ng-click="selectDate('previous')" style="margin-right: 5px;" ng-class="mode=='now'?'disabled':''")
+                   i.material-icons keyboard_arrow_left
+               //gl-datepicker(controller="vm", parameters="{model: formatStartTime}")
+               //.date-text(ng-bind="formatStartTime", ng-click="controller.selectDate(callback)")
+               input.datepicker.z-depth-0(type="text" ng-model="formatStartTime" ng-change="selectDates()"  style="border-radius: 5px;border: 1px solid rgb(220, 220, 222)!important;padding: 0 10px;width: 150px;margin:0 0 8px 0!important" ng-disabled="mode=='now'?true:false")
+               a.waves-effect.waves-light.btn.green-1(ng-click="selectDate('next')" style="margin-left: 5px;" ng-class="mode=='now'?'disabled':''")
+                   i.material-icons keyboard_arrow_right
+
+           //.black-text.center.daymode(ng-show="mode =='day'")
+           //    a.waves-effect.waves-light.btn.green-1(ng-click="selectDate('previous')" style="margin-right: 5px;")
+           //        i.material-icons keyboard_arrow_left
+           //    input.datepicker(type="text" ng-model="formatStartTime" ng-change="selectDates()"  style="border-radius: 5px;border: 1px solid rgb(220, 220, 222);padding: 0 10px;width: 116px;")
+           //    a.waves-effect.waves-light.btn.green-1(ng-click="selectDate('next')" style="margin-left: 5px;")
+           //        i.material-icons keyboard_arrow_right
+
+           .btn-group.center.statisticmode(ng-if="mode!='now' && mode!='day' && mode!='heatmap'")
+               a.waves-effect.waves-light.btn.green-1(ng-click="queryRecords('previous')")
+                   i.material-icons keyboard_arrow_left
+               a.waves-effect.waves-light.btn.green-1(ng-click="queryRecords('refresh')")
+                   i.material-icons refresh
+               a.waves-effect.waves-light.btn.green-1(ng-click="queryRecords('next')" style="margin-right:0px;")
+                   i.material-icons keyboard_arrow_right
+
+           .btn-group.center.statisticmode(ng-if="mode==='heatmap'")
+               a.waves-effect.waves-light.btn.green-1(ng-click="shiftCalendar('prev')")
+                   i.material-icons keyboard_arrow_left
+               a.waves-effect.waves-light.btn.green-1(ng-click="shiftCalendar('rewind')")
+                   i.material-icons refresh
+               a.waves-effect.waves-light.btn.green-1(ng-click="shiftCalendar('next')" style="margin-right:0px;")
+                   i.material-icons keyboard_arrow_right
+
+        .ss-chart(ng-show="mode !== 'heatmap'")
+
+        .container(ng-if="mode === 'heatmap'")
+            //.heat-map
+            //    button#cal-heatmap-prev.btn.waves-effect.waves-light.cal-heat-map-btn(ng-click="shiftCalendar('prev')")
+            //        i.material-icons keyboard_arrow_left
+            //    button.btn.waves-effect.waves-light.cal-heat-map-btn(ng-click="shiftCalendar('rewind')")
+            //        i.material-icons refresh
+            //    button#cal-heatmap-next.btn.waves-effect.waves-light.cal-heat-map-btn(ng-click="shiftCalendar('next')")
+            //        i.material-icons keyboard_arrow_right
+            div(ng-repeat="signal in selectSignals")
+                cal-heatmap(controller="controller" parameters="{station: equipment.model.station, equipment: equipment.model.equipment, signal: signal.model.signal, index: $index}")
+
+
+

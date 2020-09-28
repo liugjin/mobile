@@ -1,0 +1,15 @@
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    packagingOptions {
+       exclude 'META-INF/NOTICE'
+       exclude 'META-INF/LICENSE'
+   }
+}
+dependencies {
+    compile(name:'frp', ext:'aar')
+}

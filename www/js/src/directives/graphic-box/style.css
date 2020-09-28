@@ -1,0 +1,38 @@
+graphic-box {
+  display: block; }
+  graphic-box .box-hexagon {
+    margin-top: 1rem;
+    width: 100%; }
+    graphic-box .box-hexagon .box-content {
+      text-align: center;
+      border-left: 1px solid #00e7ee;
+      border-right: 1px solid #00e7ee;
+      color: #ffffff;
+      padding: 0 1rem;
+      background-color: rgba(26, 69, 162, 0.4);
+      height: 100%; }
+    graphic-box .box-hexagon .subtitle {
+      font-size: 0.9rem;
+      margin-left: 0.4rem; }
+    graphic-box .box-hexagon .box-content .title {
+      height: 2.4rem;
+      font-size: 1.4rem;
+      text-align: left;
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: 1.6rem; }
+  graphic-box .big-box-border-top {
+    background-repeat: no-repeat;
+    background-position-x: -1px;
+    background-size: 101%;
+    border-right: 1px solid #00e7ee;
+    height: 1rem; }
+  graphic-box .big-box-border-bottom {
+    background-repeat: no-repeat;
+    background-position-x: -1px;
+    background-size: 101%;
+    border-right: 1px solid #00e7ee;
+    height: 1rem;
+    transform: rotateY(180deg) rotateX(180deg); }
+  graphic-box #graphic, graphic-box #player {
+    height: 100%; }

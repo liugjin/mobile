@@ -1,0 +1,23 @@
+//-
+    User: Pu
+    Date: 2019/10/28
+    Desc: 
+    
+
+.container
+    .row
+        .col.s12
+            nav.teal.lighten-1(ng-class='mvm.setting.theme')
+                .nav-wrapper
+                    ul
+                        li
+                            a()
+                                span.menu-selected 服务简介
+                        li
+                            a(href='#/config', title='服务简介')
+                                i.material-icons.left arrow_back
+                                span 服务配置
+
+    .row
+        .col.s12
+            p(markdown='vm.readme')

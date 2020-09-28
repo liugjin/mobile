@@ -1,0 +1,33 @@
+
+style.
+  .bar a img.img-station {
+    width: 1rem;
+    margin-top: 3px;
+  }
+
+ion-modal-view
+  ion-header-bar.bar.bar-header.bar-light
+    h1.title 选择站点
+    //a.button.button-icon.icon-right.ion-ios-close-empty(ng-click='modal.hide()')
+    a.button.button-icon.icon-right(ng-click='vm.closeModal()')
+      img.img-station(src="./img/svg/close-top.svg")
+
+
+  ion-content
+    .card.z-depth-0.no-margin
+      .item.item-text-wrap
+        | 当前站点：{{vm.station.model.name}}
+
+
+    .card.z-depth-0.list(ng-repeat='dt in vm.datacenters | orderBy: "model.index":true')
+      a.item.item-icon-left.item-divider.item-icon-right.normal-font(ng-click='vm.modalSelectStation(dt)' style="padding-top:16px;padding-bottom:16px;background: #fff;")
+        i.icon.ion-android-globe.balanced
+        | {{dt.model.name}}
+        i.icon.ion-chevron-right.icon-accessory
+
+
+      a.item.item-icon-left.item-icon-right.normal-font(ng-repeat='station in dt.stations | orderBy: "model.index":true', ng-click='vm.modalSelectStation(station)' style="padding-top:8px;padding-bottom:8px;background: #fff;")
+        i.icon.ion-ios-information-empty.balanced
+        | {{station.model.name}}
+        i.icon.ion-chevron-right.icon-accessory
+

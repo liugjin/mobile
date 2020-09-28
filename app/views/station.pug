@@ -1,0 +1,17 @@
+
+ion-header-bar.bar.bar-positive.bar-header
+  a.button.icon-left.ion-ios-arrow-left.button-clear(ui-sref='tab.stations({user: vm.project.model.user, project: vm.project.model.project})')
+  h1.title
+    | {{vm.station.model.name}}
+
+ion-content(scroll='false')
+
+  ion-tabs.tabs-icon-top.tabs-color-active-positive
+    ion-tab(title='概览', icon-on='ion-ios-paper', icon-off='ion-ios-paper-outline')
+      include ./station/overview.pug
+    ion-tab(title='接线图', icon-on='ion-ios-pulse-strong', icon-off='ion-ios-pulse')
+      include ./station/graphic.pug
+    ion-tab(title='设备', icon-on='ion-ios-calculator', icon-off='ion-ios-calculator-outline')
+      include ./station/equipment.pug
+    ion-tab(title='告警', icon-on='ion-ios-bell', icon-off='ion-ios-bell-outline')
+      include ./station/event.pug

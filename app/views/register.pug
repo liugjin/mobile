@@ -1,0 +1,99 @@
+
+style.
+  .bar-header-none {
+    background-color: #ffffff;
+    border: none;
+  }
+  .ion-content {
+    background: #ffffff !important;
+  }
+  .popup-container.active .popup {
+    background: #ffffff;
+  }
+
+ion-header-bar.bar.bar-header.bar-header-none
+  a.button.button-icon.icon-left.ion-ios-close-empty(ui-sref='login()')
+
+ion-content.login-pane.ion-content(scroll="false")
+  .padding
+    h5 注册
+
+  section.login-container
+    form.login-form
+      .list.padding
+        label.item.item-input.margin-bottom-8
+          span.account 公司名称
+          input(type='text', ng-model='vm.registerData.name', placeholder='请填写最长18位的汉字、字母或数字' required ng-change="vm.changeInput()" maxlength="18")
+          //.alarm(ng-show="!vm.registerData.name") *
+        label.item.item-input.margin-bottom-8
+          span.account 登录账号
+          input(type='text', ng-model='vm.registerData.user', placeholder='请填写字母、数字或_' required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.registerData.user") *
+        label.item.item-input.margin-bottom-8
+          span.account 密码
+          input(type='password', ng-model='vm.registerData.password', placeholder='请填写密码' required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.registerData.password") *
+        label.item.item-input.margin-bottom-8
+          span.account 确认密码
+          input(type='password', ng-model='vm.registerData.passwordAgain', placeholder='确认密码' required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.registerData.passwordAgain") *
+        label.item.item-input.margin-bottom-8
+          span.account 邮箱
+          input(type='text', ng-model='vm.registerData.email', placeholder='请填写邮箱' required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.registerData.email") *
+        label.item.item-input.margin-bottom-8
+          span.account 手机号
+          input(type='tel', ng-model='vm.registerData.phone', placeholder='请填写手机号' required ng-change="vm.changeInput()")
+          //.alarm(ng-show="!vm.registerData.phone") *
+        .code
+          label.item.item-input.margin-bottom-8.left(style="width:60vw;display:inline-block;")
+            input(type='text', ng-model='vm.registerData.code', placeholder='验证码', required ng-change="vm.changeInput()")
+          a.btn.btn-code.right.no-shadow(ng-click="vm.checkPhone()" ng-disabled='vm.ismail')
+            span(ng-if="!vm.TIME") 发送验证码
+            span(ng-if="vm.TIME" style="margin-left:10px;") {{vm.TIME}}
+
+      .padding
+        button.button.button-block.btn-register(ng-click='vm.doRegister()' ng-class="{'btn-green': vm.isAll}" ng-disabled="!vm.isAll") {{vm.btnTxt}}
+
+
+//ion-header-bar.bar.bar-header.bar-header-none
+  a.button.button-icon.icon-left.ion-ios-close-empty(ui-sref='login()')
+
+//ion-content.login-pane(scroll="false")
+  .padding
+    h5 注册
+
+  section.login-container
+    form.login-form(ng-submit='vm.doRegister()')
+      .list.padding
+        label.item.item-2.item-input.margin-bottom-8
+          span 用户名
+          input(type='text', ng-model='vm.registerData.name', placeholder='请填写注册用户名', required)
+        label.item.item-2.item-input.margin-bottom-8
+          span 注册ID
+          input(type='text', ng-model='vm.registerData.user', placeholder='请填写注册ID', required)
+        label.item.item-2.item-input.margin-bottom-8
+          span 邮箱
+          input(type='email', ng-model='vm.registerData.email', placeholder='请填写邮箱', required)
+        label.item.item-2.item-input.margin-bottom-8
+          span 密码
+          input(type='password', ng-model='vm.registerData.password', placeholder='请填写密码', required)
+        label.item.item-2.item-input.margin-bottom-8
+          span 确认密码
+          input(type='password', ng-model='vm.registerData.passwordAgain', placeholder='确认密码', required)
+        label.item.item-2.item-input.margin-bottom-8
+          span 手机号
+          input(type='tel', ng-model='vm.registerData.phone', placeholder='请填写手机号', required)
+        .code
+          label.item.item-2.item-input.margin-bottom-8.left(style="width:50vw;display:inline-block;")
+            input(type='text', ng-model='vm.registerData.code', placeholder='验证码', required)
+          a.btn.right(style="width:40vw;display:inline-block;height:40px !important;background:#eee;line-height:40px;color:#666;",ng-click="vm.sendsmscode()",ng-disabled='vm.ismail')
+            span(ng-if="!vm.TIME") 发送验证码
+            span(ng-if="vm.TIME",style="margin-left:10px;") {{vm.TIME}}s
+
+      .padding
+        button.button.button-block.button-green(type='submit', ng-disabled='vm.isRegister') {{vm.btnTxt}}
+
+
+
+

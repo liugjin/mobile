@@ -1,0 +1,14 @@
+ion-popover-view.tabPop
+  ion-header-bar
+    h1.title 更多操作
+  ion-content
+    .list
+      a.item.item-icon-left.item-icon-right(ng-click='vm.goVideo()')
+        i.icon.ion-ios-videocam-outline
+        | 视频监控
+        i.icon.ion-chevron-right.icon-accessory
+      a.item.item-icon-left.item-icon-right(ng-click='vm.logout()')
+        i.icon.ion-log-out
+        | 退出当前账号
+        i.icon.ion-chevron-right.icon-accessory
+

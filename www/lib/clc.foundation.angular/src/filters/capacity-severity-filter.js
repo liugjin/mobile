@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{CapacitySeverityFilter:e=function(){return function(e){var n;return n=e<30?"success":e<50?"info":e<70?"warning":"danger"}}}});

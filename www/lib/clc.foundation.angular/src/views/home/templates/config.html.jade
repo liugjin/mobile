@@ -1,0 +1,73 @@
+//-
+    User: Pu
+    Date: 2019/10/28
+    Desc: 
+
+.container
+    .row
+        .col.s12
+            nav.teal.lighten-1(ng-class='mvm.setting.theme')
+                .nav-wrapper
+                    ul
+                        li
+                            a()
+                                span.menu-selected 服务配置
+                        li
+                            a(href='#/home', title='服务简介')
+                                i.material-icons.left arrow_back
+                                span 服务简介
+
+                        li
+                            a(ng-click='vm.toggleConfig()', title='切换配置模式')
+                                i.material-icons.left swap_horiz
+                                span {{vm.configDetails && "高级配置" || "详细配置"}}
+
+                        li
+                            a(ng-click='vm.setConfig()', title='保存配置')
+                                i.material-icons.left save
+                                span 保存
+                        li
+                            a(ng-click='vm.getConfig(true)', title='重新获取配置')
+                                i.material-icons.left refresh
+                                span 刷新
+                        li
+                            a(ng-click='vm.restoreConfig()', title='恢复上一次配置')
+                                i.material-icons.left undo
+                                span 恢复
+                        li
+                            a(ng-click='vm.restartProcess()', title='重启服务', ng-show='!vm.restarting')
+                                i.material-icons.left restore
+                                span 重启服务
+                        li
+                            a.red(ng-click='vm.restartProcess2()', title='确认重启服务', ng-show='vm.restarting')
+                                i.material-icons.left restore
+                                span 确认重启
+
+                        li
+                            a(ng-click='vm.restarting = false', title='取消重启服务', ng-show='vm.restarting')
+                                i.material-icons.left cancel
+                                span 取消重启
+
+    .row
+        .col.s12.m6.l6(ng-show='!vm.configDetails')
+            .input-field
+                input.validate(type='text', ng-model='vm.configJson.id', required)
+                label(ng-class='{active: vm.configJson.id}') 服务ID
+                    span.required *
+            .input-field
+                input.validate(type='text', ng-model='vm.configJson.mqtt.url', placeholder='mqtt://localhost:1883', required)
+                label.active MQTT URL
+                    span.required *
+            .input-field
+                input.validate(type='number', ng-model='vm.configJson.web.port', required)
+                label(ng-class='{active: vm.configJson.web.port}') WEB端口
+                    span.required *
+
+        .col.s12(ng-show='vm.configDetails')
+            .config-editor(ui-ace="{mode: 'json'}", ng-model='vm.config')
+
+    .row
+        .col.s12
+            label * 错误的配置将会导致服务启动失败或无法访问，需要进入docker手动修改index-setting.json配置文件
+
+

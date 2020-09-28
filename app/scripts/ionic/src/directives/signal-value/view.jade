@@ -1,0 +1,5 @@
+
+img.overview-img(src='./img/{{parameters.image}}')
+.overview-title.label {{parameters.name || signal.model.name}}
+.overview-value {{signal.data.value || parameters.value || 0}}
+//img.overview-img(src='./img/{{parameters.image}}' style="text-align: right;")

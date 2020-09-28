@@ -1,0 +1,161 @@
+.order
+  .row.order-item
+    .col.s4.item-alarm.alarm-severity-1
+      .alarm
+        .alarm-num {{content.severities[1].value}}
+        .item-name 普通告警
+    .col.s4.item-alarm.alarm-severity-2
+      .alarm
+        .alarm-num {{content.severities[2].value}}
+        .item-name 重要告警
+    .col.s4.item-alarm.alarm-severity-3
+      .alarm(style="border: 0")
+        .alarm-num {{content.severities[3].value}}
+        .item-name 紧急告警
+  .row.order-item
+    .col.s6.item-capacity(style="padding: 0 4px 0 8px;")
+      .capacity
+        .capacity-img.left
+          .img(ng-class="{'alarm':content.ups1.alarms}")
+        .capacity-detail.left
+          .capacity-num {{getMaxValue(content.ups1.loadRate)}}%
+          .capacity-name 1#UPS负载容量
+    .col.s6.item-capacity(style="padding: 0 8px 0 4px;")
+      .capacity
+        .capacity-img.left
+          .img(ng-class="{'alarm':content.ups2.alarms}")
+        .capacity-detail.left
+          .capacity-num {{getMaxValue(content.ups2.loadRate)}}%
+          .capacity-name 2#UPS负载容量
+  .row.order-item
+    .col.s8.item-voltage(style="padding: 0 4px 0 8px;")
+      .voltage
+        .voltage-img
+          .img-oval-1(ng-class="{'alarm':content.distributor.alarms}")
+          .img-oval-2(ng-class="{'alarm':content.distributor.alarms}")
+          .img-ups
+        .voltage-item
+          .voltage-num {{getMaxValue(content.distributor.voltage)}}V
+          .voltage-name 市电输入电压
+        .voltage-other
+          .temperature {{content.distributor.temperature}}℃
+          .temperature {{content.distributor.humidity}}%
+    .col.s4.item-voltage(style="padding: 0 8px 0 4px;")
+      .voltage
+        .battery-name 电池房温湿度
+        .battery-item
+          .battery-img
+            .img-oval-1(ng-class="{'alarm':content.battery.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.battery.alarms}")
+          .battery-other
+            .temperature {{content.battery.temperature}}℃
+            .temperature {{content.battery.humidity}}%
+  .order-item
+    .air-condition-item
+      .air-name 机房1#空调
+      .air-img(ng-class="{'alarm':content.ac1.alarms}")
+      .air-status {{content.ac1.status}}
+    .air-condition-item
+      .air-name 机房2#空调
+      .air-img(ng-class="{'alarm':content.ac2.alarms}")
+      .air-status {{content.ac2.status}}
+    .air-condition-item
+      .air-name 机房3#空调
+      .air-img(ng-class="{'alarm':content.ac3.alarms}")
+      .air-status {{content.ac3.status}}
+    .air-condition-item
+      .air-name 电池房1#空调
+      .air-img(ng-class="{'alarm':content.dme1.alarms}")
+      .air-status {{content.dme1.status}}
+    .air-condition-item
+      .air-name 电池房2#空调
+      .air-img(ng-class="{'alarm':content.dme2.alarms}")
+      .air-status {{content.dme2.status}}
+  .order-item(style="padding: 8px 0 0")
+    .rack
+      .rack-title 温湿度状态
+      .item-list
+        .rack-item
+          .rack-name 一排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th1.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th1.alarms}")
+          .rack-value {{content.th1.temperature}}℃
+          .rack-value {{content.th1.humidity}}%
+        .rack-item
+          .rack-name 二排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th2.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th2.alarms}")
+          .rack-value {{content.th2.temperature}}℃
+          .rack-value {{content.th2.humidity}}%
+        .rack-item
+          .rack-name 三排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th3.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th3.alarms}")
+          .rack-value {{content.th3.temperature}}℃
+          .rack-value {{content.th3.humidity}}%
+        .rack-item
+          .rack-name 四排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th4.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th4.alarms}")
+          .rack-value {{content.th4.temperature}}℃
+          .rack-value {{content.th4.humidity}}%
+        .rack-item
+          .rack-name 五排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th5.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th5.alarms}")
+          .rack-value {{content.th5.temperature}}℃
+          .rack-value {{content.th5.humidity}}%
+        .rack-item
+          .rack-name 六排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th6.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th6.alarms}")
+          .rack-value {{content.th6.temperature}}℃
+          .rack-value {{content.th6.humidity}}%
+        .rack-item
+          .rack-name 七排机柜
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.th7.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.th7.alarms}")
+          .rack-value {{content.th7.temperature}}℃
+          .rack-value {{content.th1.humidity}}%
+  .order-item(style="padding: 12px 0 0")
+    .rack
+      .rack-title 水浸状态
+      .environmental-list
+        .environmental-item
+          .rack-name 配电区水浸
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.water1.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.water1.alarms}")
+        .environmental-item
+          .rack-name 1#空调水浸
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.water2.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.water2.alarms}")
+        .environmental-item
+          .rack-name 2#空调水浸
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.water3.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.water3.alarms}")
+        .environmental-item
+          .rack-name 3#空调水浸
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.water4.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.water4.alarms}")
+        .environmental-item
+          .rack-name 电池房水浸
+          .rack-img
+            .img-oval-1(ng-class="{'alarm':content.water5.alarms}")
+            .img-oval-2(ng-class="{'alarm':content.water5.alarms}")
+  .row.order-item
+    .col.s12.feedback
+      .feedback-title 工作情况反馈
+      .feedback-content
+        textarea.validate(type="text" placeholder="无反馈情况" ng-model='content.comment' required disabled)
+

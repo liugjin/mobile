@@ -1,0 +1,167 @@
+
+.order-detail
+  .table
+    table(style="font-size: 14px;")
+      thead
+        tr(style="border-bottom: 0;")
+          th(style="width: 20%;")
+          th(style="width: 2%;")
+          th(style="width: 28%;")
+          th(style="width: 11%;")
+          th(style="width: 10%;")
+          th(style="width: 24%;")
+          th(style="width: 5%;")
+      tbody
+        tr.border-bottom-0
+          td.equip-type.run-normal-bg(rowspan="4") {{checkContent[0].equiptypeName}}
+          td.equip-name(rowspan="2" colspan="2") {{checkContent[0].equips[0].equipmentName}}
+          td(colspan="2")
+            span.signal-name {{checkContent[0].equips[0].value[0].name}}：
+          td
+            span.signal-value {{checkContent[0].equips[0].value[0].value}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[0].equips[0].value[0].checked" ng-change="checkedChange(checkContent[0].equips[0].equipmentName+checkContent[0].equips[0].value[0].name, checkContent[0].equips[0].value[0].checked)")
+              span
+        tr
+          td(colspan="2")
+            span.signal-name {{checkContent[0].equips[0].value[1].name}}：
+          td
+            span(ng-class="{'run-normal': checkContent[0].equips[0].value[1].value == '正常', 'run-alarm': checkContent[0].equips[0].value[1].value != '正常'}") {{checkContent[0].equips[0].value[1].value}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[0].equips[0].value[1].checked" ng-change="checkedChange(checkContent[0].equips[0].equipmentName+checkContent[0].equips[0].value[1].name, checkContent[0].equips[0].value[1].checked)")
+              span
+        tr.border-bottom-0
+          td.equip-name(rowspan="2" colspan="2") {{checkContent[0].equips[1].equipmentName}}
+          td(colspan="2")
+            span.signal-name {{checkContent[0].equips[1].value[0].name}}：
+          td
+            span.signal-value.normal {{checkContent[0].equips[1].value[0].value}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[0].equips[1].value[0].checked" ng-change="checkedChange(checkContent[0].equips[1].equipmentName+checkContent[0].equips[1].value[0].name, checkContent[0].equips[1].value[0].checked)")
+              span
+        tr
+          td(colspan="2")
+            span.signal-name {{checkContent[0].equips[1].value[1].name}}：
+          td
+            span(ng-class="{'run-normal': checkContent[0].equips[1].value[1].value == '正常', 'run-alarm': checkContent[0].equips[1].value[1].value != '正常'}") {{checkContent[0].equips[1].value[1].value}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[0].equips[1].value[1].checked" ng-change="checkedChange(checkContent[0].equips[1].equipmentName+checkContent[0].equips[1].value[1].name, checkContent[0].equips[1].value[1].checked)")
+              span
+        //tr.border-bottom-0
+          td.equip-name(rowspan="2") APC
+          td(colspan="2")
+            span.signal-name 负载容量：
+          td
+            span.signal-value.normal 45.6
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in")
+              span
+        //tr
+          td(colspan="2")
+            span.signal-name 运行状态：
+          td
+            span.run-normal 正常
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in")
+              span
+        tr(style="border-bottom: 0;")
+          td.equip-type.run-normal-bg(rowspan="4") {{checkContent[1].equiptypeName}}
+          td.equip-name(rowspan="2" colspan="2") {{checkContent[1].equips[0].equipmentName}}
+          td(colspan="2")
+            span.signal-name {{checkContent[1].equips[0].value[0].name}}：
+          td
+            span.signal-value {{checkContent[1].equips[0].value[0].value}}℃
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[1].equips[0].value[0].checked" ng-change="checkedChange(checkContent[1].equips[0].equipmentName+checkContent[1].equips[0].value[0].name, checkContent[1].equips[0].value[0].checked)")
+              span
+        tr
+          td(colspan="2")
+            span.signal-name {{checkContent[1].equips[0].value[1].name}}：
+          td
+            span.signal-value {{checkContent[1].equips[0].value[1].value}}%RH
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[1].equips[0].value[1].checked" ng-change="checkedChange(checkContent[1].equips[0].equipmentName+checkContent[1].equips[0].value[1].name, checkContent[1].equips[0].value[1].checked)")
+              span
+        tr(style="border-bottom: 0;")
+          td.equip-name(rowspan="2" colspan="2") {{checkContent[1].equips[1].equipmentName}}
+          td(colspan="2")
+            span.signal-name {{checkContent[1].equips[1].value[0].name}}：
+          td
+            span.signal-value {{checkContent[1].equips[1].value[0].value}}℃
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[1].equips[1].value[0].checked" ng-change="checkedChange(checkContent[1].equips[1].equipmentName+checkContent[1].equips[1].value[0].name, checkContent[1].equips[1].value[0].checked)")
+              span
+        tr
+          td(colspan="2")
+            span.signal-name {{checkContent[1].equips[1].value[1].name}}：
+          td
+            span.signal-value {{checkContent[1].equips[1].value[1].value}}%RH
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[1].equips[1].value[1].checked" ng-change="checkedChange(checkContent[1].equips[1].equipmentName+checkContent[1].equips[1].value[1].name, checkContent[1].equips[1].value[1].checked)")
+              span
+        tr
+          td.equip-type.run-normal-bg {{checkContent[2].equiptypeName}}
+          td.signal-value(colspan="5" style="text-align: center;") {{checkContent[2].equips[0].value}}V
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[2].equips[0].checked" ng-change="checkedChange(checkContent[2].equips[0].equipmentName, checkContent[2].equips[0].checked)")
+              span
+        tr(style="border-bottom: 0;")
+          td.equip-type.run-normal-bg(rowspan="3") {{checkContent[3].equiptypeName}}
+          td
+          td.signal-value(style="text-align: left;") {{checkContent[3].equips[0].equipmentName}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[3].equips[0].checked" ng-change="checkedChange(checkContent[3].equips[0].equipmentName, checkContent[3].equips[0].checked)")
+              span
+          td
+          td.signal-value(style="text-align: left;") {{checkContent[3].equips[1].equipmentName}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[3].equips[1].checked" ng-change="checkedChange(checkContent[3].equips[1].equipmentName, checkContent[3].equips[1].checked)")
+              span
+        tr(style="border-bottom: 0;")
+          td
+          td.signal-value(style="text-align: left;") {{checkContent[3].equips[2].equipmentName}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[3].equips[2].checked" ng-change="checkedChange(checkContent[3].equips[2].equipmentName, checkContent[3].equips[2].checked)")
+              span
+          td
+          td.signal-value(style="text-align: left;") {{checkContent[3].equips[3].equipmentName}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[3].equips[3].checked" ng-change="checkedChange(checkContent[3].equips[3].equipmentName, checkContent[3].equips[3].checked)")
+              span
+        tr
+          td
+          td.signal-value(style="text-align: left;") {{checkContent[3].equips[4].equipmentName}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[3].equips[4].checked" ng-change="checkedChange(checkContent[3].equips[4].equipmentName, checkContent[3].equips[4].checked)")
+              span
+          td
+          td.signal-value(style="text-align: left;") {{checkContent[3].equips[5].equipmentName}}
+          td
+            label.input-checkbox
+              input(type="checkbox" class="filled-in" ng-model="checkContent[3].equips[5].checked" ng-change="checkedChange(checkContent[3].equips[5].equipmentName, checkContent[3].equips[5].checked)")
+              span
+        tr
+          td.equip-type.run-normal-bg 工作情况反馈
+          td.signal-value(colspan="6" style="text-align: center; padding: 0;")
+            textarea.validate(type="text" placeholder="无反馈情况" ng-model='currTask.memo' required)
+  .process-btn
+    .btn-renew(ng-click="refreshData()") 重新填写
+    .btn-upload(ng-click="uploadData()") 完成并上传
+
+

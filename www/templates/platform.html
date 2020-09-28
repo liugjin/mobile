@@ -1,0 +1,35 @@
+
+<style>
+  .bar a img.img-platform {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .button.btn-green {
+    /*background: #87D4AB;*/
+    background: #10A957;
+    color: #ffffff;
+  }
+  
+</style>
+<ion-header-bar class="bar" style="background: #f0f3f4; border-bottom: 0;"><a class="button button-icon icon-left" ui-sref="login()"><img class="img-platform" src="./img/svg/arrow-left.svg"/></a></ion-header-bar>
+<!--ion-header-bar.bar.bar-header.bar-header-none
+a.button.button-icon.icon-left.ion-ios-close-empty(ui-sref='login()')
+
+-->
+<ion-content class="login-pane" scroll="false">
+  <div class="padding">
+    <h5>选择平台</h5>
+  </div>
+  <section class="login-container">
+    <form class="login-form" ng-submit="vm.doRegister()">
+      <div class="list padding">
+        <select class="select-3" style="display:block;" ng-model="vm.selectPlatform">
+          <option ng-repeat="item in vm.platform" value="{{item.ip + '&amp;' + item.token}}">{{item.name}}</option>
+        </select>
+      </div>
+      <div class="padding">
+        <button class="button button-block btn-green" type="submit">下一步</button>
+      </div>
+    </form>
+  </section>
+</ion-content>

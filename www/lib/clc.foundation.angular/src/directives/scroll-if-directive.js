@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{ScrollIfDirective:e=function(e,n){return{restrict:"A",link:function(e,n,r,i){return e.$watch(r.scrollIf,function(e){if(e)return n[0].scrollIntoView({behavior:"smooth"})})}}}}});

@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,t;return{ByteFormatFilter:e=function(){return function(e,t){var i,o;return isNaN(parseFloat(e))||!isFinite(e)?"-":(void 0===t&&(t=1),o=["bytes","kB","MB","GB","TB","PB"],i=Math.floor(Math.log(e)/Math.log(1024)),(e/Math.pow(1024,Math.floor(i))).toFixed(t)+" "+o[i])}}}});

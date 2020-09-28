@@ -1,0 +1,39 @@
+
+<ion-content>
+  <div class="padding">
+    <h5>选择供应商</h5>
+  </div>
+  <section class="login-container">
+    <form class="login-form">
+      <div class="list padding supplier">
+        <input class="supplier-input" type="text" ng-model="vm.selectProjectName" ng-change="vm.changeInput()"/>
+        <div class="suggestion">
+          <ul>
+            <li ng-repeat="item in vm.items | filter: vm.filterProjects()" ng-click="vm.selectCompany(item)">{{item.name}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="padding"><a class="btn" style="width:40%;background-color:#10A957;" ng-click="vm.defaultProject()">不需要</a><a class="btn" style="width:40%;margin-left:10%;background-color:#10A957;" ng-click="vm.showConfirm()">确定</a></div>
+    </form>
+  </section>
+</ion-content>
+<script>
+  window.onclick = function (event) {
+    $('.suggestion').hide()
+  };
+  
+</script>
+<!--ion-content
+.padding
+  h5 选择供应商
+section.login-container
+  form.login-form
+    .list.padding
+      select.select-3(style="display:block;", ng-model='vm.selectProject')
+        option(ng-repeat="item in vm.items", value="{{item.project}}") {{item.name}}
+    .padding
+      //a.btn(ng-click="vm.noRegister()" style="width:40%;background-color:#10A957;") 不需要
+      a.btn(ui-sref="login()" style="width:40%;background-color:#10A957;") 不需要
+      //button.button.button-block.button-green(type='submit') 下一步
+      a.btn(ng-click="vm.doRegister()" style="width:40%;margin-left:10%;background-color:#10A957;") 确定
+-->

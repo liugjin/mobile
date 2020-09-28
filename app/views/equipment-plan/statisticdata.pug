@@ -1,0 +1,27 @@
+
+//ion-nav-view
+//ion-content
+div(style="position: relative; padding-top: 1px; padding-bottom: 1px; padding-left: 0; margin-bottom: 20px;")
+  mobile-equip-event(controller='vm', parameters='{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}')
+  //mobile-equip-event(controller='vm', parameters='{project: vm.equipment.model.project, station: vm.equipment.model.station, equipment: vm.equipment.model.equipment}')
+
+//ion-nav-view
+  ion-content(scroll='false')
+    ion-scroll(direction='x', style='width: 100%', scrollbar-x='false', ng-init="status={'start':'持续', 'confirm':'确认', 'end':'结束', 'completed': '结束'}")
+      .item.item-header.item-stable.row.row-item.min-705
+        .col.col-right.min-75 设备
+        .col.col-right.min-50 报警值
+        .col.col-right.min-140 内容
+        .col.col-right.min-120 开始
+        .col.col-right.min-120 结束
+        .col.col-right.min-50 状态
+
+
+      .item.row.row-item.min-705(ng-repeat='event in vm.eventRecords.items | orderBy: vm.eventRecords.predicate:vm.eventRecords.reverse', ng-if='vm.equipment.model.equipment==event.equipment && event.phase=="start"')
+        .col.col-right.col-sep.min-75 {{event.equipmentName || event.equipment}}
+        .col.col-right.col-sep.min-50 {{event.startValue | prettyNumber:2}}
+        .col.col-right.col-sep.min-140 {{event.title || event.eventName|| event.event}}
+        .col.col-right.col-sep.min-120 {{event.startTime | date:'yyyy-MM-dd HH:mm:ss'}}
+        .col.col-right.col-sep.min-120 {{event.endTime | date:'yyyy-MM-dd HH:mm:ss'}}
+        .col.col-right.col-sep.min-50 {{status[event.phase]}}
+

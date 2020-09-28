@@ -1,0 +1,16 @@
+{
+  "id": "event-detail",
+  "name": "EventDetail控件",
+  "type": "EventDetailDirective",
+  "desc": "自定义控件",
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "css": "",
+  "version": "0.0.1"
+}

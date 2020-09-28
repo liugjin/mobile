@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-proxy" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>proxy</name>
+  <js-module name="proxy" src="www/proxy.js">
+    <clobbers target="proxy" />
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="proxy">
+        <param name="android-package" value="cordova.plugin.proxy.proxy" />
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml">
+    </config-file>
+    <source-file src="src/android/proxy.java" target-dir="src/cordova/plugin/proxy" />
+    <source-file src="src/android/frp-sources.jar" target-dir="libs" />
+    <source-file src="src/android/frp.aar" target-dir="libs" />
+    <framework src="src/android/frp.gradle" custom="true" type="gradleReference"/>
+  </platform>
+</plugin>

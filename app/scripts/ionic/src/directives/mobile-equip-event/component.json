@@ -1,0 +1,23 @@
+{
+  "id": "mobile-equip-event",
+  "name": "MobileEquipEvent控件",
+  "type": "MobileEquipEventDirective",
+  "desc": {
+    "author": "bingo",
+    "comment": "自定义组件",
+    "version": {
+      "0.0.1": [
+      ]
+    }
+  },
+  "group": "功能组件",
+  "parameters": [
+
+  ],
+  "interact": {
+    "pubs": [],
+    "subs": []
+  },
+  "css": "",
+  "version": "0.0.1"
+}

@@ -1,0 +1,25 @@
+ion-header-bar.bar.bar-header.bg-white
+  button.button.button-icon.icon.ion-ios-arrow-left(ng-click='vm.onBackPress()')  我的
+  h1.title 推送设置
+
+ion-content.has-header(scroll='false')
+  ul.list.margin-top-10
+    li.item.item-toggle.font-14.black 推送通知
+      label.toggle.toggle-clc-green
+        input(type='checkbox' ng-model="push" ng-click='vm.pushChange()')
+        .track
+          .handle
+      .margin-top-10.font-12.gray 开启后,设备异常时将推送消息提示信息到APP消息中心
+
+    li.item.item-toggle.font-14.black  短信通知
+      label.toggle.toggle-clc-green
+        input(type='checkbox'  ng-model='SMS' ng-click='vm.SMSChange()')
+        .track
+          .handle
+      .margin-top-10.font-12.gray 开启后,设备异常时将发送短信到您的手机
+    li.item.item-toggle.font-14.black  邮箱通知
+      label.toggle.toggle-clc-green
+        input(type='checkbox'  ng-model='email' ng-click='vm.emailChange()')
+        .track
+          .handle
+      .margin-top-10.font-12.gray 开启后,设备异常时将发送邮件提示信息到您的邮箱

@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{ListDescFilter:e=function(){return function(e){var n,i,r,t,f;if(!e)return e;for(r="<ul>",t=0,f=(i=e.split("\n")).length;t<f;t++)r+="<li>"+(n=i[t])+"</li>";return r+="</ul>"}}}});

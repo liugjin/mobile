@@ -1,0 +1,21 @@
+health-value .box {
+  margin: 0 2rem 1rem 2rem; }
+  health-value .box .value {
+    color: #00A2EE;
+    font-size: 16px;
+    font-weight: 700; }
+  health-value .box .bar {
+    border: 0;
+    height: 10px;
+    margin: 10px 0 0 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #E4F192, #1B95F5); }
+    health-value .box .bar .length {
+      left: auto;
+      right: 0;
+      background-color: #F0F3F4;
+      height: 10px; }
+
+health-value .data {
+  display: flex;
+  justify-content: space-between; }

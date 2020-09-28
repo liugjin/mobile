@@ -1,0 +1,45 @@
+
+<style>
+  .bar-order a img {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .tabs .tab a {
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: transparent;
+    outline: none;
+  }
+  .tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #00a755;
+  }
+  .tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    /*background-color: #87D4AB;*/
+    background-color: #00a755;
+    will-change: left, right;
+  }
+  .popup-container {
+    background: rgba(0, 0, 0, 0.5)
+  }
+  .popup-container .popup {
+    background: #F0F3F4;
+  }
+  
+</style>
+<ion-header-bar class="bar bar-header" style="border-bottom: 0;">
+  <h1 class="title" style="color: #000; font-size: 18px;">运维管理</h1>
+  <mobile-date-switching controller="vm" parameters="{}" style="position: absolute;top: 5px;right: 5px;bottom: 5px;"></mobile-date-switching>
+</ion-header-bar>
+<div class="bar bar-subheader" style="border-bottom: 0;top: 42px;height: 30px;z-index: 8">
+  <mobile-data-title class="title" style="height: 30px;line-height: 30px;z-index:10;font-size: 14px" controller="vm" parameters="{}"></mobile-data-title>
+</div>
+<ion-content class="scroll-content" style="margin-top: 24px">
+  <mobile-mocha-itom controller="vm" parameters="{}"></mobile-mocha-itom>
+</ion-content>

@@ -1,0 +1,23 @@
+ion-modal-view
+  ion-header-bar.bar.bar-header.bar-light
+    h1.title 选择区域
+    a.button.button-icon.icon-right.ion-ios-close-empty(ng-click='modal.hide()')
+
+
+  ion-content
+    .card
+      .item.item-text-wrap
+        | 当前区域：{{::controller.station.model.name}}
+
+
+    .card.list(ng-repeat='dt in controller.datacenters')
+      a.item.item-icon-left.item-divider.item-icon-right(ng-click='controller.modalSelectStation(dt)')
+        i.icon.ion-android-globe.balanced
+        | {{::dt.model.name}}
+        i.icon.ion-chevron-right.icon-accessory
+
+
+      a.item.item-icon-left.item-icon-right(ng-repeat='station in dt.stations', ng-click='controller.modalSelectStation(station)')
+        i.icon.ion-ios-information-empty.balanced
+        | {{::station.model.name}}
+        i.icon.ion-chevron-right.icon-accessory

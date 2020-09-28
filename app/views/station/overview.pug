@@ -1,0 +1,77 @@
+ion-nav-view
+  ion-content
+    .row
+      .col.col-50
+        .list
+          a.item.item-icon-left(href='#')
+            i.icon.ion-stats-bars.positive
+            h3.grey 日发电量
+            div
+              span.value {{vm.station.stationSignal['day-power-generation'].value}}&nbsp;
+              span.unit {{vm.station.unit['day-power-generation-overview']}}
+
+
+          a.item.item-icon-left(href='#')
+            i.icon.ion-connection-bars.positive
+            h3.grey 月发电量
+            div
+              span.value {{vm.station.stationSignal['month-power-generation'].value}}&nbsp;
+              span.unit {{vm.station.unit['month-power-generation-overview']}}
+
+          a.item.item-icon-left(href='#')
+            i.icon.ion-arrow-graph-up-right.positive
+            h3.grey 年发电量
+            div
+              span.value {{vm.station.stationSignal['year-power-generation'].value}}&nbsp;
+              span.unit {{vm.station.unit['year-power-generation-overview']}}
+
+          a.item.item-icon-left(href='#')
+            i.icon.ion-pie-graph.positive
+            h3.grey 总发电量
+            div
+              span.value {{vm.station.stationSignal['total-power-generation'].value}}&nbsp;
+              span.unit {{vm.station.unit['total-power-generation-overview']}}
+
+
+
+
+
+
+      .col.col-50
+        .list
+          a.item.item-icon-left(href='#')
+            i.icon.ion-social-yen.positive
+            h3.grey 累计收益
+            div
+              span.value {{vm.station.stationSignal['income'].value}}&nbsp;
+              span.unit ¥
+
+          a.item.item-icon-left(href='#')
+            i.icon.ion-android-cloud-circle.positive
+            h3.grey co2减排
+            div
+              span.value {{vm.station.stationSignal['co2-reduction'].value}}&nbsp;
+              span.unit {{vm.station.unit['co2-reduction']}}
+
+
+          a.item.item-icon-left(href='#')
+            i.icon.ion-ios-color-filter.positive
+            h3.grey so2减排
+            div
+              span.value {{vm.station.stationSignal['so2-reduction'].value}}&nbsp;
+              span.unit {{vm.station.unit['so2-reduction']}}
+
+          a.item.item-icon-left(href='#')
+            i.icon.ion-android-cart.positive
+            h3.grey 节约煤炭
+            div
+              span.value {{vm.station.stationSignal['saving-standard-coal'].value}}&nbsp;
+              span.unit {{vm.station.unit['saving-standard-coal']}}
+
+
+
+    .card.margin-top-4
+      .item.item-divider
+        | 实时功率 (kW)
+      .item
+        power-chart.power-chart(signals='vm.signalValues', setting='vm.signalSetting', data='vm.signalValue')

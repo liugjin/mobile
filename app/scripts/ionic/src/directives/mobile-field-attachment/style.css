@@ -1,0 +1,88 @@
+mobile-field-attachment .enclosure1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+  padding: 0.8rem; }
+
+mobile-field-attachment .enclosure1 span {
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+mobile-field-attachment .enclosure {
+  height: 75%;
+  padding: 0.8rem;
+  background: #FFF;
+  overflow-y: scroll; }
+
+mobile-field-attachment .picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15.6rem;
+  margin-bottom: 0.8rem;
+  background: #F0F3F4; }
+
+mobile-field-attachment .video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 16rem;
+  background: #F0F3F4; }
+
+mobile-field-attachment .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(53, 53, 53, 0.4); }
+
+mobile-field-attachment .modal-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  background: #F0F3F4; }
+
+mobile-field-attachment .padding {
+  padding: 10px 8px; }
+
+mobile-field-attachment .btn-green {
+  background: #10A957  !important;
+  color: #FFF  !important; }
+
+mobile-field-attachment .add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+mobile-field-attachment .modalinfo {
+  height: 100% !important; }
+  mobile-field-attachment .modalinfo .modal-content {
+    height: 89%; }
+  mobile-field-attachment .modalinfo .modal-footer {
+    height: 10%; }
+
+mobile-field-attachment .modal {
+  top: 10rem;
+  min-height: auto; }
+  mobile-field-attachment .modal .modal-content p {
+    text-align: center;
+    font-size: 18px; }
+  mobile-field-attachment .modal .modal-footer {
+    display: flex;
+    padding: 0;
+    height: auto; }
+    mobile-field-attachment .modal .modal-footer a.btn, mobile-field-attachment .modal .modal-footer a.btn-flat {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+      height: 48px;
+      line-height: 48px;
+      background: #ffffff;
+      background: #10A957; }

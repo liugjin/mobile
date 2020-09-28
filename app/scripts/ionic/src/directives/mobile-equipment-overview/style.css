@@ -1,0 +1,23 @@
+mobile-equipment-overview .signal-info {
+  line-height: 1.5;
+  position: relative;
+  text-align: center;
+  color: #101010;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: .75rem;
+  padding: .75rem; }
+  mobile-equipment-overview .signal-info .title {
+    font-size: 1rem;
+    color: #a8a8a8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  mobile-equipment-overview .signal-info .content {
+    font-size: 1.4rem;
+    font-weight: bold; }
+  mobile-equipment-overview .signal-info .collect-time {
+    color: #a8a8a8;
+    height: 20px; }

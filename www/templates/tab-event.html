@@ -1,0 +1,81 @@
+
+<ion-header-bar class="bar" style="border-bottom: 0;">
+  <h1 class="title" style="color: #000; font-size: 18px;">告警</h1>
+</ion-header-bar>
+<ion-content class="tab-event">
+  <!--event-manager(controller="vm" parameters="{project: vm.$routeParams.project, station: vm.$routeParams.station, isEvent: vm.$routeParams.event}")-->
+  <mobile-event-list controller="vm" parameters="{station: vm.$routeParams.station}"></mobile-event-list>
+</ion-content>
+<!--ion-header-bar.bar.bar-dark.bar-header
+h1.title 告警
+
+-->
+<!--ion-content.tab-event
+.list.list-inset.list-search
+  label.item.item-input
+    i.icon.ion-ios-search.placeholder-icon
+    input(type='search', placeholder='搜索')
+
+.select-group
+  .select-group-1
+    a.select-2(ng-click='vm.openModal()')
+      span 深圳
+      i.icon.ion-ios-arrow-down.margin-left.select-icon
+  .select-group-2
+    select.select-1(ng-model='vm.eventSeverity', ng-change='vm.selectEventSeverity()', ng-options='es as es.model.name for es in vm.project.typeModels.eventseverities.items')
+    //select.select-1
+    //  option Blue
+    //  option(selected='') 普通告警
+    //  option Red
+    i.icon.ion-ios-arrow-down.margin-left.select-icon
+
+
+.list
+  //a.item.item-event.item-icon-left
+  //  img.event-icon.icon-left(src='img/icon/alarm.svg')
+  //  .item-event-name
+  //    span UPS
+  //    .item-time 08-18 10:55:31
+  //  .item-event-content
+  //    img.event-icon-2.icon-left(src='img/icon/e-alarm-2.svg')
+  //    span.item-title 主路相电压Ua电压过高
+  //    //span.item-continue 持续6分钟
+  //    img.event-icon-2.icon-left(src='img/icon/e-alarm-3.svg')
+  //    span.item-title 普通告警
+
+  a.item.item-event.item-icon-left(ng-click='vm.selectEvent(event)', ng-repeat='event in vm.stationEvents.items | filter: vm.filterEvent() | orderBy: vm.stationEvents.predicate:vm.reverse | limitTo: vm.stationEvents.pageItems * vm.stationEvents.page | limitTo: -vm.stationEvents.pageItems', ng-class='{"active": event == vm.event}', ui-sref="equipment({user: vm.project.model.user, project: vm.project.model.project, station: event.station, equipment: event.equipment})")
+    img.event-icon.icon-left(src='img/icon/alarm.svg')
+    .item-event-name
+      span {{event.equipmentName || event.equipment}}
+      .item-time {{event.startTime| date:'MM-dd HH:mm:ss'}}
+    .item-event-content
+      img.event-icon-2.icon-left(src='img/icon/e-alarm-2.svg')
+      span.item-title {{event.title || event.event}}
+      //span.item-continue(ng-if='!!event.severityName') [{{event.severityName}}]
+      span.item-continue(ng-if='!!event.phaseName') [{{event.phaseName}}]
+
+  .button.button-block.button-clear.button-stable(ng-if='!vm.stationEvents.items.length')
+    | 没有告警
+
+
+-->
+<!--ion-content(scroll='false')-->
+<!--  ion-scroll(direction='x', style='width: 100%', scrollbar-x='false')-->
+<!--    .item.item-header.item-stable.row.row-item.min-705-->
+<!--      .col.col-right.min-120 站点-->
+<!--      .col.col-right.min-180 设备-->
+<!--      .col.col-right.min-140 告警-->
+<!--      .col.col-right.min-50 开始值-->
+<!--      .col.col-right.min-50 结束值-->
+<!--      .col.col-right.min-120 开始时间-->
+<!--      .col.col-right.min-120 结束时间-->
+<!---->
+<!---->
+<!--    .item.row.row-item.min-705(ng-repeat='event in vm.stationEvents.items | filter: vm.filterEvent() | orderBy: vm.stationEvents.predicate:vm.reverse | limitTo: vm.stationEvents.pageItems * vm.stationEvents.page | limitTo: -vm.stationEvents.pageItems', ng-class='{"active": event == vm.event}', ng-if='event.phase=="start"')-->
+<!--      .col.col-right.col-sep.min-120 {{event.stationName || event.station}}-->
+<!--      .col.col-right.col-sep.min-180 {{event.equipmentName || event.equipment}}-->
+<!--      .col.col-right.col-sep.min-140 {{event.title || event.event}}-->
+<!--      .col.col-right.col-sep.min-50 {{event.startValue | prettyNumber:2}}-->
+<!--      .col.col-right.col-sep.min-50 {{event.endValue | prettyNumber:2}}-->
+<!--      .col.col-right.col-sep.min-120 {{event.startTime| date:'yyyy-MM-dd HH:mm:ss'}}-->
+<!--      .col.col-right.col-sep.min-120 {{event.endTime| date:'yyyy-MM-dd HH:mm:ss'}}-->

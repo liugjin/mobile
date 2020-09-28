@@ -1,0 +1,24 @@
+
+
+ion-side-menus(enable-menu-with-back-views='false')
+  ion-side-menu-content
+    ion-nav-bar.bar-calm.bar-sfere
+      ion-nav-back-button
+      ion-nav-buttons(side='left')
+        button.button.button-icon.button-clear.ion-navicon(menu-toggle='left')
+    ion-nav-view(name='menuContent')
+  ion-side-menu(side='left')
+    ion-header-bar.bar-dark
+      h1.title SFERE
+    ion-content
+      ion-list
+        ion-item.item-icon-left(menu-close='', href='#/dash/clc/sfere')
+          i.icon.ion-android-home
+          | 主页
+        ion-item.item-icon-left(menu-close='', href='#/video')
+          i.icon.ion-social-youtube-outline
+          | 视频监控
+        ion-item.item-divider
+        ion-item.item-icon-left(menu-close='', href='#/logout')
+          i.icon.ion-android-exit
+          | 退出当前账号

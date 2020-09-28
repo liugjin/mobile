@@ -1,0 +1,7 @@
+ul.collection
+  li.collection-item(ng-repeat="equipment in equips " ui-sref="equipment({user:equipment.model.user, project:equipment.model.project, station:equipment.model.station, equipment:equipment.model.equipment})")
+    a.collection-item-title(title="" href="")
+      span.state-dot(ng-class="{'state-online': equipment.signals.getItemByIds({signal:'communication-status'}).data.value == 0 && !equipment.signals.getItemByIds({signal:'alarms'}).data.value, 'state-alarm': equipment.signals.getItemByIds({signal:'communication-status'}).data.value == 0 && equipment.signals.getItemByIds({signal:'alarms'}).data.value}")
+      | {{equipment.model.name}}
+.follow-blank(ng-if="equips.length == 0")
+  span 无关注设备

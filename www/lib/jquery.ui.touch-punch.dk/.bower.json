@@ -1,0 +1,31 @@
+{
+  "name": "jquery.ui.touch-punch.dk",
+  "version": "0.3.3",
+  "author": {
+    "name": "Dzmitry Khadorkin",
+    "url": "http://khadorkin.by"
+  },
+  "dependencies": {
+    "jquery": ">=1.7.1",
+    "jqueryui": ">=1.8.16"
+  },
+  "licenses": "MIT",
+  "main": "jquery.ui.touch-punch.dk.js",
+  "description": "Touch Event Support for jQuery UI",
+  "keywords": [
+    "jquery",
+    "jquery-ui",
+    "touch"
+  ],
+  "homepage": "https://github.com/khadorkin/jquery-ui-touch-punch",
+  "_release": "0.3.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.3",
+    "commit": "1cbd9e0ccdfe6cf3275116535940747521bc6b37"
+  },
+  "_source": "git://github.com/khadorkin/jquery-ui-touch-punch.git",
+  "_target": "~0.3.3",
+  "_originalSource": "jquery.ui.touch-punch.dk",
+  "_direct": true
+}

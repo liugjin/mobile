@@ -1,0 +1,173 @@
+
+<style>
+  .bar a img {
+    width: .8rem;
+    margin-top: 5px;
+  }
+  .tabs .tab a {
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: transparent;
+    outline: none;
+  }
+  .tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #00a755;
+  }
+  .tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    /*background-color: #87D4AB;*/
+    background-color: #00a755;
+    will-change: left, right;
+  }
+  
+</style>
+<ion-header-bar class="bar bar-light bar-header has-tabs-top">
+  <!--a.button.icon-left.ion-ios-arrow-left.button-clear(ng-click="vm.goBack()")--><a class="button button-icon icon-left" ng-click="vm.goBack()"><img src="./img/svg/arrow-left.svg"/></a>
+  <h1 class="title">{{vm.currentEquipInfo.name}}</h1>
+</ion-header-bar>
+<!--ion-content(scroll='false')-->
+<ion-content>
+  <ul class="tabs tabs-fixed-width" id="tabs" md-tabs="md-tabs" data-swipeable="false">
+    <li class="tab" ng-if="vm.templateId"><a href="#overview">概况</a></li>
+    <li class="tab" ng-if="vm.currentEquipInfo.type == 'video' &amp;&amp; vm.currentEquipInfo.template =='video_template'"><a href="#video">视频</a></li>
+    <li class="tab"><a href="#signal">实时</a></li>
+    <li class="tab"><a href="#history">曲线</a></li>
+    <li class="tab"><a href="#event">告警</a></li>
+    <li class="tab"><a href="#property">属性</a></li>
+  </ul>
+  <div style="top:44px">
+    <div id="overview">
+      <graphic-box id="graphic" ng-if="vm.templateId" style="width:100%;height:calc(100vh - 92px)" controller="vm" parameters="{templateId: vm.templateId, templateParameters: vm.templateParameters}" ng-dblclick="vm.fullGraphic()"></graphic-box>
+    </div>
+    <div id="video" ng-if="vm.currentEquipInfo.type == 'video' &amp;&amp; vm.currentEquipInfo.template =='video_template'">
+      <mobile-equip-video controller="vm" parameters="{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}"></mobile-equip-video>
+    </div>
+    <div id="signal">
+      <!--ion-nav-view-->
+      <!--ion-content-->
+      <mobile-equip-signal controller="vm" parameters="{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}"></mobile-equip-signal>
+      <!--mobile-equip-signal(controller="vm", parameters="{station:vm.equipment.model.station, equipment: vm.equipment.model.equipment}")-->
+      <!--mobile-equipment-overview(controller="vm", parameters="{station:vm.equipment.model.station, equipment: vm.equipment.model.equipment}")
+      //#player
+      //  .graphic-viewer(tabindex2='0', graphic-player='', options='vm.graphicOptions', template-id='vm.templateId', controller='vm', on-template-load='vm.onTemplateLoad()', on-element-changed='vm.onElementChanged()', parameters='vm.parameters')
+      //  #element-placeholder(ng-show='vm.placeholderMode != "none"', data-activates='placeholder-menu', md-dropdown, data-hover='false', data-beloworigin='true', title2='信息窗口')
+      //    #element-placeholder-popover(style='width:100%; height:100%;', ng-click2='vm.togglePopover($event)', element-popover, data-style='inverse', data-title='{{vm.element.propertyValues.name || vm.element.id}}', element='vm.element', controller='vm', data-trigger='manual', data-placement='auto', data-closeable='true', data-dismissible='false', data-animation='fade', title2='信息展示：在选中项前双击即可弹出信息窗口')
+      //
+      //.row.white
+      //  .col.s6(ng-repeat="s in vm.showSignals")
+      //    mobile-signal-card(controller="vm", parameters="{station:vm.equipment.model.station, equipment:vm.equipment.model.equipment, signal:s.model.signal}")
+        //.row(ng-if='$even')
+        //  .col-50
+        //    .card.text-center.signal-card2.no-shadow
+        //      .item
+        //        .signal-name {{vm.showSignals[$index].instance.name}}
+        //        .signal-content
+        //          span.signal-value {{vm.showSignals[$index].data.formatValue}}&nbsp
+        //          span.signal-unit {{vm.showSignals[$index].unit.unit}}
+        //        .signal-time {{vm.showSignals[$index].data.timestamp | date:'MM-dd HH:mm:ss'}}
+        //
+        //
+        //  .col-50(ng-if='vm.showSignals[$index+1]')
+        //    .card.text-center.signal-card2.no-shadow
+        //      .item
+        //        .signal-name {{vm.showSignals[$index+1].instance.name}}
+        //        .signal-content
+        //          span.signal-value {{vm.showSignals[$index+1].data.formatValue}}&nbsp
+        //          span.signal-unit {{s.unit.unit}}
+        //        .signal-time {{vm.showSignals[$index+1].data.timestamp | date:'MM-dd HH:mm:ss'}}
+      -->
+    </div>
+    <div id="history">
+      <!--ion-nav-view-->
+      <!--ion-content-->
+      <div style="position: relative; padding-top: 1px; padding-bottom: 1px; padding-left: 0; margin-bottom: 20px;">
+        <mobile-historycurve controller="vm" parameters="{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}"></mobile-historycurve>
+        <!--mobile-historycurve(controller='vm', parameters='{station: vm.equipment.model.station, equipment: vm.equipment.model.equipment}')-->
+      </div>
+    </div>
+    <div id="event">
+      <!--ion-nav-view-->
+      <!--ion-content-->
+      <div style="position: relative; padding-top: 1px; padding-bottom: 1px; padding-left: 0; margin-bottom: 20px;">
+        <mobile-equip-event controller="vm" parameters="{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}"></mobile-equip-event>
+        <!--mobile-equip-event(controller='vm', parameters='{project: vm.equipment.model.project, station: vm.equipment.model.station, equipment: vm.equipment.model.equipment}')-->
+      </div>
+      <!--ion-nav-view
+      ion-content(scroll='false')
+        ion-scroll(direction='x', style='width: 100%', scrollbar-x='false', ng-init="status={'start':'持续', 'confirm':'确认', 'end':'结束', 'completed': '结束'}")
+          .item.item-header.item-stable.row.row-item.min-705
+            .col.col-right.min-75 设备
+            .col.col-right.min-50 报警值
+            .col.col-right.min-140 内容
+            .col.col-right.min-120 开始
+            .col.col-right.min-120 结束
+            .col.col-right.min-50 状态
+      
+      
+          .item.row.row-item.min-705(ng-repeat='event in vm.eventRecords.items | orderBy: vm.eventRecords.predicate:vm.eventRecords.reverse', ng-if='vm.equipment.model.equipment==event.equipment && event.phase=="start"')
+            .col.col-right.col-sep.min-75 {{event.equipmentName || event.equipment}}
+            .col.col-right.col-sep.min-50 {{event.startValue | prettyNumber:2}}
+            .col.col-right.col-sep.min-140 {{event.title || event.eventName|| event.event}}
+            .col.col-right.col-sep.min-120 {{event.startTime | date:'yyyy-MM-dd HH:mm:ss'}}
+            .col.col-right.col-sep.min-120 {{event.endTime | date:'yyyy-MM-dd HH:mm:ss'}}
+            .col.col-right.col-sep.min-50 {{status[event.phase]}}
+      -->
+    </div>
+    <div id="property">
+      <!--ion-nav-view-->
+      <!--ion-content-->
+      <div style="position: relative; padding-top: 1px; padding-bottom: 1px; padding-left: 0; margin-bottom: 20px;">
+        <mobile-equipproperty controller="vm" parameters="{station: vm.currentEquipInfo.stationId, equipment: vm.currentEquipInfo.equipmentId}"></mobile-equipproperty>
+        <!--mobile-equipproperty(controller='vm', parameters='{station:vm.equipment.model.station, equipment: vm.equipment.model.equipment}')
+        //.item.item-image(ng-if='vm.equipment.model.image')
+        //  img.card-img(ng-src='{{vm.options.uploadUrl}}/{{vm.equipment.model.image}}')
+        //
+        //.item
+        //  span 类型：
+        //  span {{vm.equipment.model.typeName}}
+        //.item
+        //  span 厂商：
+        //  span {{vm.equipment.model.vendorName}}
+        //.item(ng-repeat='property in vm.equipment.properties.items | filter: vm.equipment.properties.filter(vm.searchProperty, ["property", "name"], true) | orderBy: vm.equipment.properties.predicate: vm.equipment.properties.reverse', ng-if='!(property.model.property.indexOf("_")===0 || property.model.property=="periods")')
+        //  div(ng-switch='property.model.dataType')
+        //    div(ng-switch-default)
+        //      span {{property.model.name}}：
+        //      span {{property.value}}
+        //      span &nbsp;{{property.unit.abbr}}
+        //
+        //    div(ng-switch-when='date')
+        //      span {{property.model.name}}：
+        //      span {{property.value | date: 'yyyy-MM-dd'}}
+        //      //span &nbsp;{{property.unit.abbr}}
+        //
+        //    div(ng-switch-when='datetime')
+        //      span {{property.model.name}}：
+        //      span {{property.value | date: 'yyyy-MM-dd HH:mm:ss'}}
+              //span &nbsp;{{property.unit.abbr}}
+        -->
+      </div>
+    </div>
+  </div>
+  <!--ion-tabs.tabs-top.tabs-color-active-balanced.equipment-tabs
+  ion-tab(title='实时')
+    include ./equipment-plan/overview.pug
+  
+  ion-tab(title='曲线')
+    include ./equipment-plan/historydata.pug
+  
+  //ion-tab(title='信号')
+  //    include ./equipment-plan/realdata.pug
+  
+  ion-tab(title='告警')
+    include ./equipment-plan/statisticdata.pug
+  
+  ion-tab(title='属性')
+    include ./equipment-plan/property.pug
+  -->
+</ion-content>

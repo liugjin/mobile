@@ -1,0 +1,65 @@
+{
+  "name": "clc.mobile",
+  "version": "1.1.0",
+  "description": "An Ionic project",
+  "scripts": {
+    "start": "ionic serve --lab",
+    "android": "ionic cordova run android",
+    "build-android": "ionic cordova build android",
+    "ios": "ionic cordova emulate ios"
+  },
+  "devDependencies": {
+    "@ionic/v1-toolkit": "2.0.13",
+    "gulp": "^3.5.6",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-iced": "0.0.3",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^5.0.0",
+    "natives": "^1.1.6"
+  },
+  "dependencies": {
+    "@ionic-native/camera": "^5.17.0",
+    "@ionic-native/file": "^5.17.0",
+    "cordova-android": "7.1.4",
+    "cordova-ios": "^4.5.5",
+    "cordova-plugin-app-version": "^0.1.9",
+    "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.1.2",
+    "cordova-plugin-proxy": "file:plugin/cordova-plug-proxy",
+    "cordova-plugin-qrscanner": "3.0.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-streaming-media": "2.2.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "natives": "^1.1.6",
+    "parse-node-version": "^1.0.1",
+    "run": "1.4.0",
+    "sax": "^1.2.4",
+    "sdp": "^2.9.0",
+    "xml2js": "^0.4.19",
+    "xmlbuilder": "^11.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-app-version": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-qrscanner": {},
+      "cordova-plugin-streaming-media": {},
+      "cordova-plugin-proxy": {},
+      "cordova-plugin-camera": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}

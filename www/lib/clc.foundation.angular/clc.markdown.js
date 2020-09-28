@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define(["clc.foundation.angular/modules/clc.markdown.module"],function(e){var n;return e});

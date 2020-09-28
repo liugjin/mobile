@@ -1,0 +1,26 @@
+
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-green"><a class="button button-icon icon-left ion-ios-close-empty" ng-click="vm.closeModal2()"></a>
+    <h1 class="title">新建工单</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">类型</div>
+        <select>
+          <option selected="">临时</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">责任人</div>
+        <select ng-model="vm.newWork.notify" ng-options="u as u.name for u in vm.selectUsers"></select>
+      </label>
+      <div class="item"><span>工单内容</span><span class="assertive">*</span><span>:</span>
+        <textarea rows="3" cols="40" placeholder="请输入" ng-model="vm.newWork.order_detail"></textarea>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-green" type="submit" ng-click="vm.saveNewWorklist()">提交</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

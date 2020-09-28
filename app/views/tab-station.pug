@@ -1,0 +1,20 @@
+
+
+ion-header-bar.bar.bar-dark.bar-header
+  h1.title 地区
+
+ion-content
+  .card.list(ng-repeat='dt in vm.datacenters')
+    a.item.item-icon-left.item-divider
+      i.icon.ion-android-globe.calm
+      | {{::dt.model.name}}
+
+
+    a.item.item-icon-left.item-icon-right(ng-repeat='station in dt.stations', ui-sref='tab.signal({user: vm.project.model.user, project: vm.project.model.project, station: station.model.station})')
+      i.icon.ion-ios-information-empty.positive
+      | {{::station.model.name}}
+      i.icon.ion-chevron-right.icon-accessory
+
+
+
+

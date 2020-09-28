@@ -1,0 +1,1 @@
+if("function"!=typeof define)var define=require("amdefine")(module);define([],function(){var e,n;return{PrettyNumberFilter:e=function(){return function(e,n){var r;return null==n&&(n=2),isNaN(e)?e:"NaN"===(r=(r=parseFloat(e))%1==0?r.toFixed(0):r.toFixed(n))?"":r}}}});

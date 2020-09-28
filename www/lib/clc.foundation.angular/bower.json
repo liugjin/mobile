@@ -1,0 +1,19 @@
+{
+  "name": "clc.foundation.angular",
+  "version": "1.0.1",
+  "authors": [
+    "Dow <dow@clcdata.com>"
+  ],
+  "description": "foundation framework for angular directives, services and controllers",
+  "license": "MIT",
+  "homepage": "https://clc-dow@bitbucket.org/clc-dow/clc.foundation.angular.git",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ]
+}

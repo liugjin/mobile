@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="72px" viewBox="0 0 41 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工单复制-4" transform="translate(-59.000000, -592.000000)">
+            <rect fill="#F0F3F4" x="0" y="0" width="750" height="1334"></rect>
+            <g id="设备列表" transform="translate(0.000000, 138.000000)">
+                <g id="艾默生-UHA1R-0030L">
+                    <g id="UPS状态复制-2" transform="translate(10.000000, 410.000000)">
+                        <path d="M0,14.0062673 C0,6.27081946 6.26548785,0 13.9916129,0 L124.008387,0 C131.735742,0 138,6.27218962 138,14.0062673 L138,145.993733 C138,153.729181 131.734512,160 124.008387,160 L13.9916129,160 C6.26425846,160 0,153.72781 0,145.993733 L0,14.0062673 Z" id="bg" fill="#FFFFFF"></path>
+                        <g id="编组" transform="translate(49.000000, 44.000000)" fill="#00A856">
+                            <polygon id="Fill-1" points="0 4 41 4 41 0 0 0"></polygon>
+                            <polygon id="Fill-2" points="0 23 41 23 41 19 0 19"></polygon>
+                            <polygon id="Fill-3" points="0 16 41 16 41 13 0 13"></polygon>
+                            <polygon id="Fill-4" points="13 41 27 41 27 38 13 38"></polygon>
+                            <polygon id="Fill-5" points="0 10 41 10 41 7 0 7"></polygon>
+                            <polygon id="Fill-6" points="0 67 41 67 41 63 0 63"></polygon>
+                            <polygon id="Fill-7" points="30 72 37 72 37 68 30 68"></polygon>
+                            <polygon id="Fill-8" points="4 72 11 72 11 68 4 68"></polygon>
+                            <polygon id="Fill-9" points="0 0 0.00134318334 67 4 67 3.99731363 0"></polygon>
+                            <polygon id="Fill-10" points="19 0 19.0012 22 22 22 21.9988 0"></polygon>
+                            <polygon id="Fill-11" points="13 41 13 19 15.9988 19 16 41"></polygon>
+                            <polygon id="Fill-12" points="25.0012 41 25 19 28 19 28 41"></polygon>
+                            <polygon id="Fill-13" points="37 0 37.0040282 67 41 67 40.9986573 0"></polygon>
+                            <g transform="translate(18.000000, 25.000000)">
+                                <path d="M4.379875,2.21833333 C4.379875,3.23155556 3.539875,4.05166667 2.504875,4.05166667 C1.469875,4.05166667 0.629875,3.23155556 0.629875,2.21833333 C0.629875,1.20633333 1.469875,0.385 2.504875,0.385 C3.539875,0.385 4.379875,1.20633333 4.379875,2.21833333" id="Fill-14"></path>
+                                <path d="M4.379875,8.53355556 C4.379875,9.54555556 3.539875,10.3668889 2.504875,10.3668889 C1.469875,10.3668889 0.629875,9.54555556 0.629875,8.53355556 C0.629875,7.52155556 1.469875,6.70022222 2.504875,6.70022222 C3.539875,6.70022222 4.379875,7.52155556 4.379875,8.53355556" id="Fill-16"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
